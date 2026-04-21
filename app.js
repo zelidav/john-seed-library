@@ -34,6 +34,7 @@
     lineage: new Set(),
     q: '',
     sort: 'section',
+    sort2: 'name',
     view: 'expanded',
   };
 
@@ -235,6 +236,9 @@
   sectionFilters.querySelectorAll('button').forEach(b =>
     b.addEventListener('click', () => { state.section = b.dataset.filter; render(); }));
   sortEl.addEventListener('change', () => { state.sort = sortEl.value; render(); });
+  const sort2El = document.getElementById('sort2');
+  sort2El.value = state.sort2;
+  sort2El.addEventListener('change', () => { state.sort2 = sort2El.value; render(); });
   viewToggle.querySelectorAll('button').forEach(b =>
     b.addEventListener('click', () => { state.view = b.dataset.view; render(); }));
 
@@ -275,20 +279,28 @@
   const SECTION_ORDER = { SEALED: 0, OPEN: 1, OTHER: 2, BONUS: 3 };
   const PHENO_ORDER = { 'Indica-leaning': 0, 'Balanced hybrid': 1, 'Hybrid': 2, 'Sativa-leaning': 3, 'Autoflower': 4 };
   const AVAIL_ORDER = { 'in-stock': 0, 'limited': 1, 'sold-out': 2, 'discontinued': 3, 'tester': 4, 'unreleased': 5 };
+  // Core comparators — pure two-element compare, no built-in tie-breakers,
+  // so they compose cleanly when user picks a secondary sort key.
   const SORTS = {
-    'section': (a,b) => (SECTION_ORDER[a.section.split('/')[0]] ?? 9) - (SECTION_ORDER[b.section.split('/')[0]] ?? 9) || a.name.localeCompare(b.name),
+    'section': (a,b) => (SECTION_ORDER[a.section.split('/')[0]] ?? 9) - (SECTION_ORDER[b.section.split('/')[0]] ?? 9),
     'name': (a,b) => a.name.localeCompare(b.name),
     'name-desc': (a,b) => b.name.localeCompare(a.name),
     'value-desc': (a,b) => (b.estMid||0) - (a.estMid||0),
     'value-asc': (a,b) => (a.estMid||0) - (b.estMid||0),
-    'rarity-desc': (a,b) => (b.rarity||0) - (a.rarity||0) || (b.estMid||0) - (a.estMid||0),
+    'rarity-desc': (a,b) => (b.rarity||0) - (a.rarity||0),
     'rarity-asc': (a,b) => (a.rarity||0) - (b.rarity||0),
-    'avail': (a,b) => (AVAIL_ORDER[a.availability?.code] ?? 9) - (AVAIL_ORDER[b.availability?.code] ?? 9) || a.name.localeCompare(b.name),
+    'avail': (a,b) => (AVAIL_ORDER[a.availability?.code] ?? 9) - (AVAIL_ORDER[b.availability?.code] ?? 9),
     'seeds-desc': (a,b) => (b.seedsPerPack||0) - (a.seedsPerPack||0),
     'seeds-asc': (a,b) => (a.seedsPerPack||0) - (b.seedsPerPack||0),
     'breeder': (a,b) => (a.breeder||'').localeCompare(b.breeder||''),
-    'pheno': (a,b) => (PHENO_ORDER[a.phenoType] ?? 9) - (PHENO_ORDER[b.phenoType] ?? 9) || a.name.localeCompare(b.name),
+    'pheno': (a,b) => (PHENO_ORDER[a.phenoType] ?? 9) - (PHENO_ORDER[b.phenoType] ?? 9),
   };
+  function composedSort(primary, secondary) {
+    const p = SORTS[primary] || SORTS.section;
+    const s = secondary && SORTS[secondary];
+    const nameTie = SORTS.name;
+    return (a, b) => p(a, b) || (s ? s(a, b) : 0) || nameTie(a, b);
+  }
 
   // ─────── Render helpers ───────
   // Single source of truth for the small availability badge shown on cards
@@ -414,7 +426,7 @@
   function render() {
     syncFilterUI();
     const filtered = data.strains.filter(matches);
-    filtered.sort(SORTS[state.sort] || SORTS.section);
+    filtered.sort(composedSort(state.sort, state.sort2));
     const renderCard = state.view === 'list' ? listCard : expandedCard;
     grid.className = 'grid' + (state.view === 'list' ? ' list-view' : '');
     grid.innerHTML = filtered.map((s) => renderCard(s, data.strains.indexOf(s))).join('')
