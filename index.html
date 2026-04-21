@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>John Seed Library — Strain Reference</title>
+<meta name="description" content="Consolidated strain genetics reference with photos — Sealed, Open, and Other sections.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <h1>John Seed Library</h1>
+    <p class="sub">Consolidated strain-genetics reference · compiled April 2026</p>
+    <div class="stats" id="stats"></div>
+    <nav class="filters">
+      <button data-filter="ALL" class="on">All</button>
+      <button data-filter="SEALED">Sealed</button>
+      <button data-filter="OPEN">Open</button>
+      <button data-filter="OTHER">Other</button>
+      <button data-filter="BONUS">Bonus / Unlisted</button>
+    </nav>
+    <input type="search" id="search" placeholder="Search strain, breeder, genetics…">
+  </div>
+</header>
+
+<section class="lists wrap">
+  <h2>Master inventory lists</h2>
+  <p class="muted">Original handwritten index cards. Click to enlarge.</p>
+  <div class="list-grid">
+    <a href="img/IMG_4485.jpg" target="_blank"><img src="thumb/IMG_4485.jpg" alt="Sealed list"><span>Sealed</span></a>
+    <a href="img/IMG_4484.jpg" target="_blank"><img src="thumb/IMG_4484.jpg" alt="Open / Other list"><span>Open · Other</span></a>
+  </div>
+</section>
+
+<main class="wrap">
+  <div id="grid" class="grid"></div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Source: <em>Strain_Genetics_Reference.docx</em> + 42 photos (IMG_4484 → IMG_4525). Quantities and seed types preserved from source inventory.</p>
+    <p class="muted">Legend: <b>REG</b> Regular · <b>FEM</b> Feminized · <b>AUTO</b> Autoflower · <b>S1</b> Self-pollinated first gen · <b>BX</b> Backcross · <b>S1 self</b> feminized self</p>
+  </div>
+</footer>
+
+<div id="lightbox" class="lightbox hidden" onclick="this.classList.add('hidden')">
+  <img id="lightbox-img" alt="">
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
