@@ -191,36 +191,152 @@ HYPE_STRAIN_BONUS = {
 }
 
 def rarity(strain):
+    """Returns (score, reason, breakdown) — breakdown is a list of (label, delta) tuples."""
     name = (strain.get('name') or '').lower()
     breeder = (strain.get('breeder') or '').lower()
     notes = (strain.get('notes') or '').lower()
     section = (strain.get('section') or '').upper()
+    seed_type = (strain.get('seedType') or '').upper()
+
+    breakdown = []
     # Base from breeder tier
     score = 2
     reason = 'craft unknown'
+    tier_label = 'Unknown craft breeder'
     for kw, s, r in HYPE_KEYWORDS:
         if kw in breeder:
             score = s
             reason = r
+            tier_label = f'Breeder tier: {r}'
             break
+    breakdown.append((f'Breeder base: {tier_label}', score))
+
     # Strain-specific override
+    strain_bonus = 0
     for kw, s in HYPE_STRAIN_BONUS.items():
         if kw in name:
-            score = max(score, s)
+            if s > score:
+                strain_bonus = s - score
+                breakdown.append(('Strain-specific hype (sought-after release)', strain_bonus))
+                score = s
             break
+
     # Modifiers
     if 'SEALED' in section:
-        score = min(5, score + 1)  # sealed preserves value
+        if score < 5:
+            breakdown.append(('Sealed / unopened preservation bonus', +1))
+            score = min(5, score + 1)
+    if 'S1' in seed_type or 's1' in name:
+        # already priced in via strain_bonus often, but note it
+        breakdown.append(('S1 feminized self (collector premium)', 0))
     if 'tester' in notes:
-        score = min(5, max(score, 4))
+        if score < 4:
+            breakdown.append(('Tester pack (never publicly sold)', 4 - score))
+            score = 4
     if 'freebie' in notes:
+        breakdown.append(('Freebie pack (comes as bonus, not standalone sale)', -1))
         score = max(1, score - 1)
-    # Boutique handwritten sealed = bonus
+    # Boutique handwritten sealed override
     if 'a&b' in breeder and 'SEALED' in section:
+        if score < 5:
+            breakdown.append(('A&B Company sealed boutique (pendant box, authentication)', 5 - score))
         score = 5
-    # Clamp
+
     score = max(1, min(5, score))
-    return score, reason
+    return score, reason, breakdown
+
+# ──────────────────────────────────────────────────────────────
+# Availability (separate from rarity — tracks current market status)
+# ──────────────────────────────────────────────────────────────
+# Rarity = how hard to find once you want one.
+# Availability = is it currently being sold, sold out, never sold, etc.
+#
+# A strain can be LOW rarity but UNAVAILABLE (e.g., a commercial line that
+# got discontinued), or HIGH rarity but IN STOCK (e.g., Ethos rare drops
+# sometimes re-release). Both dimensions matter for collectors.
+
+AVAILABILITY_STATES = {
+    'in-stock':     ('🟢', 'In stock',       'Currently listed by breeder or authorized retailers at standard pricing.'),
+    'limited':      ('🟡', 'Limited',        'Irregular drops — in stock briefly then gone; next restock window unknown.'),
+    'sold-out':     ('🟠', 'Sold out',       'Was publicly sold; current retail listings empty. Aftermarket only (Strainly, breeder auctions, IG DMs).'),
+    'discontinued': ('🔴', 'Discontinued',   'Retired by breeder, no further production planned. Aftermarket/collection value only.'),
+    'tester':       ('⚫', 'Tester',         'Never retailed — given to selected growers for reports. Trading requires connections.'),
+    'unreleased':   ('🟣', 'Unreleased',     'Pheno-hunt / breeder-internal / handmade cross without public distribution.'),
+}
+
+# Per-strain availability override (curated — overrides the breeder default)
+STRAIN_AVAILABILITY = {
+    'Covert Boats & Hoes':             ('limited',     'Covert Genetics does limited craft drops via select shops and direct DMs. Older releases often sell out within hours.'),
+    'Tiki Madman Space Runtz':         ('sold-out',    'Released after the Space Runtz Connoisseur Cup win; typical Tiki drops move fast and Space Runtz in particular is no longer on standard retail. Aftermarket trade.'),
+    'GSRH (Garlic Sherb)':             ('limited',     'In House Genetics still releases GSRH variants occasionally. Original cuts (original Garlic Sherb #1) are pheno-hunter territory; S1 packs easier to find on drops.'),
+    'Drive Thru Wedding':              ('limited',     'Covert Genetics — small craft runs. Chem Brulée male is a heritage male for Covert so this pairing surfaces periodically.'),
+    'Envy Pop Rocks':                  ('in-stock',    'Envy Genetics runs a deep catalogue; Pop Rocks has been in rotation and is typically findable at retailers that carry Envy.'),
+    'Gushers S1':                      ('sold-out',    'Cookies Fam feminized S1 — original Gushers F1 release is long gone. S1 self drops surface occasionally on Cookies releases and authorized resellers.'),
+    'Runtz S1':                        ('limited',     'Multiple S1 self versions exist (Cookies Fam original + several reputable pheno-hunter versions). Easier to find than Gushers S1 but drops sell fast.'),
+    'Cult Classic Fresh Baked':        ('limited',     'Cult Classics Seeds does boutique drops through select retailers; Fresh Baked is a Freshies hype line and typically moves within hours of release.'),
+    'Cement Shoes S1':                 ('sold-out',    'Cement Shoes S1 self (Universally Seeded / Cult Classics) — sealed collector pack; not currently in retail rotation.'),
+    'Ethos OGDLUX':                    ('limited',     'Ethos Genetics OGDLUX Bx3 is part of their OG backcross program; Ethos re-releases Bx projects occasionally via ethosgenetics.com and select seedbanks.'),
+    'Freshmaker':                      ('limited',     'Cult Classics Seeds — Freshies-crossed boutique drops. Not commonly in stock; check Cult Classics IG for drop schedule.'),
+    'Savage Jr Mintz':                 ('in-stock',    'Savage Genetics runs their Jr line (smaller seed counts) through direct and retail channels. Mintz crosses rotate in the Savage catalogue.'),
+    'Cloud Spin':                      ('unreleased',  'No confirmed breeder on public record. Name circulates among small-batch hunters but no retail presence.'),
+    'ABSeed Goat Cheese':              ('limited',     'Small-batch Goat Cheese cross — surface through IG and pheno-hunter circles. Not in mainstream seedbanks.'),
+    'S. Orange Pucker':                ('unreleased',  'Name present on the inventory card but no matching public breeder listing. Likely a pheno-hunter or craft release.'),
+    'Grandmas Pajamas':                ('unreleased',  'A&B Company boutique cross; A&B releases are hand-labelled boutique packs, not sold on standard seedbanks.'),
+    'O. Cookie Violence':              ('unreleased',  'No public listing. Likely underground pheno-hunter release.'),
+    'Jurassic Kush':                   ('sold-out',    'A&B Company boutique release — sealed wooden box with custom glass pendant. Collector item; not currently on retail.'),
+    'N. Speckley Boogie':              ('unreleased',  'No public listing under this name. Craft/pheno-hunter territory.'),
+    'Bloom Guava Barz':                ('in-stock',    'Bloom Seed Co (Colorado) runs their catalogue through authorized seedbanks; Guava Barz is a recognisable Biscotti × Guavaz 74 cross and typically findable.'),
+    'Nephisto MBAP (ManBearAlienPig)': ('limited',     'Mephisto Genetics Reserva line — Mephisto restocks Reserva on short windows; MBAP surfaces occasionally.'),
+    'G. Classics Hitmaker':            ('limited',     'Cult Classics Seeds Hitmaker — Motor Breath × Freshies. Drops-only through Cult Classics channels.'),
+    'Sunset Freshies':                 ('limited',     'Cult Classics limited drop — Sunset Strip #3 × Freshies. Hard to catch.'),
+    'GSRH Yahemi':                     ('unreleased',  'Yahemi appears to be a pheno-hunter cross (Melonatta × Project 4516) from the GSRH family — not on standard retail.'),
+    'Exotic Greezy Runtz':             ('limited',     'Exotic Genetix — Grease Monkey reversal × Runtz. Exotic rotates their catalogue through authorized seedbanks.'),
+    'Crane City S. Socker / The Zit':  ('limited',     'Crane City Cannabis — craft Zkittlez crosses. Limited retail distribution; check Crane City IG.'),
+    'Envy Grape Blow':                 ('in-stock',    'Envy Genetics Grape Pie × BlowPops — part of the Envy BlowPops dessert line, typically in rotation.'),
+    'Geist Kushmints × Banana06':      ('unreleased',  'Geist craft release, Banana #06 pheno — small-batch, not retailed.'),
+    'Exotic Runtz S1':                 ('limited',     'Exotic Genetix Runtz S1 self — surfaces periodically through Exotic drops.'),
+    'Ethos GMOZ × Runtz':              ('limited',     'Ethos GMOZ line × Runtz — Ethos limited/foil releases. GMOZ is part of their gas-candy program.'),
+    'Envy Weedies':                    ('in-stock',    'Envy Genetics — part of the Envy dessert line; typically findable at retailers that carry Envy.'),
+    'Wilmeac / Wilmaaa':               ('limited',     'Envy Genetics — Fruity Pebbles OG × Calisunset. Not a main-line release; limited drops.'),
+    'Savage Acai Gelato × Hooliganz':  ('tester',      'Savage Genetics tester pack — given to selected growers for reports. Never on retail.'),
+    'Ethos FPOG':                      ('in-stock',    'Ethos Genetics FPOG (Forbidden Fruit OG) — part of the mainline Ethos catalogue and typically in stock at major seedbanks.'),
+    'Fire Farms Fro OGLB (FRO GKB v2.17)': ('unreleased', 'Fire Farms handmade cross with a versioned pheno label. Craft circles only.'),
+    'GRF GMOZ':                        ('unreleased',  'GRF GMOZ — unsigned / craft release; not in any mainstream seedbank.'),
+    'Animal Kush CBD (CBP)':           ('limited',     'Humble Jungle Seeds — CBD-positive Animal Kush pheno. Humble Jungle carries CBD-forward lines through select EU/US retailers.'),
+    'Grapaya Drip':                    ('limited',     'Phantom Fire Genetics — multi-way cross (Bright Moments × Blueberry Skunk × SFV × Mendo Purps). Phantom Fire runs craft drops through IG.'),
+    'Sin City Blue Zu':                ('in-stock',    'Sin City Seeds / Blue J — established commercial breeder. Most Sin City crosses are findable through their direct site and authorized seedbanks.'),
+    'Titanium Jack × B-Side':          ('unreleased',  'Gene Traders VIP — private/select trader circle release, not on public retail.'),
+    'Papaya F2':                       ('tester',      'Phantom Fire Genetics F2 — came as a freebie/tester with another purchase. Not independently sold.'),
+    'The Hydra':                       ('unreleased',  'Lyme Rising Farm — TKNL 5 Haze × Pam F2. Craft Northeast small-batch release.'),
+    'Dinosaur Biscuits':               ('sold-out',    'A&B Company sealed boutique — Forum Cut Cookies × Stankasaurus. Certified-hologram sealed box; not on current retail.'),
+    'Copper Sunset':                   ('unreleased',  'No confirmed breeder — llama-art pack suggests small-batch handmade. Copper Chem × Peruvian Punch cross.'),
+    "Kali's Cookies":                  ('limited',     "Kali's Seeds — craft release, Kali's Lullaby × Tropicana Cookies. Limited distribution through select retailers."),
+    'The A Frame':                     ('discontinued','Geo Farms 2019 release — TKBX2 × Funky Barn BX. Old project, no current retail; aftermarket collector only.'),
+}
+
+def availability(strain):
+    name = strain.get('name')
+    if name in STRAIN_AVAILABILITY:
+        code, note = STRAIN_AVAILABILITY[name]
+        emoji, label, generic = AVAILABILITY_STATES[code]
+        return {
+            'code': code,
+            'label': label,
+            'emoji': emoji,
+            'note': note,
+        }
+    # Fallback by breeder tier
+    b = (strain.get('breeder') or '').lower()
+    if 'tester' in (strain.get('notes','') or '').lower():
+        code = 'tester'
+    elif 'freebie' in (strain.get('notes','') or '').lower():
+        code = 'tester'
+    elif not b or 'unknown' in b or 'craft' in b:
+        code = 'unreleased'
+    else:
+        code = 'limited'
+    emoji, label, generic = AVAILABILITY_STATES[code]
+    return {'code': code, 'label': label, 'emoji': emoji, 'note': generic}
 
 # ──────────────────────────────────────────────────────────────
 # Strain bud-image mapping
@@ -388,9 +504,11 @@ for s in data['strains']:
     s['pricePerSeedLow'] = round(lo / max(seed_count,1), 2)
     s['pricePerSeedHigh'] = round(hi / max(seed_count,1), 2)
 
-    rscore, rreason = rarity(s)
+    rscore, rreason, rbreakdown = rarity(s)
     s['rarity'] = rscore
     s['rarityReason'] = rreason
+    s['rarityBreakdown'] = rbreakdown
+    s['availability'] = availability(s)
 
     s['breederUrl'] = breeder_url(s.get('breeder'))
     s['seedfinderUrl'] = seedfinder_url(s.get('name'), s.get('breeder'))
@@ -420,12 +538,20 @@ for s in data['strains']:
 data['meta']['lineageTags'] = sorted(all_tags)
 data['meta']['phenoTypes'] = sorted({s['phenoType'] for s in data['strains']})
 data['meta']['rarityScale'] = {
-    5: 'Legendary — sealed boutique, hype Bx, sought-after S1 drops',
-    4: 'Rare — top-tier craft FEM, limited runs, tester packs',
-    3: 'Uncommon — established craft breeder line drops',
-    2: 'Common — widely available craft fem',
-    1: 'Commercial — unsigned / bulk',
+    '5': {'label': 'Legendary', 'desc': 'Sealed boutique releases with authentication (A&B Company pendant boxes), Ethos Bx backcross projects, Cult Classics hype Freshies drops, Cookies Fam sought-after S1 releases, and one-off handmade cuts. Hard to acquire even for connected collectors; aftermarket premiums common.'},
+    '4': {'label': 'Rare', 'desc': 'Top-tier craft feminized lines, limited runs that sell within hours of release, and tester packs (never publicly sold). Breeders at this tier: Ethos mainline, Cookies Fam regular, Savage, Tiki Madman (post-Cup winners), Covert Genetics, In House Genetics.'},
+    '3': {'label': 'Uncommon', 'desc': 'Established craft breeders with regular line drops. Harder to find than bulk commercial fem but retail availability exists through authorized seedbanks. Exotic Genetix, Mephisto Reserva, Bloom Seed Co, Envy Genetics mainline, AB Seed, Phantom Fire.'},
+    '2': {'label': 'Common', 'desc': 'Small craft breeders and unsigned-but-known crosses. Limited distribution but not artificially scarce. Geist, Crane City, Fire Farms, Humble Jungle, Gene Traders, Lyme Rising, Geo Farms, Kali\'s, Sin City.'},
+    '1': {'label': 'Commercial', 'desc': 'Unsigned / bulk / craft unknowns — these are the "extras" in collections and have limited collector value beyond the seeds themselves.'},
 }
+data['meta']['rarityFactors'] = [
+    'Breeder tier (primary) — reputation, production scale, distribution control',
+    'Seed type — S1 self-pollinated and Bx backcross projects command collector premium',
+    'Sealed status — unopened packs preserve authentication and resale value (+1)',
+    'Tester / freebie flags — testers never retailed (+1 to 4), freebies are bonus packs with reduced standalone value (-1)',
+    'Specific strain hype — named hype drops override breeder tier (e.g., Gushers S1, Cement Shoes S1, OGDLUX Bx3, Jurassic Kush pendant box)',
+]
+data['meta']['availabilityScale'] = {k: {'emoji': e, 'label': l, 'desc': d} for k, (e, l, d) in AVAILABILITY_STATES.items()}
 
 with open(SITE / 'strains.json', 'w', encoding='utf-8') as f:
     json.dump(data, f, indent=2, ensure_ascii=False)

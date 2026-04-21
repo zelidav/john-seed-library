@@ -56,11 +56,65 @@
       "Sativa-leaning"
     ],
     "rarityScale": {
-      "5": "Legendary — sealed boutique, hype Bx, sought-after S1 drops",
-      "4": "Rare — top-tier craft FEM, limited runs, tester packs",
-      "3": "Uncommon — established craft breeder line drops",
-      "2": "Common — widely available craft fem",
-      "1": "Commercial — unsigned / bulk"
+      "5": {
+        "label": "Legendary",
+        "desc": "Sealed boutique releases with authentication (A&B Company pendant boxes), Ethos Bx backcross projects, Cult Classics hype Freshies drops, Cookies Fam sought-after S1 releases, and one-off handmade cuts. Hard to acquire even for connected collectors; aftermarket premiums common."
+      },
+      "4": {
+        "label": "Rare",
+        "desc": "Top-tier craft feminized lines, limited runs that sell within hours of release, and tester packs (never publicly sold). Breeders at this tier: Ethos mainline, Cookies Fam regular, Savage, Tiki Madman (post-Cup winners), Covert Genetics, In House Genetics."
+      },
+      "3": {
+        "label": "Uncommon",
+        "desc": "Established craft breeders with regular line drops. Harder to find than bulk commercial fem but retail availability exists through authorized seedbanks. Exotic Genetix, Mephisto Reserva, Bloom Seed Co, Envy Genetics mainline, AB Seed, Phantom Fire."
+      },
+      "2": {
+        "label": "Common",
+        "desc": "Small craft breeders and unsigned-but-known crosses. Limited distribution but not artificially scarce. Geist, Crane City, Fire Farms, Humble Jungle, Gene Traders, Lyme Rising, Geo Farms, Kali's, Sin City."
+      },
+      "1": {
+        "label": "Commercial",
+        "desc": "Unsigned / bulk / craft unknowns — these are the \"extras\" in collections and have limited collector value beyond the seeds themselves."
+      }
+    },
+    "rarityFactors": [
+      "Breeder tier (primary) — reputation, production scale, distribution control",
+      "Seed type — S1 self-pollinated and Bx backcross projects command collector premium",
+      "Sealed status — unopened packs preserve authentication and resale value (+1)",
+      "Tester / freebie flags — testers never retailed (+1 to 4), freebies are bonus packs with reduced standalone value (-1)",
+      "Specific strain hype — named hype drops override breeder tier (e.g., Gushers S1, Cement Shoes S1, OGDLUX Bx3, Jurassic Kush pendant box)"
+    ],
+    "availabilityScale": {
+      "in-stock": {
+        "emoji": "🟢",
+        "label": "In stock",
+        "desc": "Currently listed by breeder or authorized retailers at standard pricing."
+      },
+      "limited": {
+        "emoji": "🟡",
+        "label": "Limited",
+        "desc": "Irregular drops — in stock briefly then gone; next restock window unknown."
+      },
+      "sold-out": {
+        "emoji": "🟠",
+        "label": "Sold out",
+        "desc": "Was publicly sold; current retail listings empty. Aftermarket only (Strainly, breeder auctions, IG DMs)."
+      },
+      "discontinued": {
+        "emoji": "🔴",
+        "label": "Discontinued",
+        "desc": "Retired by breeder, no further production planned. Aftermarket/collection value only."
+      },
+      "tester": {
+        "emoji": "⚫",
+        "label": "Tester",
+        "desc": "Never retailed — given to selected growers for reports. Trading requires connections."
+      },
+      "unreleased": {
+        "emoji": "🟣",
+        "label": "Unreleased",
+        "desc": "Pheno-hunt / breeder-internal / handmade cross without public distribution."
+      }
     }
   },
   "strains": [
@@ -96,7 +150,23 @@
       "rarity": 5,
       "rarityReason": "Colorado craft breeder, limited distribution",
       "strainImage": "strain-img/grease-monkey.jpg",
-      "strainImageIsLineage": true
+      "strainImageIsLineage": true,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: Colorado craft breeder, limited distribution",
+          4
+        ],
+        [
+          "Sealed / unopened preservation bonus",
+          1
+        ]
+      ],
+      "availability": {
+        "code": "limited",
+        "label": "Limited",
+        "emoji": "🟡",
+        "note": "Covert Genetics does limited craft drops via select shops and direct DMs. Older releases often sell out within hours."
+      }
     },
     {
       "name": "Tiki Madman Space Runtz",
@@ -134,7 +204,23 @@
       "rarity": 5,
       "rarityReason": "connoisseur cup winner, tissue-culture stable",
       "strainImage": "strain-img/space-runtz.jpg",
-      "strainImageIsLineage": false
+      "strainImageIsLineage": false,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: connoisseur cup winner, tissue-culture stable",
+          4
+        ],
+        [
+          "Sealed / unopened preservation bonus",
+          1
+        ]
+      ],
+      "availability": {
+        "code": "sold-out",
+        "label": "Sold out",
+        "emoji": "🟠",
+        "note": "Released after the Space Runtz Connoisseur Cup win; typical Tiki drops move fast and Space Runtz in particular is no longer on standard retail. Aftermarket trade."
+      }
     },
     {
       "name": "GSRH (Garlic Sherb)",
@@ -171,7 +257,23 @@
       "rarity": 5,
       "rarityReason": "GSRH line highly sought; small-batch",
       "strainImage": "strain-img/garlic-sherbet.jpg",
-      "strainImageIsLineage": false
+      "strainImageIsLineage": false,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: GSRH line highly sought; small-batch",
+          4
+        ],
+        [
+          "Sealed / unopened preservation bonus",
+          1
+        ]
+      ],
+      "availability": {
+        "code": "limited",
+        "label": "Limited",
+        "emoji": "🟡",
+        "note": "In House Genetics still releases GSRH variants occasionally. Original cuts (original Garlic Sherb #1) are pheno-hunter territory; S1 packs easier to find on drops."
+      }
     },
     {
       "name": "Drive Thru Wedding",
@@ -210,7 +312,23 @@
       "rarity": 5,
       "rarityReason": "Colorado craft breeder, limited distribution",
       "strainImage": "strain-img/wedding-cake.jpg",
-      "strainImageIsLineage": true
+      "strainImageIsLineage": true,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: Colorado craft breeder, limited distribution",
+          4
+        ],
+        [
+          "Sealed / unopened preservation bonus",
+          1
+        ]
+      ],
+      "availability": {
+        "code": "limited",
+        "label": "Limited",
+        "emoji": "🟡",
+        "note": "Covert Genetics — small craft runs. Chem Brulée male is a heritage male for Covert so this pairing surfaces periodically."
+      }
     },
     {
       "name": "Envy Pop Rocks",
@@ -248,7 +366,23 @@
       "rarity": 4,
       "rarityReason": "BlowPops line, Long Beach craft",
       "strainImage": "strain-img/fruity-pebbles.jpg",
-      "strainImageIsLineage": true
+      "strainImageIsLineage": true,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: BlowPops line, Long Beach craft",
+          3
+        ],
+        [
+          "Sealed / unopened preservation bonus",
+          1
+        ]
+      ],
+      "availability": {
+        "code": "in-stock",
+        "label": "In stock",
+        "emoji": "🟢",
+        "note": "Envy Genetics runs a deep catalogue; Pop Rocks has been in rotation and is typically findable at retailers that carry Envy."
+      }
     },
     {
       "name": "Gushers S1",
@@ -288,7 +422,27 @@
       "rarity": 5,
       "rarityReason": "s1 self releases command premium",
       "strainImage": "strain-img/gushers.jpg",
-      "strainImageIsLineage": false
+      "strainImageIsLineage": false,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: s1 self releases command premium",
+          4
+        ],
+        [
+          "Strain-specific hype (sought-after release)",
+          1
+        ],
+        [
+          "S1 feminized self (collector premium)",
+          0
+        ]
+      ],
+      "availability": {
+        "code": "sold-out",
+        "label": "Sold out",
+        "emoji": "🟠",
+        "note": "Cookies Fam feminized S1 — original Gushers F1 release is long gone. S1 self drops surface occasionally on Cookies releases and authorized resellers."
+      }
     },
     {
       "name": "Runtz S1",
@@ -329,7 +483,27 @@
       "rarity": 5,
       "rarityReason": "s1 self releases command premium",
       "strainImage": "strain-img/runtz.jpg",
-      "strainImageIsLineage": false
+      "strainImageIsLineage": false,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: s1 self releases command premium",
+          4
+        ],
+        [
+          "Sealed / unopened preservation bonus",
+          1
+        ],
+        [
+          "S1 feminized self (collector premium)",
+          0
+        ]
+      ],
+      "availability": {
+        "code": "limited",
+        "label": "Limited",
+        "emoji": "🟡",
+        "note": "Multiple S1 self versions exist (Cookies Fam original + several reputable pheno-hunter versions). Easier to find than Gushers S1 but drops sell fast."
+      }
     },
     {
       "name": "Cult Classic Fresh Baked",
@@ -369,7 +543,23 @@
       "rarity": 5,
       "rarityReason": "limited craft drops; Freshies line sought after",
       "strainImage": "strain-img/ogkb.jpg",
-      "strainImageIsLineage": true
+      "strainImageIsLineage": true,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: limited craft drops; Freshies line sought after",
+          4
+        ],
+        [
+          "Strain-specific hype (sought-after release)",
+          1
+        ]
+      ],
+      "availability": {
+        "code": "limited",
+        "label": "Limited",
+        "emoji": "🟡",
+        "note": "Cult Classics Seeds does boutique drops through select retailers; Fresh Baked is a Freshies hype line and typically moves within hours of release."
+      }
     },
     {
       "name": "Cement Shoes S1",
@@ -409,7 +599,27 @@
       "rarity": 5,
       "rarityReason": "limited craft drops; Freshies line sought after",
       "strainImage": "strain-img/cement-shoes.jpg",
-      "strainImageIsLineage": false
+      "strainImageIsLineage": false,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: limited craft drops; Freshies line sought after",
+          4
+        ],
+        [
+          "Strain-specific hype (sought-after release)",
+          1
+        ],
+        [
+          "S1 feminized self (collector premium)",
+          0
+        ]
+      ],
+      "availability": {
+        "code": "sold-out",
+        "label": "Sold out",
+        "emoji": "🟠",
+        "note": "Cement Shoes S1 self (Universally Seeded / Cult Classics) — sealed collector pack; not currently in retail rotation."
+      }
     },
     {
       "name": "Ethos OGDLUX",
@@ -448,7 +658,23 @@
       "rarity": 5,
       "rarityReason": "hype Bx projects and OGDLUX line",
       "strainImage": "strain-img/ogkb.jpg",
-      "strainImageIsLineage": true
+      "strainImageIsLineage": true,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: hype Bx projects and OGDLUX line",
+          4
+        ],
+        [
+          "Strain-specific hype (sought-after release)",
+          1
+        ]
+      ],
+      "availability": {
+        "code": "limited",
+        "label": "Limited",
+        "emoji": "🟡",
+        "note": "Ethos Genetics OGDLUX Bx3 is part of their OG backcross program; Ethos re-releases Bx projects occasionally via ethosgenetics.com and select seedbanks."
+      }
     },
     {
       "name": "Freshmaker",
@@ -484,7 +710,23 @@
       "rarity": 5,
       "rarityReason": "limited craft drops; Freshies line sought after",
       "strainImage": "strain-img/ogkb.jpg",
-      "strainImageIsLineage": true
+      "strainImageIsLineage": true,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: limited craft drops; Freshies line sought after",
+          4
+        ],
+        [
+          "Sealed / unopened preservation bonus",
+          1
+        ]
+      ],
+      "availability": {
+        "code": "limited",
+        "label": "Limited",
+        "emoji": "🟡",
+        "note": "Cult Classics Seeds — Freshies-crossed boutique drops. Not commonly in stock; check Cult Classics IG for drop schedule."
+      }
     },
     {
       "name": "Savage Jr Mintz",
@@ -522,7 +764,23 @@
       "rarity": 5,
       "rarityReason": "frost-heavy craft fem",
       "strainImage": "strain-img/runtz.jpg",
-      "strainImageIsLineage": true
+      "strainImageIsLineage": true,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: frost-heavy craft fem",
+          4
+        ],
+        [
+          "Sealed / unopened preservation bonus",
+          1
+        ]
+      ],
+      "availability": {
+        "code": "in-stock",
+        "label": "In stock",
+        "emoji": "🟢",
+        "note": "Savage Genetics runs their Jr line (smaller seed counts) through direct and retail channels. Mintz crosses rotate in the Savage catalogue."
+      }
     },
     {
       "name": "Cloud Spin",
@@ -554,7 +812,23 @@
       "rarity": 3,
       "rarityReason": "craft unknown",
       "strainImage": null,
-      "strainImageIsLineage": false
+      "strainImageIsLineage": false,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Unknown craft breeder",
+          2
+        ],
+        [
+          "Sealed / unopened preservation bonus",
+          1
+        ]
+      ],
+      "availability": {
+        "code": "unreleased",
+        "label": "Unreleased",
+        "emoji": "🟣",
+        "note": "No confirmed breeder on public record. Name circulates among small-batch hunters but no retail presence."
+      }
     },
     {
       "name": "ABSeed Goat Cheese",
@@ -588,7 +862,23 @@
       "rarity": 4,
       "rarityReason": "craft goat-cheese cross",
       "strainImage": null,
-      "strainImageIsLineage": false
+      "strainImageIsLineage": false,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: craft goat-cheese cross",
+          3
+        ],
+        [
+          "Sealed / unopened preservation bonus",
+          1
+        ]
+      ],
+      "availability": {
+        "code": "limited",
+        "label": "Limited",
+        "emoji": "🟡",
+        "note": "Small-batch Goat Cheese cross — surface through IG and pheno-hunter circles. Not in mainstream seedbanks."
+      }
     },
     {
       "name": "S. Orange Pucker",
@@ -620,7 +910,23 @@
       "rarity": 3,
       "rarityReason": "craft unknown",
       "strainImage": null,
-      "strainImageIsLineage": false
+      "strainImageIsLineage": false,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Unknown craft breeder",
+          2
+        ],
+        [
+          "Sealed / unopened preservation bonus",
+          1
+        ]
+      ],
+      "availability": {
+        "code": "unreleased",
+        "label": "Unreleased",
+        "emoji": "🟣",
+        "note": "Name present on the inventory card but no matching public breeder listing. Likely a pheno-hunter or craft release."
+      }
     },
     {
       "name": "Grandmas Pajamas",
@@ -654,7 +960,19 @@
       "rarity": 5,
       "rarityReason": "sealed boutique release with authentication",
       "strainImage": null,
-      "strainImageIsLineage": false
+      "strainImageIsLineage": false,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: sealed boutique release with authentication",
+          5
+        ]
+      ],
+      "availability": {
+        "code": "unreleased",
+        "label": "Unreleased",
+        "emoji": "🟣",
+        "note": "A&B Company boutique cross; A&B releases are hand-labelled boutique packs, not sold on standard seedbanks."
+      }
     },
     {
       "name": "O. Cookie Violence",
@@ -686,7 +1004,23 @@
       "rarity": 3,
       "rarityReason": "craft unknown",
       "strainImage": "strain-img/biscotti.jpg",
-      "strainImageIsLineage": true
+      "strainImageIsLineage": true,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Unknown craft breeder",
+          2
+        ],
+        [
+          "Sealed / unopened preservation bonus",
+          1
+        ]
+      ],
+      "availability": {
+        "code": "unreleased",
+        "label": "Unreleased",
+        "emoji": "🟣",
+        "note": "No public listing. Likely underground pheno-hunter release."
+      }
     },
     {
       "name": "Jurassic Kush",
@@ -725,7 +1059,19 @@
       "rarity": 5,
       "rarityReason": "sealed boutique release with authentication",
       "strainImage": null,
-      "strainImageIsLineage": false
+      "strainImageIsLineage": false,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: sealed boutique release with authentication",
+          5
+        ]
+      ],
+      "availability": {
+        "code": "sold-out",
+        "label": "Sold out",
+        "emoji": "🟠",
+        "note": "A&B Company boutique release — sealed wooden box with custom glass pendant. Collector item; not currently on retail."
+      }
     },
     {
       "name": "N. Speckley Boogie",
@@ -757,7 +1103,23 @@
       "rarity": 3,
       "rarityReason": "craft unknown",
       "strainImage": null,
-      "strainImageIsLineage": false
+      "strainImageIsLineage": false,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Unknown craft breeder",
+          2
+        ],
+        [
+          "Sealed / unopened preservation bonus",
+          1
+        ]
+      ],
+      "availability": {
+        "code": "unreleased",
+        "label": "Unreleased",
+        "emoji": "🟣",
+        "note": "No public listing under this name. Craft/pheno-hunter territory."
+      }
     },
     {
       "name": "Bloom Guava Barz",
@@ -795,7 +1157,19 @@
       "rarity": 3,
       "rarityReason": "tropical terp specialist",
       "strainImage": "strain-img/guava-cake.jpg",
-      "strainImageIsLineage": true
+      "strainImageIsLineage": true,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: tropical terp specialist",
+          3
+        ]
+      ],
+      "availability": {
+        "code": "in-stock",
+        "label": "In stock",
+        "emoji": "🟢",
+        "note": "Bloom Seed Co (Colorado) runs their catalogue through authorized seedbanks; Guava Barz is a recognisable Biscotti × Guavaz 74 cross and typically findable."
+      }
     },
     {
       "name": "Nephisto MBAP (ManBearAlienPig)",
@@ -832,7 +1206,19 @@
       "rarity": 3,
       "rarityReason": "autoflower legend, reserva line premium",
       "strainImage": null,
-      "strainImageIsLineage": false
+      "strainImageIsLineage": false,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: autoflower legend, reserva line premium",
+          3
+        ]
+      ],
+      "availability": {
+        "code": "limited",
+        "label": "Limited",
+        "emoji": "🟡",
+        "note": "Mephisto Genetics Reserva line — Mephisto restocks Reserva on short windows; MBAP surfaces occasionally."
+      }
     },
     {
       "name": "G. Classics Hitmaker",
@@ -873,7 +1259,19 @@
       "rarity": 4,
       "rarityReason": "limited craft drops; Freshies line sought after",
       "strainImage": "strain-img/motor-breath.jpg",
-      "strainImageIsLineage": true
+      "strainImageIsLineage": true,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: limited craft drops; Freshies line sought after",
+          4
+        ]
+      ],
+      "availability": {
+        "code": "limited",
+        "label": "Limited",
+        "emoji": "🟡",
+        "note": "Cult Classics Seeds Hitmaker — Motor Breath × Freshies. Drops-only through Cult Classics channels."
+      }
     },
     {
       "name": "Sunset Freshies",
@@ -910,7 +1308,19 @@
       "rarity": 4,
       "rarityReason": "limited craft drops; Freshies line sought after",
       "strainImage": "strain-img/sunset-sherbert.jpg",
-      "strainImageIsLineage": true
+      "strainImageIsLineage": true,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: limited craft drops; Freshies line sought after",
+          4
+        ]
+      ],
+      "availability": {
+        "code": "limited",
+        "label": "Limited",
+        "emoji": "🟡",
+        "note": "Cult Classics limited drop — Sunset Strip #3 × Freshies. Hard to catch."
+      }
     },
     {
       "name": "GSRH Yahemi",
@@ -948,7 +1358,19 @@
       "rarity": 2,
       "rarityReason": "craft unknown",
       "strainImage": null,
-      "strainImageIsLineage": false
+      "strainImageIsLineage": false,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Unknown craft breeder",
+          2
+        ]
+      ],
+      "availability": {
+        "code": "unreleased",
+        "label": "Unreleased",
+        "emoji": "🟣",
+        "note": "Yahemi appears to be a pheno-hunter cross (Melonatta × Project 4516) from the GSRH family — not on standard retail."
+      }
     },
     {
       "name": "Exotic Greezy Runtz",
@@ -987,7 +1409,19 @@
       "rarity": 3,
       "rarityReason": "established craft breeder",
       "strainImage": "strain-img/grease-monkey.jpg",
-      "strainImageIsLineage": true
+      "strainImageIsLineage": true,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: established craft breeder",
+          3
+        ]
+      ],
+      "availability": {
+        "code": "limited",
+        "label": "Limited",
+        "emoji": "🟡",
+        "note": "Exotic Genetix — Grease Monkey reversal × Runtz. Exotic rotates their catalogue through authorized seedbanks."
+      }
     },
     {
       "name": "Crane City S. Socker / The Zit",
@@ -1023,7 +1457,19 @@
       "rarity": 2,
       "rarityReason": "craft unknown",
       "strainImage": "strain-img/zkittlez.jpg",
-      "strainImageIsLineage": true
+      "strainImageIsLineage": true,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: craft unknown",
+          2
+        ]
+      ],
+      "availability": {
+        "code": "limited",
+        "label": "Limited",
+        "emoji": "🟡",
+        "note": "Crane City Cannabis — craft Zkittlez crosses. Limited retail distribution; check Crane City IG."
+      }
     },
     {
       "name": "Envy Grape Blow",
@@ -1060,7 +1506,19 @@
       "rarity": 3,
       "rarityReason": "BlowPops line, Long Beach craft",
       "strainImage": "strain-img/grape-blow.jpg",
-      "strainImageIsLineage": false
+      "strainImageIsLineage": false,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: BlowPops line, Long Beach craft",
+          3
+        ]
+      ],
+      "availability": {
+        "code": "in-stock",
+        "label": "In stock",
+        "emoji": "🟢",
+        "note": "Envy Genetics Grape Pie × BlowPops — part of the Envy BlowPops dessert line, typically in rotation."
+      }
     },
     {
       "name": "Geist Kushmints × Banana06",
@@ -1096,7 +1554,19 @@
       "rarity": 2,
       "rarityReason": "craft unknown",
       "strainImage": null,
-      "strainImageIsLineage": false
+      "strainImageIsLineage": false,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: craft unknown",
+          2
+        ]
+      ],
+      "availability": {
+        "code": "unreleased",
+        "label": "Unreleased",
+        "emoji": "🟣",
+        "note": "Geist craft release, Banana #06 pheno — small-batch, not retailed."
+      }
     },
     {
       "name": "Exotic Runtz S1",
@@ -1134,7 +1604,27 @@
       "rarity": 4,
       "rarityReason": "established craft breeder",
       "strainImage": "strain-img/runtz.jpg",
-      "strainImageIsLineage": false
+      "strainImageIsLineage": false,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: established craft breeder",
+          3
+        ],
+        [
+          "Strain-specific hype (sought-after release)",
+          1
+        ],
+        [
+          "S1 feminized self (collector premium)",
+          0
+        ]
+      ],
+      "availability": {
+        "code": "limited",
+        "label": "Limited",
+        "emoji": "🟡",
+        "note": "Exotic Genetix Runtz S1 self — surfaces periodically through Exotic drops."
+      }
     },
     {
       "name": "Ethos GMOZ × Runtz",
@@ -1173,7 +1663,19 @@
       "rarity": 4,
       "rarityReason": "hype Bx projects and OGDLUX line",
       "strainImage": "strain-img/gmo-cookies.jpg",
-      "strainImageIsLineage": true
+      "strainImageIsLineage": true,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: hype Bx projects and OGDLUX line",
+          4
+        ]
+      ],
+      "availability": {
+        "code": "limited",
+        "label": "Limited",
+        "emoji": "🟡",
+        "note": "Ethos GMOZ line × Runtz — Ethos limited/foil releases. GMOZ is part of their gas-candy program."
+      }
     },
     {
       "name": "Envy Weedies",
@@ -1209,7 +1711,19 @@
       "rarity": 3,
       "rarityReason": "BlowPops line, Long Beach craft",
       "strainImage": null,
-      "strainImageIsLineage": false
+      "strainImageIsLineage": false,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: BlowPops line, Long Beach craft",
+          3
+        ]
+      ],
+      "availability": {
+        "code": "in-stock",
+        "label": "In stock",
+        "emoji": "🟢",
+        "note": "Envy Genetics — part of the Envy dessert line; typically findable at retailers that carry Envy."
+      }
     },
     {
       "name": "Wilmeac / Wilmaaa",
@@ -1245,7 +1759,19 @@
       "rarity": 3,
       "rarityReason": "BlowPops line, Long Beach craft",
       "strainImage": "strain-img/fruity-pebbles.jpg",
-      "strainImageIsLineage": true
+      "strainImageIsLineage": true,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: BlowPops line, Long Beach craft",
+          3
+        ]
+      ],
+      "availability": {
+        "code": "limited",
+        "label": "Limited",
+        "emoji": "🟡",
+        "note": "Envy Genetics — Fruity Pebbles OG × Calisunset. Not a main-line release; limited drops."
+      }
     },
     {
       "name": "Savage Acai Gelato × Hooliganz",
@@ -1285,7 +1811,19 @@
       "rarity": 4,
       "rarityReason": "frost-heavy craft fem",
       "strainImage": null,
-      "strainImageIsLineage": false
+      "strainImageIsLineage": false,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: frost-heavy craft fem",
+          4
+        ]
+      ],
+      "availability": {
+        "code": "tester",
+        "label": "Tester",
+        "emoji": "⚫",
+        "note": "Savage Genetics tester pack — given to selected growers for reports. Never on retail."
+      }
     },
     {
       "name": "Ethos FPOG",
@@ -1321,7 +1859,19 @@
       "rarity": 4,
       "rarityReason": "hype Bx projects and OGDLUX line",
       "strainImage": "strain-img/forbidden-fruit.jpg",
-      "strainImageIsLineage": true
+      "strainImageIsLineage": true,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: hype Bx projects and OGDLUX line",
+          4
+        ]
+      ],
+      "availability": {
+        "code": "in-stock",
+        "label": "In stock",
+        "emoji": "🟢",
+        "note": "Ethos Genetics FPOG (Forbidden Fruit OG) — part of the mainline Ethos catalogue and typically in stock at major seedbanks."
+      }
     },
     {
       "name": "Fire Farms Fro OGLB (FRO GKB v2.17)",
@@ -1358,7 +1908,19 @@
       "rarity": 2,
       "rarityReason": "craft unknown",
       "strainImage": "strain-img/ogkb.jpg",
-      "strainImageIsLineage": true
+      "strainImageIsLineage": true,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: craft unknown",
+          2
+        ]
+      ],
+      "availability": {
+        "code": "unreleased",
+        "label": "Unreleased",
+        "emoji": "🟣",
+        "note": "Fire Farms handmade cross with a versioned pheno label. Craft circles only."
+      }
     },
     {
       "name": "GRF GMOZ",
@@ -1395,7 +1957,19 @@
       "rarity": 1,
       "rarityReason": "unsigned / craft unknown",
       "strainImage": "strain-img/gmo.jpg",
-      "strainImageIsLineage": true
+      "strainImageIsLineage": true,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: unsigned / craft unknown",
+          1
+        ]
+      ],
+      "availability": {
+        "code": "unreleased",
+        "label": "Unreleased",
+        "emoji": "🟣",
+        "note": "GRF GMOZ — unsigned / craft release; not in any mainstream seedbank."
+      }
     },
     {
       "name": "Animal Kush CBD (CBP)",
@@ -1431,7 +2005,19 @@
       "rarity": 2,
       "rarityReason": "craft unknown",
       "strainImage": null,
-      "strainImageIsLineage": false
+      "strainImageIsLineage": false,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: craft unknown",
+          2
+        ]
+      ],
+      "availability": {
+        "code": "limited",
+        "label": "Limited",
+        "emoji": "🟡",
+        "note": "Humble Jungle Seeds — CBD-positive Animal Kush pheno. Humble Jungle carries CBD-forward lines through select EU/US retailers."
+      }
     },
     {
       "name": "Grapaya Drip",
@@ -1470,7 +2056,19 @@
       "rarity": 3,
       "rarityReason": "craft pheno-hunt",
       "strainImage": null,
-      "strainImageIsLineage": false
+      "strainImageIsLineage": false,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: craft pheno-hunt",
+          3
+        ]
+      ],
+      "availability": {
+        "code": "limited",
+        "label": "Limited",
+        "emoji": "🟡",
+        "note": "Phantom Fire Genetics — multi-way cross (Bright Moments × Blueberry Skunk × SFV × Mendo Purps). Phantom Fire runs craft drops through IG."
+      }
     },
     {
       "name": "Sin City Blue Zu",
@@ -1506,7 +2104,19 @@
       "rarity": 2,
       "rarityReason": "established commercial",
       "strainImage": null,
-      "strainImageIsLineage": false
+      "strainImageIsLineage": false,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: established commercial",
+          2
+        ]
+      ],
+      "availability": {
+        "code": "in-stock",
+        "label": "In stock",
+        "emoji": "🟢",
+        "note": "Sin City Seeds / Blue J — established commercial breeder. Most Sin City crosses are findable through their direct site and authorized seedbanks."
+      }
     },
     {
       "name": "Titanium Jack × B-Side",
@@ -1540,7 +2150,19 @@
       "rarity": 2,
       "rarityReason": "craft unknown",
       "strainImage": null,
-      "strainImageIsLineage": false
+      "strainImageIsLineage": false,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: craft unknown",
+          2
+        ]
+      ],
+      "availability": {
+        "code": "unreleased",
+        "label": "Unreleased",
+        "emoji": "🟣",
+        "note": "Gene Traders VIP — private/select trader circle release, not on public retail."
+      }
     },
     {
       "name": "Papaya F2",
@@ -1576,7 +2198,23 @@
       "rarity": 2,
       "rarityReason": "craft pheno-hunt",
       "strainImage": "strain-img/papaya.jpg",
-      "strainImageIsLineage": false
+      "strainImageIsLineage": false,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: craft pheno-hunt",
+          3
+        ],
+        [
+          "Freebie pack (comes as bonus, not standalone sale)",
+          -1
+        ]
+      ],
+      "availability": {
+        "code": "tester",
+        "label": "Tester",
+        "emoji": "⚫",
+        "note": "Phantom Fire Genetics F2 — came as a freebie/tester with another purchase. Not independently sold."
+      }
     },
     {
       "name": "The Hydra",
@@ -1612,7 +2250,19 @@
       "rarity": 2,
       "rarityReason": "craft unknown",
       "strainImage": null,
-      "strainImageIsLineage": false
+      "strainImageIsLineage": false,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: craft unknown",
+          2
+        ]
+      ],
+      "availability": {
+        "code": "unreleased",
+        "label": "Unreleased",
+        "emoji": "🟣",
+        "note": "Lyme Rising Farm — TKNL 5 Haze × Pam F2. Craft Northeast small-batch release."
+      }
     },
     {
       "name": "Dinosaur Biscuits",
@@ -1650,7 +2300,19 @@
       "rarity": 5,
       "rarityReason": "sealed boutique release with authentication",
       "strainImage": "strain-img/biscotti.jpg",
-      "strainImageIsLineage": true
+      "strainImageIsLineage": true,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: sealed boutique release with authentication",
+          5
+        ]
+      ],
+      "availability": {
+        "code": "sold-out",
+        "label": "Sold out",
+        "emoji": "🟠",
+        "note": "A&B Company sealed boutique — Forum Cut Cookies × Stankasaurus. Certified-hologram sealed box; not on current retail."
+      }
     },
     {
       "name": "Copper Sunset",
@@ -1686,7 +2348,19 @@
       "rarity": 2,
       "rarityReason": "craft unknown",
       "strainImage": "strain-img/sunset-sherbert.jpg",
-      "strainImageIsLineage": true
+      "strainImageIsLineage": true,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Unknown craft breeder",
+          2
+        ]
+      ],
+      "availability": {
+        "code": "unreleased",
+        "label": "Unreleased",
+        "emoji": "🟣",
+        "note": "No confirmed breeder — llama-art pack suggests small-batch handmade. Copper Chem × Peruvian Punch cross."
+      }
     },
     {
       "name": "Kali's Cookies",
@@ -1722,7 +2396,19 @@
       "rarity": 2,
       "rarityReason": "craft unknown",
       "strainImage": "strain-img/tropicana-cookies.jpg",
-      "strainImageIsLineage": true
+      "strainImageIsLineage": true,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: craft unknown",
+          2
+        ]
+      ],
+      "availability": {
+        "code": "limited",
+        "label": "Limited",
+        "emoji": "🟡",
+        "note": "Kali's Seeds — craft release, Kali's Lullaby × Tropicana Cookies. Limited distribution through select retailers."
+      }
     },
     {
       "name": "The A Frame",
@@ -1758,7 +2444,19 @@
       "rarity": 2,
       "rarityReason": "craft unknown",
       "strainImage": null,
-      "strainImageIsLineage": false
+      "strainImageIsLineage": false,
+      "rarityBreakdown": [
+        [
+          "Breeder base: Breeder tier: craft unknown",
+          2
+        ]
+      ],
+      "availability": {
+        "code": "discontinued",
+        "label": "Discontinued",
+        "emoji": "🔴",
+        "note": "Geo Farms 2019 release — TKBX2 × Funky Barn BX. Old project, no current retail; aftermarket collector only."
+      }
     }
   ]
 }

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>John Seed Library — Strain Reference</title>
-<meta name="description" content="Consolidated strain genetics reference with photos, breeder links, lineage filters, rarity ratings, and valuation.">
+<meta name="description" content="Consolidated strain genetics reference with photos, breeder links, lineage filters, rarity ratings, availability, and valuation.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
     <p class="sub">Consolidated strain-genetics reference · compiled April 2026</p>
     <div class="stats" id="stats"></div>
 
-    <input type="search" id="search" placeholder="Search strain, breeder, genetics, lineage, profile, notes…">
+    <input type="search" id="search" placeholder="Search strain, breeder, genetics, lineage, profile, notes, availability…">
 
     <div class="filter-group">
       <label>Section</label>
@@ -33,7 +33,7 @@
     </div>
 
     <div class="filter-group">
-      <label>Rarity</label>
+      <label>Rarity <a href="#rarity-info" class="info-link">what's this?</a></label>
       <nav class="filters" id="rarityFilters">
         <button data-rarity="0" class="on">Any</button>
         <button data-rarity="5">🔥×5 Legendary</button>
@@ -41,6 +41,19 @@
         <button data-rarity="3">🔥×3 Uncommon</button>
         <button data-rarity="2">🔥×2 Common</button>
         <button data-rarity="1">🔥×1 Commercial</button>
+      </nav>
+    </div>
+
+    <div class="filter-group">
+      <label>Availability <a href="#availability-info" class="info-link">what's this?</a></label>
+      <nav class="filters" id="availFilters">
+        <button data-avail="" class="on">Any</button>
+        <button data-avail="in-stock">🟢 In stock</button>
+        <button data-avail="limited">🟡 Limited</button>
+        <button data-avail="sold-out">🟠 Sold out</button>
+        <button data-avail="discontinued">🔴 Discontinued</button>
+        <button data-avail="tester">⚫ Tester</button>
+        <button data-avail="unreleased">🟣 Unreleased</button>
       </nav>
     </div>
 
@@ -60,6 +73,7 @@
           <option value="value-asc">Est. value (low → high)</option>
           <option value="rarity-desc">Rarity (high → low)</option>
           <option value="rarity-asc">Rarity (low → high)</option>
+          <option value="avail">Availability (in-stock first)</option>
           <option value="seeds-desc">Seed count (high → low)</option>
           <option value="seeds-asc">Seed count (low → high)</option>
           <option value="breeder">Breeder (A–Z)</option>
@@ -74,6 +88,7 @@
         </div>
       </div>
       <button id="clearFilters" class="clear-btn" hidden>✕ Clear all filters</button>
+      <button id="exportEdits" class="clear-btn" hidden>⇩ Export edits</button>
     </div>
   </div>
 </header>
@@ -95,16 +110,49 @@
   <div id="grid" class="grid"></div>
 </main>
 
+<section id="rarity-info" class="info-section wrap">
+  <h2>Rarity rating — how it's scored</h2>
+  <p>Rarity is a <strong>1–5 opinionated score</strong> of how hard a strain is to acquire once you want one. It's distinct from availability (which is the current retail status) and from valuation (which is estimated retail price). A strain can be low-rarity but sold out, or high-rarity but currently in stock.</p>
+
+  <div class="rarity-grid" id="rarityScaleEl"></div>
+
+  <h3>Scoring factors (in order of weight)</h3>
+  <ol class="factor-list">
+    <li><strong>Breeder tier</strong> — primary signal. Reputation, production scale, and distribution control. Top-tier: A&B Company, Ethos Bx projects, Cult Classics hype drops, Cookies Fam S1 releases, Tiki Madman post-Cup winners.</li>
+    <li><strong>Seed type</strong> — S1 (self-pollinated feminized) and Bx (backcross) projects trade at collector premiums vs. regular feminized lines.</li>
+    <li><strong>Sealed status</strong> — an unopened pack preserves authentication (hologram, hand-label, breeder seal) and adds +1 to the score.</li>
+    <li><strong>Tester / freebie flags</strong> — testers were never retailed (+1 up to 4); freebies are bonus packs thrown in with other purchases and have reduced standalone value (-1).</li>
+    <li><strong>Strain-specific hype</strong> — named hype drops override the breeder tier. Examples in this library: Gushers S1, Cement Shoes S1, OGDLUX Bx3, Fresh Baked, Jurassic Kush (A&B pendant box).</li>
+  </ol>
+  <p class="muted"><em>Click any strain card for its specific rarity breakdown — which factors pushed the score up or down.</em></p>
+</section>
+
+<section id="availability-info" class="info-section wrap">
+  <h2>Availability — current market status</h2>
+  <p>Availability answers a different question than rarity: <strong>can you buy this today?</strong> A popular craft strain (high-rarity) may still be in stock if the breeder just did a drop. Conversely, a commercial line (low-rarity) may be discontinued.</p>
+  <div class="avail-grid" id="availScaleEl"></div>
+  <p class="muted"><em>Click any strain card to read a specific availability note — where it's sold today, aftermarket status, and distribution channel.</em></p>
+</section>
+
 <footer>
   <div class="wrap">
     <p><b>Valuation note:</b> <span id="valDisclaimer"></span></p>
-    <p><b>Rarity scale:</b> 🔥×5 Legendary · 🔥×4 Rare · 🔥×3 Uncommon · 🔥×2 Common · 🔥×1 Commercial. Scored by breeder tier, seed type (S1/Bx premium), sealed status, and tester/freebie flags. Opinionated.</p>
-    <p>Source: <em>Strain_Genetics_Reference.docx</em> + 42 photos (IMG_4484 → IMG_4525). Strain bud photos from Leafly / AllBud; parent-strain fallback where exact strain isn't indexed (tagged "lineage ref").</p>
-    <p class="muted">Legend: <b>REG</b> Regular · <b>FEM</b> Feminized · <b>AUTO</b> Autoflower · <b>S1</b> Self-pollinated F1 · <b>BX</b> Backcross. Per-card links: breeder · seedfinder.eu (via DuckDuckGo <code>!ducky</code> — bypasses bot wall) · Google genetics search.</p>
+    <p>Source: <em>Strain_Genetics_Reference.docx</em> + 42 photos (IMG_4484 → IMG_4525). Strain bud photos from Leafly / AllBud; parent-strain fallback tagged "lineage ref" where the exact strain isn't indexed.</p>
+    <p class="muted">Legend: <b>REG</b> Regular · <b>FEM</b> Feminized · <b>AUTO</b> Autoflower · <b>S1</b> Self-pollinated F1 · <b>BX</b> Backcross. Edits you make to name or genetics are saved to your browser's localStorage and can be exported via the "⇩ Export edits" button.</p>
   </div>
 </footer>
 
-<div id="lightbox" class="lightbox hidden" onclick="this.classList.add('hidden')">
+<!-- Detail Modal -->
+<div id="detail" class="detail-modal hidden">
+  <div class="detail-backdrop"></div>
+  <div class="detail-panel" role="dialog" aria-modal="true">
+    <button class="detail-close" aria-label="Close">✕</button>
+    <div class="detail-content" id="detailContent"></div>
+  </div>
+</div>
+
+<!-- Image lightbox -->
+<div id="lightbox" class="lightbox hidden">
   <img id="lightbox-img" alt="">
 </div>
 
