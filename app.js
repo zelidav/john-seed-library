@@ -20,6 +20,10 @@
     q: '',
   };
 
+  const escapeHtml = (s) => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]));
+  const fmtK = (n) => n == null ? '—' : n.toLocaleString();
+  const fmtMoney = (n) => n == null ? '—' : '$' + n.toLocaleString();
+
   // ---- Stats ----
   const counts = { SEALED: 0, OPEN: 0, OTHER: 0, BONUS: 0 };
   data.strains.forEach(s => {
@@ -83,10 +87,6 @@
   });
 
   searchEl.addEventListener('input', e => { state.q = e.target.value; render(); });
-
-  const escapeHtml = (s) => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]));
-  const fmtK = (n) => n == null ? '—' : n.toLocaleString();
-  const fmtMoney = (n) => n == null ? '—' : '$' + n.toLocaleString();
 
   function matches(s) {
     const secPrimary = (s.section || '').split('/')[0];
