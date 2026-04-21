@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>John Seed Library — Strain Reference</title>
-<meta name="description" content="Consolidated strain genetics reference with photos — Sealed, Open, and Other sections.">
+<meta name="description" content="Consolidated strain genetics reference with photos, breeder links, lineage filters, and valuation — Sealed, Open, Other sections.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,14 +13,31 @@
     <h1>John Seed Library</h1>
     <p class="sub">Consolidated strain-genetics reference · compiled April 2026</p>
     <div class="stats" id="stats"></div>
-    <nav class="filters">
-      <button data-filter="ALL" class="on">All</button>
-      <button data-filter="SEALED">Sealed</button>
-      <button data-filter="OPEN">Open</button>
-      <button data-filter="OTHER">Other</button>
-      <button data-filter="BONUS">Bonus / Unlisted</button>
-    </nav>
-    <input type="search" id="search" placeholder="Search strain, breeder, genetics…">
+
+    <input type="search" id="search" placeholder="Search strain, breeder, genetics, lineage, profile, notes…">
+
+    <div class="filter-group">
+      <label>Section</label>
+      <nav class="filters" id="sectionFilters">
+        <button data-filter="ALL" class="on">All</button>
+        <button data-filter="SEALED">Sealed</button>
+        <button data-filter="OPEN">Open</button>
+        <button data-filter="OTHER">Other</button>
+        <button data-filter="BONUS">Bonus / Unlisted</button>
+      </nav>
+    </div>
+
+    <div class="filter-group">
+      <label>Phenotype</label>
+      <nav class="filters" id="phenoFilters"></nav>
+    </div>
+
+    <div class="filter-group">
+      <label>Lineage / Family <span class="muted hint">(click to toggle · multiple OK)</span></label>
+      <nav class="filters lineage" id="lineageFilters"></nav>
+    </div>
+
+    <button id="clearFilters" class="clear-btn" hidden>✕ Clear all filters</button>
   </div>
 </header>
 
@@ -28,19 +45,24 @@
   <h2>Master inventory lists</h2>
   <p class="muted">Original handwritten index cards. Click to enlarge.</p>
   <div class="list-grid">
-    <a href="img/IMG_4485.jpg" target="_blank"><img src="thumb/IMG_4485.jpg" alt="Sealed list"><span>Sealed</span></a>
-    <a href="img/IMG_4484.jpg" target="_blank"><img src="thumb/IMG_4484.jpg" alt="Open / Other list"><span>Open · Other</span></a>
+    <a href="img/IMG_4485.jpg" target="_blank" rel="noopener"><img src="thumb/IMG_4485.jpg" alt="Sealed list"><span>Sealed</span></a>
+    <a href="img/IMG_4484.jpg" target="_blank" rel="noopener"><img src="thumb/IMG_4484.jpg" alt="Open / Other list"><span>Open · Other</span></a>
   </div>
 </section>
 
 <main class="wrap">
+  <div class="toolbar">
+    <div id="resultCount" class="muted"></div>
+    <div id="subtotal" class="subtotal"></div>
+  </div>
   <div id="grid" class="grid"></div>
 </main>
 
 <footer>
   <div class="wrap">
+    <p><b>Valuation disclaimer:</b> <span id="valDisclaimer">Mid-market retail estimates based on breeder tier, seed type, and current craft-seed market ranges. Hype drops and limited releases trade higher.</span></p>
     <p>Source: <em>Strain_Genetics_Reference.docx</em> + 42 photos (IMG_4484 → IMG_4525). Quantities and seed types preserved from source inventory.</p>
-    <p class="muted">Legend: <b>REG</b> Regular · <b>FEM</b> Feminized · <b>AUTO</b> Autoflower · <b>S1</b> Self-pollinated first gen · <b>BX</b> Backcross · <b>S1 self</b> feminized self</p>
+    <p class="muted">Legend: <b>REG</b> Regular · <b>FEM</b> Feminized · <b>AUTO</b> Autoflower · <b>S1</b> Self-pollinated F1 · <b>BX</b> Backcross. Pack links go to breeder's site / IG. Genetics link → <a href="https://en.seedfinder.eu" target="_blank" rel="noopener">seedfinder.eu</a>.</p>
   </div>
 </footer>
 

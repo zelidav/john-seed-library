@@ -3,8 +3,58 @@
     "title": "John Seed Library",
     "compiled": "2026-04-20",
     "source": "Strain_Genetics_Reference.docx + 42 photos (IMG_4484–IMG_4525)",
-    "listPhotos": ["IMG_4484", "IMG_4485"],
-    "totalStrains": 38
+    "listPhotos": [
+      "IMG_4484",
+      "IMG_4485"
+    ],
+    "totalStrains": 38,
+    "valuation": {
+      "currency": "USD",
+      "totalLow": 35640,
+      "totalHigh": 69355,
+      "totalMid": 52497,
+      "disclaimer": "Mid-market retail estimates based on breeder tier, seed type (REG/FEM/AUTO/S1/tester), and current craft-seed market ranges. Craft/small-batch releases vary widely; hype drops (Cookies Fam, Cult Classics limited, Ethos hype, Savage) trade higher than listed."
+    },
+    "lineageTags": [
+      "Acai",
+      "Animal Cookies",
+      "Autoflower",
+      "Banana",
+      "Biscotti",
+      "BlowPops (Envy)",
+      "Bubba Kush",
+      "CBD",
+      "Chem / Diesel",
+      "Cookies / GSC",
+      "Feminized",
+      "Forbidden Fruit",
+      "Freshies (CC)",
+      "Fruity Pebbles",
+      "GMO / Garlic",
+      "Gelato",
+      "Grape",
+      "Haze",
+      "Kush (Hindu/OG)",
+      "Kush Mints",
+      "Landrace / Heritage",
+      "OG Kush",
+      "OGKB",
+      "Papaya / Guava",
+      "Ripley's OG",
+      "Runtz family",
+      "S1 (self)",
+      "Sherbet",
+      "Skunk",
+      "Stankasaurus",
+      "Wedding Cake",
+      "Zkittlez"
+    ],
+    "phenoTypes": [
+      "Balanced hybrid",
+      "Hybrid",
+      "Indica-leaning",
+      "Sativa-leaning"
+    ]
   },
   "strains": [
     {
@@ -18,7 +68,18 @@
       "thc": "18–26%",
       "profile": "Earthy, citrus, diesel; balanced gas-forward hybrid. G-Walk adds OG funk; Chem Brulée delivers petrol/lemon sweetness.",
       "images": [],
-      "notes": "Listed on SEALED list photo (IMG_4485)."
+      "notes": "Listed on SEALED list photo (IMG_4485).",
+      "breederUrl": "https://www.instagram.com/covertgenetics/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Covert%20Boats%20%26%20Hoes",
+      "lineageTags": [
+        "Chem / Diesel"
+      ],
+      "phenoType": "Balanced hybrid",
+      "estPerPackLow": 100,
+      "estPerPackHigh": 200,
+      "estTotalLow": 100,
+      "estTotalHigh": 200,
+      "packQty": 1
     },
     {
       "name": "Tiki Madman Space Runtz",
@@ -30,8 +91,23 @@
       "flowerTime": "N/A",
       "thc": "~20–22%",
       "profile": "Sweet candy, violet, pear; caryophyllene-forward. 1st Place Best Med Indica, Connoisseur Cup Denver. Tissue-culture stable line.",
-      "images": ["IMG_4487"],
-      "notes": "Pack labeled 'Tiki Madman'; master list confirms Space Runtz."
+      "images": [
+        "IMG_4487"
+      ],
+      "notes": "Pack labeled 'Tiki Madman'; master list confirms Space Runtz.",
+      "breederUrl": "https://www.instagram.com/tikimadman/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Tiki%20Madman%20Space%20Runtz",
+      "lineageTags": [
+        "Gelato",
+        "Runtz family",
+        "Zkittlez"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 120,
+      "estPerPackHigh": 220,
+      "estTotalLow": 1200,
+      "estTotalHigh": 2200,
+      "packQty": 10
     },
     {
       "name": "GSRH (Garlic Sherb)",
@@ -44,7 +120,21 @@
       "thc": "~25–28%",
       "profile": "Garlic, gas, chem, cookies, rubber. Dense trichomes. S1 feminized version available. Tall stretch. Medium–high yield.",
       "images": [],
-      "notes": "On SEALED list; standalone photo not isolated."
+      "notes": "On SEALED list; standalone photo not isolated.",
+      "breederUrl": "https://inhousegenetics.com/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=GSRH%20Garlic%20Sherb",
+      "lineageTags": [
+        "Chem / Diesel",
+        "Cookies / GSC",
+        "GMO / Garlic",
+        "Sherbet"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 150,
+      "estPerPackHigh": 250,
+      "estTotalLow": 150,
+      "estTotalHigh": 250,
+      "packQty": 1
     },
     {
       "name": "Drive Thru Wedding",
@@ -56,8 +146,24 @@
       "flowerTime": "9–11 weeks",
       "thc": "N/A",
       "profile": "Sweet creamy frosting + diesel; purple & green hues. Wedding Cake = Triangle Mints #23 × Animal Mints.",
-      "images": ["IMG_4501"],
-      "notes": "Confirmed by Covert pack."
+      "images": [
+        "IMG_4501"
+      ],
+      "notes": "Confirmed by Covert pack.",
+      "breederUrl": "https://www.instagram.com/covertgenetics/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Drive%20Thru%20Wedding",
+      "lineageTags": [
+        "Chem / Diesel",
+        "Kush Mints",
+        "Sherbet",
+        "Wedding Cake"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 100,
+      "estPerPackHigh": 200,
+      "estTotalLow": 100,
+      "estTotalHigh": 200,
+      "packQty": 1
     },
     {
       "name": "Envy Pop Rocks",
@@ -69,8 +175,23 @@
       "flowerTime": "9–10 weeks",
       "thc": "N/A",
       "profile": "Fruity candy, dense resin; indica-leaning hybrid. BlowPops is Envy's house cross used in many dessert lines.",
-      "images": ["IMG_4499", "IMG_4506"],
-      "notes": "Two pack photos."
+      "images": [
+        "IMG_4499",
+        "IMG_4506"
+      ],
+      "notes": "Two pack photos.",
+      "breederUrl": "https://envygenetics.com/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Envy%20Pop%20Rocks",
+      "lineageTags": [
+        "BlowPops (Envy)",
+        "Fruity Pebbles"
+      ],
+      "phenoType": "Indica-leaning",
+      "estPerPackLow": 100,
+      "estPerPackHigh": 180,
+      "estTotalLow": 1000,
+      "estTotalHigh": 1800,
+      "packQty": 10
     },
     {
       "name": "Gushers S1",
@@ -82,8 +203,25 @@
       "flowerTime": "8–9 weeks",
       "thc": "22–24%",
       "profile": "Tropical fruit, sweet candy, cookies; relaxing euphoria. Dense lime-green buds with orange hairs.",
-      "images": ["IMG_4504"],
-      "notes": ""
+      "images": [
+        "IMG_4504"
+      ],
+      "notes": "",
+      "breederUrl": "https://cookies.co/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Gushers%20S1",
+      "lineageTags": [
+        "Cookies / GSC",
+        "Feminized",
+        "Gelato",
+        "OG Kush",
+        "S1 (self)"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 150,
+      "estPerPackHigh": 250,
+      "estTotalLow": 900,
+      "estTotalHigh": 1500,
+      "packQty": 6
     },
     {
       "name": "Runtz S1",
@@ -95,8 +233,26 @@
       "flowerTime": "~8 weeks",
       "thc": "~24%",
       "profile": "Sweet candy, fruity; uplifting cerebral + body relaxation. Balanced hybrid.",
-      "images": ["IMG_4505", "IMG_4510"],
-      "notes": "Rainbow tin format; appears in both Sealed and Open sections."
+      "images": [
+        "IMG_4505",
+        "IMG_4510"
+      ],
+      "notes": "Rainbow tin format; appears in both Sealed and Open sections.",
+      "breederUrl": "https://cookies.co/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Runtz%20S1",
+      "lineageTags": [
+        "Cookies / GSC",
+        "Feminized",
+        "Gelato",
+        "Runtz family",
+        "Zkittlez"
+      ],
+      "phenoType": "Balanced hybrid",
+      "estPerPackLow": 150,
+      "estPerPackHigh": 250,
+      "estTotalLow": 900,
+      "estTotalHigh": 1500,
+      "packQty": 6
     },
     {
       "name": "Cult Classic Fresh Baked",
@@ -108,8 +264,25 @@
       "flowerTime": "~8–9 weeks",
       "thc": "N/A",
       "profile": "Doughy, OG-forward, cookies. Fresh Baked = Purple Goji OG × Freshies (confirmed on pack).",
-      "images": ["IMG_4497", "IMG_4503"],
-      "notes": "Pack text confirms Purple Goji OG × Freshies. Original docx marked pairing unconfirmed — now verified."
+      "images": [
+        "IMG_4497",
+        "IMG_4503"
+      ],
+      "notes": "Pack text confirms Purple Goji OG × Freshies. Original docx marked pairing unconfirmed — now verified.",
+      "breederUrl": "https://cultclassicsseeds.com/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Cult%20Classic%20Fresh%20Baked",
+      "lineageTags": [
+        "Animal Cookies",
+        "Cookies / GSC",
+        "Freshies (CC)",
+        "OGKB"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 100,
+      "estPerPackHigh": 180,
+      "estTotalLow": 1800,
+      "estTotalHigh": 3240,
+      "packQty": 18
     },
     {
       "name": "Cement Shoes S1",
@@ -121,8 +294,25 @@
       "flowerTime": "~9 weeks",
       "thc": "25–30%",
       "profile": "Heavy sedative indica; OG-forward with doughy cookies, gas, and pepper. 'Cement Shoes' name nods to its couch-lock effect.",
-      "images": ["IMG_4502"],
-      "notes": "Not in original docx — added from pack photo."
+      "images": [
+        "IMG_4502"
+      ],
+      "notes": "Not in original docx — added from pack photo.",
+      "breederUrl": "https://cultclassicsseeds.com/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Cement%20Shoes%20S1",
+      "lineageTags": [
+        "Animal Cookies",
+        "Cookies / GSC",
+        "Feminized",
+        "Gelato",
+        "S1 (self)"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 100,
+      "estPerPackHigh": 180,
+      "estTotalLow": 1800,
+      "estTotalHigh": 3240,
+      "packQty": 18
     },
     {
       "name": "Ethos OGDLUX",
@@ -134,8 +324,24 @@
       "flowerTime": "9–10 weeks",
       "thc": ">25%",
       "profile": "Heavy petrol with ripe cherry undertones; psychedelic + deep body relaxation. Super-resinous; dense OG stretch.",
-      "images": ["IMG_4493"],
-      "notes": "Pack confirms 'Bx3' backcross generation."
+      "images": [
+        "IMG_4493"
+      ],
+      "notes": "Pack confirms 'Bx3' backcross generation.",
+      "breederUrl": "https://ethosgenetics.com/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Ethos%20OGDLUX",
+      "lineageTags": [
+        "Cookies / GSC",
+        "Landrace / Heritage",
+        "OG Kush",
+        "OGKB"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 100,
+      "estPerPackHigh": 250,
+      "estTotalLow": 1000,
+      "estTotalHigh": 2500,
+      "packQty": 10
     },
     {
       "name": "Freshmaker",
@@ -147,8 +353,21 @@
       "flowerTime": "~8–9 weeks",
       "thc": "N/A",
       "profile": "Cult Classics Freshies cross — fruit-forward candy/fruit profile layered over OG cookie backbone.",
-      "images": ["IMG_4492"],
-      "notes": "Not in original docx — added from pack photo."
+      "images": [
+        "IMG_4492"
+      ],
+      "notes": "Not in original docx — added from pack photo.",
+      "breederUrl": "https://cultclassicsseeds.com/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Freshmaker",
+      "lineageTags": [
+        "Freshies (CC)"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 100,
+      "estPerPackHigh": 180,
+      "estTotalLow": 1800,
+      "estTotalHigh": 3240,
+      "packQty": 18
     },
     {
       "name": "Savage Jr Mintz",
@@ -160,8 +379,23 @@
       "flowerTime": "60–65 days",
       "thc": ">30% total cannabinoids",
       "profile": "Sweet creamy candy with minty finish; indica-leaning hybrid. Frost-heavy, very potent.",
-      "images": ["IMG_4490"],
-      "notes": ""
+      "images": [
+        "IMG_4490"
+      ],
+      "notes": "",
+      "breederUrl": "https://savagegenetics.com/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Savage%20Jr%20Mintz",
+      "lineageTags": [
+        "Feminized",
+        "Kush Mints",
+        "Runtz family"
+      ],
+      "phenoType": "Indica-leaning",
+      "estPerPackLow": 150,
+      "estPerPackHigh": 300,
+      "estTotalLow": 1500,
+      "estTotalHigh": 3000,
+      "packQty": 10
     },
     {
       "name": "Cloud Spin",
@@ -174,7 +408,16 @@
       "thc": "N/A",
       "profile": "Name suggests hazy/sativa-leaning; no confirmed public lineage.",
       "images": [],
-      "notes": "Not in original docx — added from SEALED list photo (IMG_4485). No individual pack photo identified."
+      "notes": "Not in original docx — added from SEALED list photo (IMG_4485). No individual pack photo identified.",
+      "breederUrl": null,
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Cloud%20Spin",
+      "lineageTags": [],
+      "phenoType": "Sativa-leaning",
+      "estPerPackLow": 80,
+      "estPerPackHigh": 150,
+      "estTotalLow": 2880,
+      "estTotalHigh": 5400,
+      "packQty": 36
     },
     {
       "name": "ABSeed Goat Cheese",
@@ -187,7 +430,18 @@
       "thc": "18–25%",
       "profile": "Skunky dairy funk + tropical citrus/pine. Two phenotypes: cheese-dominant (shorter, denser) vs. Goat-dominant (taller, sweeter). Caryophyllene/myrcene forward.",
       "images": [],
-      "notes": "On SEALED list; no dedicated photo located."
+      "notes": "On SEALED list; no dedicated photo located.",
+      "breederUrl": "https://www.instagram.com/ab_seed_organization/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=ABSeed%20Goat%20Cheese",
+      "lineageTags": [
+        "Skunk"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 100,
+      "estPerPackHigh": 180,
+      "estTotalLow": 1000,
+      "estTotalHigh": 1800,
+      "packQty": 10
     },
     {
       "name": "S. Orange Pucker",
@@ -200,7 +454,16 @@
       "thc": "N/A",
       "profile": "Sour orange / citrus pucker profile implied.",
       "images": [],
-      "notes": "Not in original docx — added from SEALED list photo."
+      "notes": "Not in original docx — added from SEALED list photo.",
+      "breederUrl": null,
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=S.%20Orange%20Pucker",
+      "lineageTags": [],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 80,
+      "estPerPackHigh": 150,
+      "estTotalLow": 1440,
+      "estTotalHigh": 2700,
+      "packQty": 18
     },
     {
       "name": "Grandmas Pajamas",
@@ -212,8 +475,19 @@
       "flowerTime": "N/A",
       "thc": "N/A",
       "profile": "Name suggests sweet, comfort-indica profile; A&B Company craft release.",
-      "images": ["IMG_4507"],
-      "notes": "Handwritten label on ziplock over A&B Company card."
+      "images": [
+        "IMG_4507"
+      ],
+      "notes": "Handwritten label on ziplock over A&B Company card.",
+      "breederUrl": "https://www.instagram.com/abcompany.lv/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Grandmas%20Pajamas",
+      "lineageTags": [],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 150,
+      "estPerPackHigh": 300,
+      "estTotalLow": 150,
+      "estTotalHigh": 300,
+      "packQty": 1
     },
     {
       "name": "O. Cookie Violence",
@@ -226,7 +500,16 @@
       "thc": "N/A",
       "profile": "Cookie-forward aggressive hybrid implied by name.",
       "images": [],
-      "notes": "Not in original docx — added from SEALED list photo."
+      "notes": "Not in original docx — added from SEALED list photo.",
+      "breederUrl": null,
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=O.%20Cookie%20Violence",
+      "lineageTags": [],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 80,
+      "estPerPackHigh": 150,
+      "estTotalLow": 1440,
+      "estTotalHigh": 2700,
+      "packQty": 18
     },
     {
       "name": "Jurassic Kush",
@@ -238,8 +521,24 @@
       "flowerTime": "N/A",
       "thc": "N/A",
       "profile": "Kush-forward with Stankasaurus funk; A&B Company wooden-box release with custom glass pendant.",
-      "images": ["IMG_4486"],
-      "notes": "Original docx speculated Hindu Kush/OG Kush ancestry — pack photo confirms Platinum Kush Mints × Stankasaurus."
+      "images": [
+        "IMG_4486"
+      ],
+      "notes": "Original docx speculated Hindu Kush/OG Kush ancestry — pack photo confirms Platinum Kush Mints × Stankasaurus.",
+      "breederUrl": "https://www.instagram.com/abcompany.lv/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Jurassic%20Kush",
+      "lineageTags": [
+        "Kush (Hindu/OG)",
+        "Kush Mints",
+        "OG Kush",
+        "Stankasaurus"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 150,
+      "estPerPackHigh": 300,
+      "estTotalLow": 1500,
+      "estTotalHigh": 3000,
+      "packQty": 10
     },
     {
       "name": "N. Speckley Boogie",
@@ -252,7 +551,16 @@
       "thc": "N/A",
       "profile": "Craft/underground release; profile unconfirmed.",
       "images": [],
-      "notes": "Not in original docx — added from SEALED list photo."
+      "notes": "Not in original docx — added from SEALED list photo.",
+      "breederUrl": null,
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=N.%20Speckley%20Boogie",
+      "lineageTags": [],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 80,
+      "estPerPackHigh": 150,
+      "estTotalLow": 800,
+      "estTotalHigh": 1500,
+      "packQty": 10
     },
     {
       "name": "Bloom Guava Barz",
@@ -264,8 +572,23 @@
       "flowerTime": "63–70 days",
       "thc": "24–28%",
       "profile": "Tropical guava, dank, gassy; sativa-dominant. Energized + creative. Dense trichome coverage.",
-      "images": ["IMG_4516"],
-      "notes": "Pack shows 12 seeds (docx had 4)."
+      "images": [
+        "IMG_4516"
+      ],
+      "notes": "Pack shows 12 seeds (docx had 4).",
+      "breederUrl": "https://bloomseedco.com/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Bloom%20Guava%20Barz",
+      "lineageTags": [
+        "Biscotti",
+        "Feminized",
+        "Papaya / Guava"
+      ],
+      "phenoType": "Sativa-leaning",
+      "estPerPackLow": 100,
+      "estPerPackHigh": 200,
+      "estTotalLow": 1200,
+      "estTotalHigh": 2400,
+      "packQty": 12
     },
     {
       "name": "Nephisto MBAP (ManBearAlienPig)",
@@ -277,8 +600,22 @@
       "flowerTime": "70–80 days from sprout",
       "thc": "N/A",
       "profile": "Indica-dominant (65/35). Fruity dank OG; wide lateral branching, heavy resin. Insomnia/stress relief. 120–300g yield. LST recommended.",
-      "images": ["IMG_4512"],
-      "notes": "Mephisto Reserva line pack."
+      "images": [
+        "IMG_4512"
+      ],
+      "notes": "Mephisto Reserva line pack.",
+      "breederUrl": "https://mephistogenetics.com/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Nephisto%20MBAP%20ManBearAlienPig",
+      "lineageTags": [
+        "Autoflower",
+        "Ripley's OG"
+      ],
+      "phenoType": "Indica-leaning",
+      "estPerPackLow": 72,
+      "estPerPackHigh": 117,
+      "estTotalLow": 360,
+      "estTotalHigh": 585,
+      "packQty": 5
     },
     {
       "name": "G. Classics Hitmaker",
@@ -290,8 +627,26 @@
       "flowerTime": "55–65 days",
       "thc": "High (CBG-noted)",
       "profile": "Gas/OG, garlic, musk, pastry dough; ripe fruit on exhale. Good botrytis/mildew resistance. 500g/m² indoor.",
-      "images": ["IMG_4513"],
-      "notes": "Pack shows 6 seeds (docx had 4). Motorbreath confirmed (Motor Breath #15 lineage)."
+      "images": [
+        "IMG_4513"
+      ],
+      "notes": "Pack shows 6 seeds (docx had 4). Motorbreath confirmed (Motor Breath #15 lineage).",
+      "breederUrl": "https://cultclassicsseeds.com/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=G.%20Classics%20Hitmaker",
+      "lineageTags": [
+        "Animal Cookies",
+        "Chem / Diesel",
+        "Cookies / GSC",
+        "Freshies (CC)",
+        "GMO / Garlic",
+        "OGKB"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 100,
+      "estPerPackHigh": 180,
+      "estTotalLow": 600,
+      "estTotalHigh": 1080,
+      "packQty": 6
     },
     {
       "name": "Sunset Freshies",
@@ -303,8 +658,22 @@
       "flowerTime": "~8–9 weeks",
       "thc": "N/A",
       "profile": "Sunset Strip #3 brings sunset/berry sherbet; Freshies adds OG/cookie backbone. Handwritten '13' on pack.",
-      "images": ["IMG_4509"],
-      "notes": "Pack confirms Sunset Strip #3 (not Sunset Sherbet as docx speculated)."
+      "images": [
+        "IMG_4509"
+      ],
+      "notes": "Pack confirms Sunset Strip #3 (not Sunset Sherbet as docx speculated).",
+      "breederUrl": "https://cultclassicsseeds.com/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Sunset%20Freshies",
+      "lineageTags": [
+        "Freshies (CC)",
+        "Sherbet"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 100,
+      "estPerPackHigh": 180,
+      "estTotalLow": 1300,
+      "estTotalHigh": 2340,
+      "packQty": 13
     },
     {
       "name": "GSRH Yahemi",
@@ -316,8 +685,23 @@
       "flowerTime": "~9 weeks",
       "thc": "~25–28%",
       "profile": "Pack label shows Melonatta × Project 4516 lineage — revises docx's speculative GMO × Blue Sherbet base.",
-      "images": ["IMG_4508"],
-      "notes": "Correction: docx assumed GSRH family; pack label shows distinct Melonatta × Project 4516 cross."
+      "images": [
+        "IMG_4508"
+      ],
+      "notes": "Correction: docx assumed GSRH family; pack label shows distinct Melonatta × Project 4516 cross.",
+      "breederUrl": null,
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=GSRH%20Yahemi",
+      "lineageTags": [
+        "Feminized",
+        "GMO / Garlic",
+        "Sherbet"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 80,
+      "estPerPackHigh": 150,
+      "estTotalLow": 320,
+      "estTotalHigh": 600,
+      "packQty": 4
     },
     {
       "name": "Exotic Greezy Runtz",
@@ -329,8 +713,24 @@
       "flowerTime": "~8–9 weeks",
       "thc": "N/A",
       "profile": "Gassy, fruity Runtz variant; heavier fuel profile than standard Runtz via Grease Monkey reversal.",
-      "images": ["IMG_4511"],
-      "notes": "Pack confirms Grease Monkey reversal (not a 'Greezo' pheno)."
+      "images": [
+        "IMG_4511"
+      ],
+      "notes": "Pack confirms Grease Monkey reversal (not a 'Greezo' pheno).",
+      "breederUrl": "https://exoticgenetix.com/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Exotic%20Greezy%20Runtz",
+      "lineageTags": [
+        "Feminized",
+        "Gelato",
+        "Runtz family",
+        "Zkittlez"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 150,
+      "estPerPackHigh": 300,
+      "estTotalLow": 600,
+      "estTotalHigh": 1200,
+      "packQty": 4
     },
     {
       "name": "Crane City S. Socker / The Zit",
@@ -342,8 +742,21 @@
       "flowerTime": "N/A",
       "thc": "N/A",
       "profile": "Crane City pack labeled 'The Zit' — Zkittlez × undisclosed partner. Master-list entry is 'S. Socker'; likely the same Crane City release line.",
-      "images": ["IMG_4514"],
-      "notes": "Name discrepancy: list shows 'S. Socker', photo shows 'The Zit'. Same breeder."
+      "images": [
+        "IMG_4514"
+      ],
+      "notes": "Name discrepancy: list shows 'S. Socker', photo shows 'The Zit'. Same breeder.",
+      "breederUrl": "https://www.instagram.com/cranecitycannabis/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Crane%20City%20S.%20Socker%20/%20The%20Zit",
+      "lineageTags": [
+        "Zkittlez"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 80,
+      "estPerPackHigh": 150,
+      "estTotalLow": 240,
+      "estTotalHigh": 450,
+      "packQty": 3
     },
     {
       "name": "Envy Grape Blow",
@@ -355,8 +768,22 @@
       "flowerTime": "N/A",
       "thc": "N/A",
       "profile": "Pungent sweet grape + candy; indica-dominant. Envy's BlowPops used widely in their dessert line.",
-      "images": ["IMG_4515"],
-      "notes": "Pack confirms Grape Pie × BlowPops."
+      "images": [
+        "IMG_4515"
+      ],
+      "notes": "Pack confirms Grape Pie × BlowPops.",
+      "breederUrl": "https://envygenetics.com/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Envy%20Grape%20Blow",
+      "lineageTags": [
+        "BlowPops (Envy)",
+        "Grape"
+      ],
+      "phenoType": "Indica-leaning",
+      "estPerPackLow": 100,
+      "estPerPackHigh": 180,
+      "estTotalLow": 800,
+      "estTotalHigh": 1440,
+      "packQty": 8
     },
     {
       "name": "Geist Kushmints × Banana06",
@@ -369,7 +796,20 @@
       "thc": "N/A",
       "profile": "Minty, creamy, banana-forward. Kush Mints = Animal Mints × Bubba Kush.",
       "images": [],
-      "notes": "On OTHER list; no standalone photo."
+      "notes": "On OTHER list; no standalone photo.",
+      "breederUrl": "https://www.instagram.com/geistgenetics/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Geist%20Kushmints%20%C3%97%20Banana06",
+      "lineageTags": [
+        "Banana",
+        "Bubba Kush",
+        "Kush Mints"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 80,
+      "estPerPackHigh": 150,
+      "estTotalLow": 240,
+      "estTotalHigh": 450,
+      "packQty": 3
     },
     {
       "name": "Exotic Runtz S1",
@@ -382,7 +822,22 @@
       "thc": "~24%",
       "profile": "Candy/fruity Runtz self; stabilized fem. Consistent bag appeal.",
       "images": [],
-      "notes": "Likely same rainbow tin format as Runtz S1 — see IMG_4505/IMG_4510."
+      "notes": "Likely same rainbow tin format as Runtz S1 — see IMG_4505/IMG_4510.",
+      "breederUrl": "https://exoticgenetix.com/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Exotic%20Runtz%20S1",
+      "lineageTags": [
+        "Feminized",
+        "Gelato",
+        "Runtz family",
+        "S1 (self)",
+        "Zkittlez"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 150,
+      "estPerPackHigh": 300,
+      "estTotalLow": 300,
+      "estTotalHigh": 600,
+      "packQty": 2
     },
     {
       "name": "Ethos GMOZ × Runtz",
@@ -394,8 +849,24 @@
       "flowerTime": "8–9 weeks",
       "thc": "25%+",
       "profile": "Gas-garlic funk meets candy-fruit sweetness; heavy resin. Purple expression possible.",
-      "images": ["IMG_4517"],
-      "notes": "Green foil bag with marker label."
+      "images": [
+        "IMG_4517"
+      ],
+      "notes": "Green foil bag with marker label.",
+      "breederUrl": "https://ethosgenetics.com/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Ethos%20GMOZ%20%C3%97%20Runtz",
+      "lineageTags": [
+        "GMO / Garlic",
+        "Gelato",
+        "Runtz family",
+        "Zkittlez"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 100,
+      "estPerPackHigh": 250,
+      "estTotalLow": 1600,
+      "estTotalHigh": 4000,
+      "packQty": 16
     },
     {
       "name": "Envy Weedies",
@@ -407,8 +878,21 @@
       "flowerTime": "N/A",
       "thc": "N/A",
       "profile": "Sweet candy profile consistent with Envy house genetics.",
-      "images": ["IMG_4523"],
-      "notes": "Genetics line marked out on pack."
+      "images": [
+        "IMG_4523"
+      ],
+      "notes": "Genetics line marked out on pack.",
+      "breederUrl": "https://envygenetics.com/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Envy%20Weedies",
+      "lineageTags": [
+        "BlowPops (Envy)"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 100,
+      "estPerPackHigh": 180,
+      "estTotalLow": 600,
+      "estTotalHigh": 1080,
+      "packQty": 6
     },
     {
       "name": "Wilmeac / Wilmaaa",
@@ -420,8 +904,21 @@
       "flowerTime": "N/A",
       "thc": "N/A",
       "profile": "Envy Genetics release — Fruity Pebbles OG crossed with Calisunset.",
-      "images": ["IMG_4521"],
-      "notes": "Pack label reveals Envy breeder (docx had it as 'unknown craft')."
+      "images": [
+        "IMG_4521"
+      ],
+      "notes": "Pack label reveals Envy breeder (docx had it as 'unknown craft').",
+      "breederUrl": "https://envygenetics.com/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Wilmeac%20/%20Wilmaaa",
+      "lineageTags": [
+        "Fruity Pebbles"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 100,
+      "estPerPackHigh": 180,
+      "estTotalLow": 600,
+      "estTotalHigh": 1080,
+      "packQty": 6
     },
     {
       "name": "Savage Acai Gelato × Hooliganz",
@@ -433,8 +930,25 @@
       "flowerTime": "N/A",
       "thc": "N/A",
       "profile": "Deep berry-gelato + dessert hybrid; frost-heavy; Savage known for potent candy/fruit lines.",
-      "images": ["IMG_4522"],
-      "notes": "Tester pack."
+      "images": [
+        "IMG_4522"
+      ],
+      "notes": "Tester pack.",
+      "breederUrl": "https://savagegenetics.com/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Savage%20Acai%20Gelato%20%C3%97%20Hooliganz",
+      "lineageTags": [
+        "Acai",
+        "Animal Cookies",
+        "Cookies / GSC",
+        "Gelato",
+        "Runtz family"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 0,
+      "estPerPackHigh": 50,
+      "estTotalLow": 0,
+      "estTotalHigh": 400,
+      "packQty": 8
     },
     {
       "name": "Ethos FPOG",
@@ -447,7 +961,20 @@
       "thc": "~22–25%",
       "profile": "Cherry, tangerine, tropical fruit over earthy OG. Dense, colorful buds.",
       "images": [],
-      "notes": "No standalone photo located."
+      "notes": "No standalone photo located.",
+      "breederUrl": "https://ethosgenetics.com/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Ethos%20FPOG",
+      "lineageTags": [
+        "Forbidden Fruit",
+        "Fruity Pebbles",
+        "OG Kush"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 100,
+      "estPerPackHigh": 250,
+      "estTotalLow": 1600,
+      "estTotalHigh": 4000,
+      "packQty": 16
     },
     {
       "name": "Fire Farms Fro OGLB (FRO GKB v2.17)",
@@ -459,8 +986,22 @@
       "flowerTime": "N/A",
       "thc": "N/A",
       "profile": "OG/lemon/biscotti terpene profile. Fire Farms craft release.",
-      "images": ["IMG_4525"],
-      "notes": "Handwritten label. 'GKB' likely OGKB."
+      "images": [
+        "IMG_4525"
+      ],
+      "notes": "Handwritten label. 'GKB' likely OGKB.",
+      "breederUrl": "https://www.instagram.com/firefarmsgenetics/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Fire%20Farms%20Fro%20OGLB%20FRO%20GKB%20v2.17",
+      "lineageTags": [
+        "Biscotti",
+        "OGKB"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 80,
+      "estPerPackHigh": 150,
+      "estTotalLow": 240,
+      "estTotalHigh": 450,
+      "packQty": 3
     },
     {
       "name": "GRF GMOZ",
@@ -473,7 +1014,21 @@
       "thc": "25%+",
       "profile": "Gas/garlic/candy; similar to Ethos GMOZ. GRF cut may vary.",
       "images": [],
-      "notes": "No standalone photo located."
+      "notes": "No standalone photo located.",
+      "breederUrl": "https://www.instagram.com/grf.genetics/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=GRF%20GMOZ",
+      "lineageTags": [
+        "Chem / Diesel",
+        "Cookies / GSC",
+        "GMO / Garlic",
+        "Zkittlez"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 50,
+      "estPerPackHigh": 100,
+      "estTotalLow": 50,
+      "estTotalHigh": 100,
+      "packQty": 1
     },
     {
       "name": "Animal Kush CBD (CBP)",
@@ -485,8 +1040,21 @@
       "flowerTime": "N/A",
       "thc": "N/A",
       "profile": "Kush/mint profile with CBD-positive phenotype selection.",
-      "images": ["IMG_4519"],
-      "notes": "Pack shows Humble Jungle Seeds breeder and CBD (not CBP) designation."
+      "images": [
+        "IMG_4519"
+      ],
+      "notes": "Pack shows Humble Jungle Seeds breeder and CBD (not CBP) designation.",
+      "breederUrl": "https://humblejungleseeds.com/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Animal%20Kush%20CBD%20CBP",
+      "lineageTags": [
+        "CBD"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 80,
+      "estPerPackHigh": 150,
+      "estTotalLow": 480,
+      "estTotalHigh": 900,
+      "packQty": 6
     },
     {
       "name": "Grapaya Drip",
@@ -498,8 +1066,24 @@
       "flowerTime": "N/A",
       "thc": "N/A",
       "profile": "Complex fruit/skunk/haze blend across four heritage lines.",
-      "images": ["IMG_4488"],
-      "notes": "Not on master list photo — additional strain discovered in collection."
+      "images": [
+        "IMG_4488"
+      ],
+      "notes": "Not on master list photo — additional strain discovered in collection.",
+      "breederUrl": "https://www.instagram.com/phantomfiregenetics/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Grapaya%20Drip",
+      "lineageTags": [
+        "Haze",
+        "Landrace / Heritage",
+        "OG Kush",
+        "Skunk"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 80,
+      "estPerPackHigh": 150,
+      "estTotalLow": 800,
+      "estTotalHigh": 1500,
+      "packQty": 10
     },
     {
       "name": "Sin City Blue Zu",
@@ -511,8 +1095,21 @@
       "flowerTime": "N/A",
       "thc": "N/A",
       "profile": "Sin City release; blue/zu phenotype naming suggests Zkittlez × blue-berry lineage.",
-      "images": ["IMG_4489"],
-      "notes": "Not on master list — additional strain."
+      "images": [
+        "IMG_4489"
+      ],
+      "notes": "Not on master list — additional strain.",
+      "breederUrl": "https://www.instagram.com/sincityseeds/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Sin%20City%20Blue%20Zu",
+      "lineageTags": [
+        "Zkittlez"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 100,
+      "estPerPackHigh": 200,
+      "estTotalLow": 100,
+      "estTotalHigh": 200,
+      "packQty": 1
     },
     {
       "name": "Titanium Jack × B-Side",
@@ -524,8 +1121,19 @@
       "flowerTime": "60–70 days",
       "thc": "N/A",
       "profile": "Gene Traders VIP release; handwritten silver bag.",
-      "images": ["IMG_4491"],
-      "notes": "Not on master list — additional strain."
+      "images": [
+        "IMG_4491"
+      ],
+      "notes": "Not on master list — additional strain.",
+      "breederUrl": "https://www.instagram.com/gene_traders/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Titanium%20Jack%20%C3%97%20B-Side",
+      "lineageTags": [],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 80,
+      "estPerPackHigh": 150,
+      "estTotalLow": 80,
+      "estTotalHigh": 150,
+      "packQty": 1
     },
     {
       "name": "Papaya F2",
@@ -537,8 +1145,21 @@
       "flowerTime": "N/A",
       "thc": "N/A",
       "profile": "Papaya F2 freebie line.",
-      "images": ["IMG_4494"],
-      "notes": "Freebie pack. Not on master list."
+      "images": [
+        "IMG_4494"
+      ],
+      "notes": "Freebie pack. Not on master list.",
+      "breederUrl": "https://www.instagram.com/phantomfiregenetics/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Papaya%20F2",
+      "lineageTags": [
+        "Papaya / Guava"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 0,
+      "estPerPackHigh": 30,
+      "estTotalLow": 0,
+      "estTotalHigh": 180,
+      "packQty": 6
     },
     {
       "name": "The Hydra",
@@ -550,8 +1171,21 @@
       "flowerTime": "N/A",
       "thc": "N/A",
       "profile": "Haze-forward hybrid from Lyme Rising Farm.",
-      "images": ["IMG_4495"],
-      "notes": "Not on master list — additional strain."
+      "images": [
+        "IMG_4495"
+      ],
+      "notes": "Not on master list — additional strain.",
+      "breederUrl": "https://www.instagram.com/lymerisingfarm/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=The%20Hydra",
+      "lineageTags": [
+        "Haze"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 80,
+      "estPerPackHigh": 150,
+      "estTotalLow": 80,
+      "estTotalHigh": 150,
+      "packQty": 1
     },
     {
       "name": "Dinosaur Biscuits",
@@ -563,8 +1197,23 @@
       "flowerTime": "N/A",
       "thc": "N/A",
       "profile": "A&B Company Stankasaurus line — cookies crossed with Stankasaurus (same male as Jurassic Kush).",
-      "images": ["IMG_4496", "IMG_4518"],
-      "notes": "Sealed box with certified hologram. Not on master list."
+      "images": [
+        "IMG_4496",
+        "IMG_4518"
+      ],
+      "notes": "Sealed box with certified hologram. Not on master list.",
+      "breederUrl": "https://www.instagram.com/abcompany.lv/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Dinosaur%20Biscuits",
+      "lineageTags": [
+        "Cookies / GSC",
+        "Stankasaurus"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 150,
+      "estPerPackHigh": 300,
+      "estTotalLow": 150,
+      "estTotalHigh": 300,
+      "packQty": 1
     },
     {
       "name": "Copper Sunset",
@@ -576,8 +1225,21 @@
       "flowerTime": "N/A",
       "thc": "N/A",
       "profile": "Copper Chem × Peruvian Punch — chem/gas meets sativa punch.",
-      "images": ["IMG_4498"],
-      "notes": "Not on master list — additional strain."
+      "images": [
+        "IMG_4498"
+      ],
+      "notes": "Not on master list — additional strain.",
+      "breederUrl": null,
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Copper%20Sunset",
+      "lineageTags": [
+        "Chem / Diesel"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 80,
+      "estPerPackHigh": 150,
+      "estTotalLow": 800,
+      "estTotalHigh": 1500,
+      "packQty": 10
     },
     {
       "name": "Kali's Cookies",
@@ -589,8 +1251,21 @@
       "flowerTime": "N/A",
       "thc": "N/A",
       "profile": "Tropicanna-cookie-forward with Kali's Lullaby sedation.",
-      "images": ["IMG_4500"],
-      "notes": "Not on master list — additional strain."
+      "images": [
+        "IMG_4500"
+      ],
+      "notes": "Not on master list — additional strain.",
+      "breederUrl": "https://www.instagram.com/kalisgenetics/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=Kali%27s%20Cookies",
+      "lineageTags": [
+        "Cookies / GSC"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 80,
+      "estPerPackHigh": 150,
+      "estTotalLow": 80,
+      "estTotalHigh": 150,
+      "packQty": 1
     },
     {
       "name": "The A Frame",
@@ -602,8 +1277,21 @@
       "flowerTime": "N/A",
       "thc": "N/A",
       "profile": "Triangle Kush BX2 × Funky Barn BX — OG/funk-forward hybrid from Geo Farms.",
-      "images": ["IMG_4520"],
-      "notes": "Not on master list — additional strain."
+      "images": [
+        "IMG_4520"
+      ],
+      "notes": "Not on master list — additional strain.",
+      "breederUrl": "https://www.instagram.com/geo_farms_/",
+      "seedfinderUrl": "https://en.seedfinder.eu/search/?q=The%20A%20Frame",
+      "lineageTags": [
+        "OG Kush"
+      ],
+      "phenoType": "Hybrid",
+      "estPerPackLow": 80,
+      "estPerPackHigh": 150,
+      "estTotalLow": 960,
+      "estTotalHigh": 1800,
+      "packQty": 12
     }
   ]
 }
