@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>John Seed Library — Strain Reference</title>
-<meta name="description" content="Consolidated strain genetics reference with photos, breeder links, lineage filters, and valuation — Sealed, Open, Other sections.">
+<meta name="description" content="Consolidated strain genetics reference with photos, breeder links, lineage filters, rarity ratings, and valuation.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -33,11 +33,48 @@
     </div>
 
     <div class="filter-group">
+      <label>Rarity</label>
+      <nav class="filters" id="rarityFilters">
+        <button data-rarity="0" class="on">Any</button>
+        <button data-rarity="5">🔥×5 Legendary</button>
+        <button data-rarity="4">🔥×4 Rare</button>
+        <button data-rarity="3">🔥×3 Uncommon</button>
+        <button data-rarity="2">🔥×2 Common</button>
+        <button data-rarity="1">🔥×1 Commercial</button>
+      </nav>
+    </div>
+
+    <div class="filter-group">
       <label>Lineage / Family <span class="muted hint">(click to toggle · multiple OK)</span></label>
       <nav class="filters lineage" id="lineageFilters"></nav>
     </div>
 
-    <button id="clearFilters" class="clear-btn" hidden>✕ Clear all filters</button>
+    <div class="toolbar-row">
+      <div class="sort-ctrl">
+        <label for="sort">Sort by</label>
+        <select id="sort">
+          <option value="section">Section (Sealed → Bonus)</option>
+          <option value="name">Name (A–Z)</option>
+          <option value="name-desc">Name (Z–A)</option>
+          <option value="value-desc">Est. value (high → low)</option>
+          <option value="value-asc">Est. value (low → high)</option>
+          <option value="rarity-desc">Rarity (high → low)</option>
+          <option value="rarity-asc">Rarity (low → high)</option>
+          <option value="seeds-desc">Seed count (high → low)</option>
+          <option value="seeds-asc">Seed count (low → high)</option>
+          <option value="breeder">Breeder (A–Z)</option>
+          <option value="pheno">Phenotype</option>
+        </select>
+      </div>
+      <div class="view-ctrl">
+        <label>View</label>
+        <div class="view-toggle">
+          <button data-view="expanded" class="on">▦ Expanded</button>
+          <button data-view="list">☰ List</button>
+        </div>
+      </div>
+      <button id="clearFilters" class="clear-btn" hidden>✕ Clear all filters</button>
+    </div>
   </div>
 </header>
 
@@ -60,9 +97,10 @@
 
 <footer>
   <div class="wrap">
-    <p><b>Valuation disclaimer:</b> <span id="valDisclaimer">Mid-market retail estimates based on breeder tier, seed type, and current craft-seed market ranges. Hype drops and limited releases trade higher.</span></p>
-    <p>Source: <em>Strain_Genetics_Reference.docx</em> + 42 photos (IMG_4484 → IMG_4525). Quantities and seed types preserved from source inventory.</p>
-    <p class="muted">Legend: <b>REG</b> Regular · <b>FEM</b> Feminized · <b>AUTO</b> Autoflower · <b>S1</b> Self-pollinated F1 · <b>BX</b> Backcross. Pack links go to breeder's site / IG. Genetics link → <a href="https://en.seedfinder.eu" target="_blank" rel="noopener">seedfinder.eu</a>.</p>
+    <p><b>Valuation note:</b> <span id="valDisclaimer"></span></p>
+    <p><b>Rarity scale:</b> 🔥×5 Legendary · 🔥×4 Rare · 🔥×3 Uncommon · 🔥×2 Common · 🔥×1 Commercial. Scored by breeder tier, seed type (S1/Bx premium), sealed status, and tester/freebie flags. Opinionated.</p>
+    <p>Source: <em>Strain_Genetics_Reference.docx</em> + 42 photos (IMG_4484 → IMG_4525). Strain bud photos from Leafly / AllBud; parent-strain fallback where exact strain isn't indexed (tagged "lineage ref").</p>
+    <p class="muted">Legend: <b>REG</b> Regular · <b>FEM</b> Feminized · <b>AUTO</b> Autoflower · <b>S1</b> Self-pollinated F1 · <b>BX</b> Backcross. Per-card links: breeder · seedfinder.eu (via DuckDuckGo <code>!ducky</code> — bypasses bot wall) · Google genetics search.</p>
   </div>
 </footer>
 

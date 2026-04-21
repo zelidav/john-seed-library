@@ -7,22 +7,29 @@
   const searchEl = document.getElementById('search');
   const sectionFilters = document.getElementById('sectionFilters');
   const phenoFilters = document.getElementById('phenoFilters');
+  const rarityFilters = document.getElementById('rarityFilters');
   const lineageFilters = document.getElementById('lineageFilters');
   const clearBtn = document.getElementById('clearFilters');
   const resultCount = document.getElementById('resultCount');
   const subtotalEl = document.getElementById('subtotal');
   const valDisclaimerEl = document.getElementById('valDisclaimer');
+  const sortEl = document.getElementById('sort');
+  const viewToggle = document.querySelector('.view-toggle');
 
   const state = {
     section: 'ALL',
     pheno: null,
+    rarity: 0,   // 0 = any
     lineage: new Set(),
     q: '',
+    sort: 'section',
+    view: 'expanded',
   };
 
   const escapeHtml = (s) => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]));
   const fmtK = (n) => n == null ? '—' : n.toLocaleString();
   const fmtMoney = (n) => n == null ? '—' : '$' + n.toLocaleString();
+  const rarityFlames = (n) => '🔥'.repeat(Math.max(1, Math.min(5, n||1)));
 
   // ---- Stats ----
   const counts = { SEALED: 0, OPEN: 0, OTHER: 0, BONUS: 0 };
@@ -36,8 +43,8 @@
     <span class="stat"><b>${counts.SEALED}</b> sealed</span>
     <span class="stat"><b>${counts.OPEN}</b> open</span>
     <span class="stat"><b>${counts.OTHER}</b> other</span>
-    <span class="stat"><b>${counts.BONUS}</b> bonus / unlisted</span>
-    <span class="stat value"><b>$${fmtK(v.totalLow)} – $${fmtK(v.totalHigh)}</b> est. retail value</span>
+    <span class="stat"><b>${counts.BONUS}</b> bonus</span>
+    <span class="stat value"><b>$${fmtK(v.totalLow)}–$${fmtK(v.totalHigh)}</b> est. retail</span>
   `;
   if (v.disclaimer) valDisclaimerEl.textContent = v.disclaimer;
 
@@ -51,6 +58,14 @@
       render();
     });
     phenoFilters.appendChild(b);
+  });
+
+  // ---- Rarity filter ----
+  rarityFilters.querySelectorAll('button').forEach(b => {
+    b.addEventListener('click', () => {
+      state.rarity = parseInt(b.dataset.rarity, 10) || 0;
+      render();
+    });
   });
 
   // ---- Lineage filter chips ----
@@ -77,9 +92,21 @@
     });
   });
 
+  // ---- Sort ----
+  sortEl.addEventListener('change', () => { state.sort = sortEl.value; render(); });
+
+  // ---- View toggle ----
+  viewToggle.querySelectorAll('button').forEach(b => {
+    b.addEventListener('click', () => {
+      state.view = b.dataset.view;
+      render();
+    });
+  });
+
   clearBtn.addEventListener('click', () => {
     state.section = 'ALL';
     state.pheno = null;
+    state.rarity = 0;
     state.lineage.clear();
     state.q = '';
     searchEl.value = '';
@@ -92,6 +119,7 @@
     const secPrimary = (s.section || '').split('/')[0];
     if (state.section !== 'ALL' && secPrimary !== state.section) return false;
     if (state.pheno && s.phenoType !== state.pheno) return false;
+    if (state.rarity && s.rarity !== state.rarity) return false;
     for (const t of state.lineage) {
       if (!(s.lineageTags || []).includes(t)) return false;
     }
@@ -100,6 +128,7 @@
       const hay = [
         s.name, s.breeder, s.genetics, s.profile, s.notes,
         s.section, s.phenoType, s.seedType,
+        s.rarityReason,
         ...(s.lineageTags || []),
       ].filter(Boolean).join(' ').toLowerCase();
       if (!hay.includes(q)) return false;
@@ -107,45 +136,67 @@
     return true;
   }
 
-  function cardHtml(s) {
-    const secPrimary = (s.section || '').split('/')[0];
-    const imgs = (s.images && s.images.length)
-      ? s.images.map(i => `<div class="imgbox"><img class="pack" loading="lazy" src="thumb/${i}.jpg" data-full="img/${i}.jpg" alt="${escapeHtml(s.name)}"></div>`).join('')
-      : `<div class="imgbox"><div class="placeholder">Listed on handwritten inventory card — no individual pack photo</div></div>`;
+  // ---- Sort comparators ----
+  const SECTION_ORDER = { SEALED: 0, OPEN: 1, OTHER: 2, BONUS: 3 };
+  const PHENO_ORDER = { 'Indica-leaning': 0, 'Balanced hybrid': 1, 'Hybrid': 2, 'Sativa-leaning': 3, 'Autoflower': 4 };
+  const SORTS = {
+    'section': (a,b) => (SECTION_ORDER[a.section.split('/')[0]] ?? 9) - (SECTION_ORDER[b.section.split('/')[0]] ?? 9) || a.name.localeCompare(b.name),
+    'name': (a,b) => a.name.localeCompare(b.name),
+    'name-desc': (a,b) => b.name.localeCompare(a.name),
+    'value-desc': (a,b) => (b.estMid||0) - (a.estMid||0),
+    'value-asc': (a,b) => (a.estMid||0) - (b.estMid||0),
+    'rarity-desc': (a,b) => (b.rarity||0) - (a.rarity||0) || (b.estMid||0) - (a.estMid||0),
+    'rarity-asc': (a,b) => (a.rarity||0) - (b.rarity||0),
+    'seeds-desc': (a,b) => (b.seedsPerPack||0) - (a.seedsPerPack||0),
+    'seeds-asc': (a,b) => (a.seedsPerPack||0) - (b.seedsPerPack||0),
+    'breeder': (a,b) => (a.breeder||'').localeCompare(b.breeder||''),
+    'pheno': (a,b) => (PHENO_ORDER[a.phenoType] ?? 9) - (PHENO_ORDER[b.phenoType] ?? 9) || a.name.localeCompare(b.name),
+  };
 
+  // ---- Render helpers ----
+  function imgRow(s) {
+    const packImgs = (s.images && s.images.length)
+      ? s.images.map(i => `<div class="imgbox pack-box"><img class="pack" loading="lazy" src="thumb/${i}.jpg" data-full="img/${i}.jpg" alt="${escapeHtml(s.name)} pack"></div>`).join('')
+      : `<div class="imgbox pack-box"><div class="placeholder">No pack photo</div></div>`;
+    const budClass = s.strainImageIsLineage ? 'imgbox bud-box lineage-ref' : 'imgbox bud-box';
+    const budImg = s.strainImage
+      ? `<div class="${budClass}"><img class="pack" loading="lazy" src="${escapeHtml(s.strainImage)}" data-full="${escapeHtml(s.strainImage)}" alt="${escapeHtml(s.name)} flower"></div>`
+      : `<div class="imgbox bud-box"><div class="placeholder">No strain photo</div></div>`;
+    return packImgs + budImg;
+  }
+
+  function expandedCard(s) {
+    const secPrimary = (s.section || '').split('/')[0];
     const breederText = escapeHtml(s.breeder || '');
     const breederHtml = s.breederUrl
       ? `<a href="${escapeHtml(s.breederUrl)}" target="_blank" rel="noopener">${breederText}</a>`
       : breederText;
-
     const geneticsHtml = s.genetics
-      ? `<b>Genetics:</b> ${escapeHtml(s.genetics)} <a class="sf" href="${escapeHtml(s.seedfinderUrl)}" target="_blank" rel="noopener" title="Search on seedfinder.eu">seedfinder ↗</a>`
+      ? `<b>Genetics:</b> ${escapeHtml(s.genetics)}`
       : '<b>Genetics:</b> —';
-
     const tags = (s.lineageTags || []).map(t =>
       `<span class="tag" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</span>`
     ).join('');
-
-    const valLine = (s.packQty > 0 && s.estPerPackLow != null)
+    const valLine = s.estPerPackLow != null
       ? `<div class="value-row">
-           <span class="per">${fmtMoney(s.estPerPackLow)}–${fmtMoney(s.estPerPackHigh)} per pack × ${s.packQty}</span>
+           <span class="per">${fmtMoney(s.estPerPackLow)}–${fmtMoney(s.estPerPackHigh)} · 1 pack · ${s.seedsPerPack} seeds (${fmtMoney(s.pricePerSeedLow)}–${fmtMoney(s.pricePerSeedHigh)}/seed)</span>
            <span class="val">${fmtMoney(s.estTotalLow)}–${fmtMoney(s.estTotalHigh)}</span>
          </div>`
       : '';
-
     const footerLinks = [];
     if (s.breederUrl) footerLinks.push(`<a href="${escapeHtml(s.breederUrl)}" target="_blank" rel="noopener">Breeder</a>`);
-    if (s.seedfinderUrl) footerLinks.push(`<a href="${escapeHtml(s.seedfinderUrl)}" target="_blank" rel="noopener">seedfinder.eu</a>`);
-
+    if (s.seedfinderUrl) footerLinks.push(`<a href="${escapeHtml(s.seedfinderUrl)}" target="_blank" rel="noopener" title="Direct seedfinder strain page via DuckDuckGo !ducky redirect">seedfinder.eu</a>`);
+    if (s.geneticsSearchUrl) footerLinks.push(`<a href="${escapeHtml(s.geneticsSearchUrl)}" target="_blank" rel="noopener" title="Google search: genetics / reviews (Leafly, AllBud, breeder blogs)">Genetics search</a>`);
     return `
       <article class="card">
-        <div class="img-row">${imgs}</div>
+        <div class="img-row">${imgRow(s)}</div>
         <div class="body">
           <div class="meta-row">
             <span class="badge badge-${secPrimary}">${escapeHtml(s.section)}</span>
-            <span class="qty">×${escapeHtml(s.quantity)}</span>
+            <span class="qty">${escapeHtml(s.quantity)} seeds</span>
             <span class="seedtype">${escapeHtml(s.seedType)}</span>
             ${s.phenoType ? `<span class="pheno">${escapeHtml(s.phenoType)}</span>` : ''}
+            ${s.rarity ? `<span class="rarity" title="${escapeHtml(s.rarityReason || '')}">${rarityFlames(s.rarity)}×${s.rarity}</span>` : ''}
           </div>
           <h3>${escapeHtml(s.name)}</h3>
           <div class="breeder">${breederHtml}</div>
@@ -163,24 +214,57 @@
       </article>`;
   }
 
+  function listCard(s) {
+    const secPrimary = (s.section || '').split('/')[0];
+    const breederText = escapeHtml(s.breeder || '');
+    const breederHtml = s.breederUrl
+      ? `<a href="${escapeHtml(s.breederUrl)}" target="_blank" rel="noopener">${breederText}</a>`
+      : breederText;
+    return `
+      <article class="card">
+        <div class="img-row">${imgRow(s)}</div>
+        <div class="body">
+          <h3>${escapeHtml(s.name)}</h3>
+          <div class="list-meta">
+            <span class="badge badge-${secPrimary}">${escapeHtml(s.section)}</span>
+            <span class="qty">${escapeHtml(s.quantity)}×${escapeHtml(s.seedType)}</span>
+            ${s.phenoType ? `<span class="pheno">${escapeHtml(s.phenoType)}</span>` : ''}
+          </div>
+          <div class="breeder">${breederHtml}</div>
+          <div class="list-rarity">
+            <span class="rarity" title="${escapeHtml(s.rarityReason || '')}">${rarityFlames(s.rarity)}</span>
+          </div>
+          <div class="list-value">
+            ${fmtMoney(s.estTotalLow)}–${fmtMoney(s.estTotalHigh)}
+            <span class="per">${fmtMoney(s.pricePerSeedLow)}–${fmtMoney(s.pricePerSeedHigh)}/seed</span>
+          </div>
+        </div>
+      </article>`;
+  }
+
   function syncFilterUI() {
-    sectionFilters.querySelectorAll('button').forEach(b => {
-      b.classList.toggle('on', b.dataset.filter === state.section);
-    });
-    phenoFilters.querySelectorAll('button').forEach(b => {
-      b.classList.toggle('on', b.dataset.pheno === state.pheno);
-    });
-    lineageFilters.querySelectorAll('button').forEach(b => {
-      b.classList.toggle('on', state.lineage.has(b.dataset.tag));
-    });
-    const anyFilter = state.section !== 'ALL' || state.pheno || state.lineage.size || state.q;
+    sectionFilters.querySelectorAll('button').forEach(b =>
+      b.classList.toggle('on', b.dataset.filter === state.section));
+    phenoFilters.querySelectorAll('button').forEach(b =>
+      b.classList.toggle('on', b.dataset.pheno === state.pheno));
+    rarityFilters.querySelectorAll('button').forEach(b =>
+      b.classList.toggle('on', parseInt(b.dataset.rarity,10) === state.rarity));
+    lineageFilters.querySelectorAll('button').forEach(b =>
+      b.classList.toggle('on', state.lineage.has(b.dataset.tag)));
+    viewToggle.querySelectorAll('button').forEach(b =>
+      b.classList.toggle('on', b.dataset.view === state.view));
+    const anyFilter = state.section !== 'ALL' || state.pheno || state.rarity || state.lineage.size || state.q;
     clearBtn.hidden = !anyFilter;
   }
 
   function render() {
     syncFilterUI();
     const filtered = data.strains.filter(matches);
-    grid.innerHTML = filtered.map(cardHtml).join('')
+    filtered.sort(SORTS[state.sort] || SORTS.section);
+
+    const renderCard = state.view === 'list' ? listCard : expandedCard;
+    grid.className = 'grid' + (state.view === 'list' ? ' list-view' : '');
+    grid.innerHTML = filtered.map(renderCard).join('')
       || `<p style="color:var(--muted);padding:2rem;text-align:center;">No strains match these filters.</p>`;
 
     const sumLow = filtered.reduce((a,s) => a + (s.estTotalLow || 0), 0);
@@ -191,7 +275,7 @@
       : '';
   }
 
-  // Delegate clicks on in-card lineage tags to toggle the lineage filter
+  // Delegate clicks on in-card lineage tags + pack images
   grid.addEventListener('click', (e) => {
     const t = e.target;
     if (t.classList.contains('pack')) {
