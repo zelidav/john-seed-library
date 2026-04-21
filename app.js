@@ -22,6 +22,10 @@
   const rarityScaleEl = document.getElementById('rarityScaleEl');
   const availScaleEl = document.getElementById('availScaleEl');
 
+  // Pricing/valuation is hidden by default. Set window.JSL_SHOW_PRICING=true
+  // in DevTools to bring it back, or flip the const below.
+  const SHOW_PRICING = typeof window !== 'undefined' && window.JSL_SHOW_PRICING === true;
+
   const state = {
     section: 'ALL',
     pheno: null,
@@ -99,16 +103,22 @@
     if (!b) return '';
     return b.replace(/\([^)]*\)/g, '').split(/\s+\/\s+|\s+—\s+/)[0].replace(/\s+/g, ' ').trim();
   }
+  function stripBreederNoise(b) {
+    return (b || '').replace(/\b(unknown|craft|small-batch|various|pheno-hunter|cross|cuts? exist)\b/gi, '').trim();
+  }
   function computeSeedfinderUrl(name, breeder) {
-    const q = `${cleanName(name)} ${cleanBreeder(breeder)} site:seedfinder.eu`.trim();
-    return `https://duckduckgo.com/?q=%21ducky+${encodeURIComponent(q).replace(/%20/g, '+')}`;
+    const b = stripBreederNoise(cleanBreeder(breeder));
+    const q = b ? `${cleanName(name)} ${b} site:seedfinder.eu` : `${cleanName(name)} site:seedfinder.eu`;
+    return `https://www.google.com/search?q=${encodeURIComponent(q).replace(/%20/g, '+')}`;
   }
   function computeGeneticsSearchUrl(name, breeder) {
-    const q = `${cleanName(name)} ${cleanBreeder(breeder)} cannabis strain genetics lineage`.trim();
+    const b = stripBreederNoise(cleanBreeder(breeder));
+    const q = b ? `${cleanName(name)} ${b} cannabis strain genetics lineage` : `${cleanName(name)} cannabis strain genetics lineage`;
     return `https://www.google.com/search?q=${encodeURIComponent(q).replace(/%20/g, '+')}`;
   }
   function computeImagesSearchUrl(name, breeder) {
-    const q = `${cleanName(name)} ${cleanBreeder(breeder)} cannabis bud flower`.trim();
+    const b = stripBreederNoise(cleanBreeder(breeder));
+    const q = b ? `${cleanName(name)} ${b} cannabis bud flower` : `${cleanName(name)} cannabis bud flower`;
     return `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(q).replace(/%20/g, '+')}`;
   }
 
@@ -166,9 +176,13 @@
     <span class="stat"><b>${counts.OPEN}</b> open</span>
     <span class="stat"><b>${counts.OTHER}</b> other</span>
     <span class="stat"><b>${counts.BONUS}</b> bonus</span>
-    <span class="stat value"><b>$${fmtK(v.totalLow)}–$${fmtK(v.totalHigh)}</b> est. retail</span>
+    ${SHOW_PRICING ? `<span class="stat value"><b>$${fmtK(v.totalLow)}–$${fmtK(v.totalHigh)}</b> est. retail</span>` : ''}
   `;
-  if (v.disclaimer) valDisclaimerEl.textContent = v.disclaimer;
+  if (valDisclaimerEl) {
+    valDisclaimerEl.textContent = SHOW_PRICING && v.disclaimer
+      ? v.disclaimer
+      : 'Pricing data is hidden in this view. Open DevTools and run window.JSL_SHOW_PRICING=true then refresh to display per-pack/per-seed estimates.';
+  }
 
   // ─────── Rarity + availability scale docs ───────
   if (data.meta.rarityScale) {
@@ -292,22 +306,27 @@
   function expandedCard(s, idx) {
     const secPrimary = (s.section || '').split('/')[0];
     const breederText = escapeHtml(s.breeder || '');
+    const breederIcon = s.breederLinkType === 'direct' ? '↗' : '🔍';
     const breederHtml = s.breederUrl
-      ? `<a href="${escapeHtml(s.breederUrl)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${breederText}</a>`
+      ? `<a href="${escapeHtml(s.breederUrl)}" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="${s.breederLinkType === 'direct' ? 'Verified breeder site' : 'Google search for breeder'}">${breederText} <span style="opacity:0.5">${breederIcon}</span></a>`
       : breederText;
     const geneticsHtml = s.genetics ? `<b>Genetics:</b> ${escapeHtml(s.genetics)}` : '<b>Genetics:</b> —';
     const tags = (s.lineageTags || []).map(t =>
       `<span class="tag" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</span>`).join('');
-    const valLine = s.estPerPackLow != null
+    const valLine = (SHOW_PRICING && s.estPerPackLow != null)
       ? `<div class="value-row">
            <span class="per">${fmtMoney(s.estPerPackLow)}–${fmtMoney(s.estPerPackHigh)} · 1 pack · ${s.seedsPerPack} seeds (${fmtMoney(s.pricePerSeedLow)}–${fmtMoney(s.pricePerSeedHigh)}/seed)</span>
            <span class="val">${fmtMoney(s.estTotalLow)}–${fmtMoney(s.estTotalHigh)}</span>
          </div>` : '';
     const footerLinks = [];
-    if (s.breederUrl) footerLinks.push(`<a href="${escapeHtml(s.breederUrl)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Breeder</a>`);
-    if (s.seedfinderUrl) footerLinks.push(`<a href="${escapeHtml(s.seedfinderUrl)}" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Direct seedfinder strain page via DuckDuckGo !ducky redirect">seedfinder.eu</a>`);
-    if (s.geneticsSearchUrl) footerLinks.push(`<a href="${escapeHtml(s.geneticsSearchUrl)}" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Google search: genetics / reviews">Genetics search</a>`);
-    if (s.imagesSearchUrl) footerLinks.push(`<a href="${escapeHtml(s.imagesSearchUrl)}" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Google Images: more flower photos">Flower photos</a>`);
+    if (s.breederUrl) {
+      const label = s.breederLinkType === 'direct' ? 'Breeder ↗' : 'Breeder 🔍';
+      const title = s.breederLinkType === 'direct' ? 'Verified breeder site' : 'Google search for breeder (no verified site URL)';
+      footerLinks.push(`<a href="${escapeHtml(s.breederUrl)}" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="${title}">${label}</a>`);
+    }
+    if (s.seedfinderUrl) footerLinks.push(`<a href="${escapeHtml(s.seedfinderUrl)}" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Google search restricted to seedfinder.eu — top result is the strain page when one exists">🔍 seedfinder.eu</a>`);
+    if (s.geneticsSearchUrl) footerLinks.push(`<a href="${escapeHtml(s.geneticsSearchUrl)}" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Google search: genetics / reviews (Leafly, AllBud, breeder blogs, IG)">🔍 Genetics</a>`);
+    if (s.imagesSearchUrl) footerLinks.push(`<a href="${escapeHtml(s.imagesSearchUrl)}" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Google Images: flower photos">🔍 Flower photos</a>`);
     const edited = s._edited ? `<span class="edited-tag" title="Name/genetics edited locally">EDITED</span>` : '';
     const avail = s.availability
       ? `<span class="avail" title="${escapeHtml(s.availability.note || '')}">${s.availability.emoji} ${escapeHtml(s.availability.label)}</span>` : '';
@@ -362,10 +381,10 @@
             <span class="rarity" title="${escapeHtml(s.rarityReason || '')}">${rarityFlames(s.rarity)}</span>
           </div>
           <div class="list-avail">${avail}</div>
-          <div class="list-value">
+          ${SHOW_PRICING ? `<div class="list-value">
             ${fmtMoney(s.estTotalLow)}–${fmtMoney(s.estTotalHigh)}
             <span class="per">${fmtMoney(s.pricePerSeedLow)}–${fmtMoney(s.pricePerSeedHigh)}/seed</span>
-          </div>
+          </div>` : `<div class="list-value"></div>`}
         </div>
       </article>`;
   }
@@ -390,12 +409,15 @@
     grid.className = 'grid' + (state.view === 'list' ? ' list-view' : '');
     grid.innerHTML = filtered.map((s) => renderCard(s, data.strains.indexOf(s))).join('')
       || `<p style="color:var(--muted);padding:2rem;text-align:center;">No strains match these filters.</p>`;
-    const sumLow = filtered.reduce((a,s) => a + (s.estTotalLow || 0), 0);
-    const sumHigh = filtered.reduce((a,s) => a + (s.estTotalHigh || 0), 0);
     resultCount.textContent = `${filtered.length} strain${filtered.length !== 1 ? 's' : ''}`;
-    subtotalEl.textContent = filtered.length
-      ? `Subtotal: $${sumLow.toLocaleString()} – $${sumHigh.toLocaleString()}`
-      : '';
+    if (SHOW_PRICING) {
+      const sumLow = filtered.reduce((a,s) => a + (s.estTotalLow || 0), 0);
+      const sumHigh = filtered.reduce((a,s) => a + (s.estTotalHigh || 0), 0);
+      subtotalEl.textContent = filtered.length
+        ? `Subtotal: $${sumLow.toLocaleString()} – $${sumHigh.toLocaleString()}` : '';
+    } else {
+      subtotalEl.textContent = '';
+    }
   }
 
   // ─────── Detail modal ───────
@@ -403,8 +425,10 @@
     const s = data.strains[idx];
     if (!s) return;
     const secPrimary = (s.section || '').split('/')[0];
+    const breederIconD = s.breederLinkType === 'direct' ? '↗' : '🔍';
+    const breederTitle = s.breederLinkType === 'direct' ? 'Verified breeder site' : 'Google search for breeder';
     const breederHtml = s.breederUrl
-      ? `<a href="${escapeHtml(s.breederUrl)}" target="_blank" rel="noopener">${escapeHtml(s.breeder || '')}</a>`
+      ? `<a href="${escapeHtml(s.breederUrl)}" target="_blank" rel="noopener" title="${breederTitle}">${escapeHtml(s.breeder || '')} <span style="opacity:0.5">${breederIconD}</span></a>`
       : escapeHtml(s.breeder || '');
     const tags = (s.lineageTags || []).map(t =>
       `<span class="tag" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</span>`).join('');
@@ -448,9 +472,9 @@
         </div>`;
     }
 
-    // Valuation
+    // Valuation (hidden by default — toggle SHOW_PRICING to reveal)
     let valHtml = '';
-    if (s.estPerPackLow != null) {
+    if (SHOW_PRICING && s.estPerPackLow != null) {
       valHtml = `
         <div class="detail-section value-detail">
           <h3>Estimated value</h3>
@@ -468,10 +492,13 @@
 
     // Footer links
     const footerLinks = [];
-    if (s.breederUrl) footerLinks.push(`<a href="${escapeHtml(s.breederUrl)}" target="_blank" rel="noopener">Breeder</a>`);
-    if (s.seedfinderUrl) footerLinks.push(`<a href="${escapeHtml(s.seedfinderUrl)}" target="_blank" rel="noopener">seedfinder.eu</a>`);
-    if (s.geneticsSearchUrl) footerLinks.push(`<a href="${escapeHtml(s.geneticsSearchUrl)}" target="_blank" rel="noopener">Genetics search</a>`);
-    if (s.imagesSearchUrl) footerLinks.push(`<a href="${escapeHtml(s.imagesSearchUrl)}" target="_blank" rel="noopener">Flower photos (Google Images)</a>`);
+    if (s.breederUrl) {
+      const lbl = s.breederLinkType === 'direct' ? 'Breeder ↗' : 'Breeder 🔍';
+      footerLinks.push(`<a href="${escapeHtml(s.breederUrl)}" target="_blank" rel="noopener">${lbl}</a>`);
+    }
+    if (s.seedfinderUrl) footerLinks.push(`<a href="${escapeHtml(s.seedfinderUrl)}" target="_blank" rel="noopener">🔍 seedfinder.eu</a>`);
+    if (s.geneticsSearchUrl) footerLinks.push(`<a href="${escapeHtml(s.geneticsSearchUrl)}" target="_blank" rel="noopener">🔍 Genetics search</a>`);
+    if (s.imagesSearchUrl) footerLinks.push(`<a href="${escapeHtml(s.imagesSearchUrl)}" target="_blank" rel="noopener">🔍 Flower photos (Google Images)</a>`);
 
     const edited = s._edited ? `<span class="edited-tag">EDITED LOCALLY</span>` : '';
 

@@ -130,8 +130,8 @@
       "profile": "Earthy, citrus, diesel; balanced gas-forward hybrid. G-Walk adds OG funk; Chem Brulée delivers petrol/lemon sweetness.",
       "images": [],
       "notes": "Listed on SEALED list photo (IMG_4485).",
-      "breederUrl": "https://www.instagram.com/covertgenetics/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Covert+Boats+%26+Hoes+Covert+Genetics+site%3Aseedfinder.eu",
+      "breederUrl": "https://www.covertgenetics.com/",
+      "seedfinderUrl": "https://www.google.com/search?q=Covert+Boats+%26+Hoes+Covert+Genetics+site%3Aseedfinder.eu",
       "lineageTags": [
         "Chem / Diesel"
       ],
@@ -166,7 +166,8 @@
         "label": "Limited",
         "emoji": "🟡",
         "note": "Covert Genetics does limited craft drops via select shops and direct DMs. Older releases often sell out within hours."
-      }
+      },
+      "breederLinkType": "direct"
     },
     {
       "name": "Tiki Madman Space Runtz",
@@ -182,8 +183,8 @@
         "IMG_4487"
       ],
       "notes": "Pack labeled 'Tiki Madman'; master list confirms Space Runtz.",
-      "breederUrl": "https://www.instagram.com/tikimadman/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Tiki+Madman+Space+Runtz+Tiki+Madman+site%3Aseedfinder.eu",
+      "breederUrl": "https://www.google.com/search?q=Tiki+Madman+cannabis+seeds+breeder",
+      "seedfinderUrl": "https://www.google.com/search?q=Tiki+Madman+Space+Runtz+Tiki+Madman+site%3Aseedfinder.eu",
       "lineageTags": [
         "Gelato",
         "Runtz family",
@@ -220,7 +221,8 @@
         "label": "Sold out",
         "emoji": "🟠",
         "note": "Released after the Space Runtz Connoisseur Cup win; typical Tiki drops move fast and Space Runtz in particular is no longer on standard retail. Aftermarket trade."
-      }
+      },
+      "breederLinkType": "search"
     },
     {
       "name": "GSRH (Garlic Sherb)",
@@ -235,7 +237,7 @@
       "images": [],
       "notes": "On SEALED list; standalone photo not isolated.",
       "breederUrl": "https://inhousegenetics.com/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+GSRH+Garlic+Sherb+In+House+Genetics+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=GSRH+Garlic+Sherb+In+House+Genetics+site%3Aseedfinder.eu",
       "lineageTags": [
         "Chem / Diesel",
         "Cookies / GSC",
@@ -273,7 +275,8 @@
         "label": "Limited",
         "emoji": "🟡",
         "note": "In House Genetics still releases GSRH variants occasionally. Original cuts (original Garlic Sherb #1) are pheno-hunter territory; S1 packs easier to find on drops."
-      }
+      },
+      "breederLinkType": "direct"
     },
     {
       "name": "Drive Thru Wedding",
@@ -289,8 +292,8 @@
         "IMG_4501"
       ],
       "notes": "Confirmed by Covert pack.",
-      "breederUrl": "https://www.instagram.com/covertgenetics/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Drive+Thru+Wedding+Covert+Genetics+site%3Aseedfinder.eu",
+      "breederUrl": "https://www.covertgenetics.com/",
+      "seedfinderUrl": "https://www.google.com/search?q=Drive+Thru+Wedding+Covert+Genetics+site%3Aseedfinder.eu",
       "lineageTags": [
         "Chem / Diesel",
         "Kush Mints",
@@ -328,7 +331,8 @@
         "label": "Limited",
         "emoji": "🟡",
         "note": "Covert Genetics — small craft runs. Chem Brulée male is a heritage male for Covert so this pairing surfaces periodically."
-      }
+      },
+      "breederLinkType": "direct"
     },
     {
       "name": "Envy Pop Rocks",
@@ -346,7 +350,7 @@
       ],
       "notes": "Two pack photos.",
       "breederUrl": "https://envygenetics.com/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Envy+Pop+Rocks+Envy+Genetics+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=Envy+Pop+Rocks+Envy+Genetics+site%3Aseedfinder.eu",
       "lineageTags": [
         "BlowPops (Envy)",
         "Fruity Pebbles"
@@ -382,7 +386,8 @@
         "label": "In stock",
         "emoji": "🟢",
         "note": "Envy Genetics runs a deep catalogue; Pop Rocks has been in rotation and is typically findable at retailers that carry Envy."
-      }
+      },
+      "breederLinkType": "direct"
     },
     {
       "name": "Gushers S1",
@@ -399,7 +404,7 @@
       ],
       "notes": "",
       "breederUrl": "https://cookies.co/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Gushers+S1+Cookies+Fam+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=Gushers+S1+Cookies+Fam+site%3Aseedfinder.eu",
       "lineageTags": [
         "Cookies / GSC",
         "Feminized",
@@ -442,7 +447,8 @@
         "label": "Sold out",
         "emoji": "🟠",
         "note": "Cookies Fam feminized S1 — original Gushers F1 release is long gone. S1 self drops surface occasionally on Cookies releases and authorized resellers."
-      }
+      },
+      "breederLinkType": "direct"
     },
     {
       "name": "Runtz S1",
@@ -460,7 +466,7 @@
       ],
       "notes": "Rainbow tin format; appears in both Sealed and Open sections.",
       "breederUrl": "https://cookies.co/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Runtz+S1+Cookies+Fam+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=Runtz+S1+Cookies+Fam+site%3Aseedfinder.eu",
       "lineageTags": [
         "Cookies / GSC",
         "Feminized",
@@ -503,7 +509,8 @@
         "label": "Limited",
         "emoji": "🟡",
         "note": "Multiple S1 self versions exist (Cookies Fam original + several reputable pheno-hunter versions). Easier to find than Gushers S1 but drops sell fast."
-      }
+      },
+      "breederLinkType": "direct"
     },
     {
       "name": "Cult Classic Fresh Baked",
@@ -521,7 +528,7 @@
       ],
       "notes": "Pack text confirms Purple Goji OG × Freshies. Original docx marked pairing unconfirmed — now verified.",
       "breederUrl": "https://cultclassicsseeds.com/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Cult+Classic+Fresh+Baked+Cult+Classics+Seeds+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=Cult+Classic+Fresh+Baked+Cult+Classics+Seeds+site%3Aseedfinder.eu",
       "lineageTags": [
         "Animal Cookies",
         "Cookies / GSC",
@@ -559,7 +566,8 @@
         "label": "Limited",
         "emoji": "🟡",
         "note": "Cult Classics Seeds does boutique drops through select retailers; Fresh Baked is a Freshies hype line and typically moves within hours of release."
-      }
+      },
+      "breederLinkType": "direct"
     },
     {
       "name": "Cement Shoes S1",
@@ -576,7 +584,7 @@
       ],
       "notes": "Not in original docx — added from pack photo.",
       "breederUrl": "https://cultclassicsseeds.com/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Cement+Shoes+S1+Cult+Classics+Seeds+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=Cement+Shoes+S1+Cult+Classics+Seeds+site%3Aseedfinder.eu",
       "lineageTags": [
         "Animal Cookies",
         "Cookies / GSC",
@@ -619,7 +627,8 @@
         "label": "Sold out",
         "emoji": "🟠",
         "note": "Cement Shoes S1 self (Universally Seeded / Cult Classics) — sealed collector pack; not currently in retail rotation."
-      }
+      },
+      "breederLinkType": "direct"
     },
     {
       "name": "Ethos OGDLUX",
@@ -636,7 +645,7 @@
       ],
       "notes": "Pack confirms 'Bx3' backcross generation.",
       "breederUrl": "https://ethosgenetics.com/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Ethos+OGDLUX+Ethos+Genetics+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=Ethos+OGDLUX+Ethos+Genetics+site%3Aseedfinder.eu",
       "lineageTags": [
         "Cookies / GSC",
         "Landrace / Heritage",
@@ -674,7 +683,8 @@
         "label": "Limited",
         "emoji": "🟡",
         "note": "Ethos Genetics OGDLUX Bx3 is part of their OG backcross program; Ethos re-releases Bx projects occasionally via ethosgenetics.com and select seedbanks."
-      }
+      },
+      "breederLinkType": "direct"
     },
     {
       "name": "Freshmaker",
@@ -691,7 +701,7 @@
       ],
       "notes": "Not in original docx — added from pack photo.",
       "breederUrl": "https://cultclassicsseeds.com/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Freshmaker+Cult+Classics+Seeds+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=Freshmaker+Cult+Classics+Seeds+site%3Aseedfinder.eu",
       "lineageTags": [
         "Freshies (CC)"
       ],
@@ -726,7 +736,8 @@
         "label": "Limited",
         "emoji": "🟡",
         "note": "Cult Classics Seeds — Freshies-crossed boutique drops. Not commonly in stock; check Cult Classics IG for drop schedule."
-      }
+      },
+      "breederLinkType": "direct"
     },
     {
       "name": "Savage Jr Mintz",
@@ -743,7 +754,7 @@
       ],
       "notes": "",
       "breederUrl": "https://savagegenetics.com/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Savage+Jr+Mintz+Savage+Genetics+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=Savage+Jr+Mintz+Savage+Genetics+site%3Aseedfinder.eu",
       "lineageTags": [
         "Feminized",
         "Kush Mints",
@@ -780,7 +791,8 @@
         "label": "In stock",
         "emoji": "🟢",
         "note": "Savage Genetics runs their Jr line (smaller seed counts) through direct and retail channels. Mintz crosses rotate in the Savage catalogue."
-      }
+      },
+      "breederLinkType": "direct"
     },
     {
       "name": "Cloud Spin",
@@ -795,7 +807,7 @@
       "images": [],
       "notes": "Not in original docx — added from SEALED list photo (IMG_4485). No individual pack photo identified.",
       "breederUrl": null,
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Cloud+Spin+unknown+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=Cloud+Spin+site%3Aseedfinder.eu",
       "lineageTags": [],
       "phenoType": "Sativa-leaning",
       "estPerPackLow": 105,
@@ -803,7 +815,7 @@
       "estTotalLow": 105,
       "estTotalHigh": 195,
       "packQty": 36,
-      "geneticsSearchUrl": "https://www.google.com/search?q=Cloud+Spin+unknown+cannabis+strain+genetics+lineage",
+      "geneticsSearchUrl": "https://www.google.com/search?q=Cloud+Spin+cannabis+strain+genetics+lineage",
       "seedsPerPack": 36,
       "packCount": 1,
       "estMid": 150,
@@ -828,7 +840,8 @@
         "label": "Unreleased",
         "emoji": "🟣",
         "note": "No confirmed breeder on public record. Name circulates among small-batch hunters but no retail presence."
-      }
+      },
+      "breederLinkType": null
     },
     {
       "name": "ABSeed Goat Cheese",
@@ -842,8 +855,8 @@
       "profile": "Skunky dairy funk + tropical citrus/pine. Two phenotypes: cheese-dominant (shorter, denser) vs. Goat-dominant (taller, sweeter). Caryophyllene/myrcene forward.",
       "images": [],
       "notes": "On SEALED list; no dedicated photo located.",
-      "breederUrl": "https://www.instagram.com/ab_seed_organization/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+ABSeed+Goat+Cheese+AB+Seed+site%3Aseedfinder.eu",
+      "breederUrl": "https://www.google.com/search?q=AB+Seed+cannabis+seeds+breeder",
+      "seedfinderUrl": "https://www.google.com/search?q=ABSeed+Goat+Cheese+AB+Seed+site%3Aseedfinder.eu",
       "lineageTags": [
         "Skunk"
       ],
@@ -878,7 +891,8 @@
         "label": "Limited",
         "emoji": "🟡",
         "note": "Small-batch Goat Cheese cross — surface through IG and pheno-hunter circles. Not in mainstream seedbanks."
-      }
+      },
+      "breederLinkType": "search"
     },
     {
       "name": "S. Orange Pucker",
@@ -893,7 +907,7 @@
       "images": [],
       "notes": "Not in original docx — added from SEALED list photo.",
       "breederUrl": null,
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+S.+Orange+Pucker+unknown+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=S.+Orange+Pucker+site%3Aseedfinder.eu",
       "lineageTags": [],
       "phenoType": "Hybrid",
       "estPerPackLow": 91,
@@ -901,7 +915,7 @@
       "estTotalLow": 91,
       "estTotalHigh": 169,
       "packQty": 18,
-      "geneticsSearchUrl": "https://www.google.com/search?q=S.+Orange+Pucker+unknown+cannabis+strain+genetics+lineage",
+      "geneticsSearchUrl": "https://www.google.com/search?q=S.+Orange+Pucker+cannabis+strain+genetics+lineage",
       "seedsPerPack": 18,
       "packCount": 1,
       "estMid": 130,
@@ -926,7 +940,8 @@
         "label": "Unreleased",
         "emoji": "🟣",
         "note": "Name present on the inventory card but no matching public breeder listing. Likely a pheno-hunter or craft release."
-      }
+      },
+      "breederLinkType": null
     },
     {
       "name": "Grandmas Pajamas",
@@ -942,8 +957,8 @@
         "IMG_4507"
       ],
       "notes": "Handwritten label on ziplock over A&B Company card.",
-      "breederUrl": "https://www.instagram.com/abcompany.lv/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Grandmas+Pajamas+A%26B+Company+site%3Aseedfinder.eu",
+      "breederUrl": "https://www.google.com/search?q=A%26B+Company+cannabis+seeds+breeder",
+      "seedfinderUrl": "https://www.google.com/search?q=Grandmas+Pajamas+A%26B+Company+site%3Aseedfinder.eu",
       "lineageTags": [],
       "phenoType": "Hybrid",
       "estPerPackLow": 165,
@@ -972,7 +987,8 @@
         "label": "Unreleased",
         "emoji": "🟣",
         "note": "A&B Company boutique cross; A&B releases are hand-labelled boutique packs, not sold on standard seedbanks."
-      }
+      },
+      "breederLinkType": "search"
     },
     {
       "name": "O. Cookie Violence",
@@ -987,7 +1003,7 @@
       "images": [],
       "notes": "Not in original docx — added from SEALED list photo.",
       "breederUrl": null,
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+O.+Cookie+Violence+unknown+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=O.+Cookie+Violence+site%3Aseedfinder.eu",
       "lineageTags": [],
       "phenoType": "Hybrid",
       "estPerPackLow": 91,
@@ -995,7 +1011,7 @@
       "estTotalLow": 91,
       "estTotalHigh": 169,
       "packQty": 18,
-      "geneticsSearchUrl": "https://www.google.com/search?q=O.+Cookie+Violence+unknown+cannabis+strain+genetics+lineage",
+      "geneticsSearchUrl": "https://www.google.com/search?q=O.+Cookie+Violence+cannabis+strain+genetics+lineage",
       "seedsPerPack": 18,
       "packCount": 1,
       "estMid": 130,
@@ -1020,7 +1036,8 @@
         "label": "Unreleased",
         "emoji": "🟣",
         "note": "No public listing. Likely underground pheno-hunter release."
-      }
+      },
+      "breederLinkType": null
     },
     {
       "name": "Jurassic Kush",
@@ -1036,8 +1053,8 @@
         "IMG_4486"
       ],
       "notes": "Original docx speculated Hindu Kush/OG Kush ancestry — pack photo confirms Platinum Kush Mints × Stankasaurus.",
-      "breederUrl": "https://www.instagram.com/abcompany.lv/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Jurassic+Kush+A%26B+Company+site%3Aseedfinder.eu",
+      "breederUrl": "https://www.google.com/search?q=A%26B+Company+cannabis+seeds+breeder",
+      "seedfinderUrl": "https://www.google.com/search?q=Jurassic+Kush+A%26B+Company+site%3Aseedfinder.eu",
       "lineageTags": [
         "Kush (Hindu/OG)",
         "Kush Mints",
@@ -1071,7 +1088,8 @@
         "label": "Sold out",
         "emoji": "🟠",
         "note": "A&B Company boutique release — sealed wooden box with custom glass pendant. Collector item; not currently on retail."
-      }
+      },
+      "breederLinkType": "search"
     },
     {
       "name": "N. Speckley Boogie",
@@ -1086,7 +1104,7 @@
       "images": [],
       "notes": "Not in original docx — added from SEALED list photo.",
       "breederUrl": null,
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+N.+Speckley+Boogie+unknown+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=N.+Speckley+Boogie+site%3Aseedfinder.eu",
       "lineageTags": [],
       "phenoType": "Hybrid",
       "estPerPackLow": 77,
@@ -1094,7 +1112,7 @@
       "estTotalLow": 77,
       "estTotalHigh": 143,
       "packQty": 10,
-      "geneticsSearchUrl": "https://www.google.com/search?q=N.+Speckley+Boogie+unknown+cannabis+strain+genetics+lineage",
+      "geneticsSearchUrl": "https://www.google.com/search?q=N.+Speckley+Boogie+cannabis+strain+genetics+lineage",
       "seedsPerPack": 10,
       "packCount": 1,
       "estMid": 110,
@@ -1119,7 +1137,8 @@
         "label": "Unreleased",
         "emoji": "🟣",
         "note": "No public listing under this name. Craft/pheno-hunter territory."
-      }
+      },
+      "breederLinkType": null
     },
     {
       "name": "Bloom Guava Barz",
@@ -1136,7 +1155,7 @@
       ],
       "notes": "Pack shows 12 seeds (docx had 4).",
       "breederUrl": "https://bloomseedco.com/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Bloom+Guava+Barz+Bloom+Seed+Co.+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=Bloom+Guava+Barz+Bloom+Seed+Co.+site%3Aseedfinder.eu",
       "lineageTags": [
         "Biscotti",
         "Feminized",
@@ -1169,7 +1188,8 @@
         "label": "In stock",
         "emoji": "🟢",
         "note": "Bloom Seed Co (Colorado) runs their catalogue through authorized seedbanks; Guava Barz is a recognisable Biscotti × Guavaz 74 cross and typically findable."
-      }
+      },
+      "breederLinkType": "direct"
     },
     {
       "name": "Nephisto MBAP (ManBearAlienPig)",
@@ -1186,7 +1206,7 @@
       ],
       "notes": "Mephisto Reserva line pack.",
       "breederUrl": "https://mephistogenetics.com/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Nephisto+MBAP+ManBearAlienPig+Mephisto+Genetics+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=Nephisto+MBAP+ManBearAlienPig+Mephisto+Genetics+site%3Aseedfinder.eu",
       "lineageTags": [
         "Autoflower",
         "Ripley's OG"
@@ -1218,7 +1238,8 @@
         "label": "Limited",
         "emoji": "🟡",
         "note": "Mephisto Genetics Reserva line — Mephisto restocks Reserva on short windows; MBAP surfaces occasionally."
-      }
+      },
+      "breederLinkType": "direct"
     },
     {
       "name": "G. Classics Hitmaker",
@@ -1235,7 +1256,7 @@
       ],
       "notes": "Pack shows 6 seeds (docx had 4). Motorbreath confirmed (Motor Breath #15 lineage).",
       "breederUrl": "https://cultclassicsseeds.com/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+G.+Classics+Hitmaker+Cult+Classics+Seeds+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=G.+Classics+Hitmaker+Cult+Classics+Seeds+site%3Aseedfinder.eu",
       "lineageTags": [
         "Animal Cookies",
         "Chem / Diesel",
@@ -1271,7 +1292,8 @@
         "label": "Limited",
         "emoji": "🟡",
         "note": "Cult Classics Seeds Hitmaker — Motor Breath × Freshies. Drops-only through Cult Classics channels."
-      }
+      },
+      "breederLinkType": "direct"
     },
     {
       "name": "Sunset Freshies",
@@ -1288,7 +1310,7 @@
       ],
       "notes": "Pack confirms Sunset Strip #3 (not Sunset Sherbet as docx speculated).",
       "breederUrl": "https://cultclassicsseeds.com/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Sunset+Freshies+Cult+Classics+Seeds+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=Sunset+Freshies+Cult+Classics+Seeds+site%3Aseedfinder.eu",
       "lineageTags": [
         "Freshies (CC)",
         "Sherbet"
@@ -1320,7 +1342,8 @@
         "label": "Limited",
         "emoji": "🟡",
         "note": "Cult Classics limited drop — Sunset Strip #3 × Freshies. Hard to catch."
-      }
+      },
+      "breederLinkType": "direct"
     },
     {
       "name": "GSRH Yahemi",
@@ -1336,8 +1359,8 @@
         "IMG_4508"
       ],
       "notes": "Correction: docx assumed GSRH family; pack label shows distinct Melonatta × Project 4516 cross.",
-      "breederUrl": null,
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+GSRH+Yahemi+pheno-hunter+cross+site%3Aseedfinder.eu",
+      "breederUrl": "https://www.google.com/search?q=pheno-hunter+cross+cannabis+seeds+breeder",
+      "seedfinderUrl": "https://www.google.com/search?q=GSRH+Yahemi+site%3Aseedfinder.eu",
       "lineageTags": [
         "Feminized",
         "GMO / Garlic",
@@ -1349,7 +1372,7 @@
       "estTotalLow": 70,
       "estTotalHigh": 130,
       "packQty": 4,
-      "geneticsSearchUrl": "https://www.google.com/search?q=GSRH+Yahemi+pheno-hunter+cross+cannabis+strain+genetics+lineage",
+      "geneticsSearchUrl": "https://www.google.com/search?q=GSRH+Yahemi+cannabis+strain+genetics+lineage",
       "seedsPerPack": 4,
       "packCount": 1,
       "estMid": 100,
@@ -1370,7 +1393,8 @@
         "label": "Unreleased",
         "emoji": "🟣",
         "note": "Yahemi appears to be a pheno-hunter cross (Melonatta × Project 4516) from the GSRH family — not on standard retail."
-      }
+      },
+      "breederLinkType": "search"
     },
     {
       "name": "Exotic Greezy Runtz",
@@ -1387,7 +1411,7 @@
       ],
       "notes": "Pack confirms Grease Monkey reversal (not a 'Greezo' pheno).",
       "breederUrl": "https://exoticgenetix.com/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+E+x+otic+Greezy+Runtz+Exotic+Genetix+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=E+x+otic+Greezy+Runtz+Exotic+Genetix+site%3Aseedfinder.eu",
       "lineageTags": [
         "Feminized",
         "Gelato",
@@ -1421,7 +1445,8 @@
         "label": "Limited",
         "emoji": "🟡",
         "note": "Exotic Genetix — Grease Monkey reversal × Runtz. Exotic rotates their catalogue through authorized seedbanks."
-      }
+      },
+      "breederLinkType": "direct"
     },
     {
       "name": "Crane City S. Socker / The Zit",
@@ -1437,8 +1462,8 @@
         "IMG_4514"
       ],
       "notes": "Name discrepancy: list shows 'S. Socker', photo shows 'The Zit'. Same breeder.",
-      "breederUrl": "https://www.instagram.com/cranecitycannabis/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Crane+City+S.+Socker+%2F+The+Zit+Crane+City+Cannabis+site%3Aseedfinder.eu",
+      "breederUrl": "https://www.google.com/search?q=Crane+City+Cannabis+cannabis+seeds+breeder",
+      "seedfinderUrl": "https://www.google.com/search?q=Crane+City+S.+Socker+%2F+The+Zit+Crane+City+Cannabis+site%3Aseedfinder.eu",
       "lineageTags": [
         "Zkittlez"
       ],
@@ -1469,7 +1494,8 @@
         "label": "Limited",
         "emoji": "🟡",
         "note": "Crane City Cannabis — craft Zkittlez crosses. Limited retail distribution; check Crane City IG."
-      }
+      },
+      "breederLinkType": "search"
     },
     {
       "name": "Envy Grape Blow",
@@ -1486,7 +1512,7 @@
       ],
       "notes": "Pack confirms Grape Pie × BlowPops.",
       "breederUrl": "https://envygenetics.com/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Envy+Grape+Blow+Envy+Genetics+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=Envy+Grape+Blow+Envy+Genetics+site%3Aseedfinder.eu",
       "lineageTags": [
         "BlowPops (Envy)",
         "Grape"
@@ -1518,7 +1544,8 @@
         "label": "In stock",
         "emoji": "🟢",
         "note": "Envy Genetics Grape Pie × BlowPops — part of the Envy BlowPops dessert line, typically in rotation."
-      }
+      },
+      "breederLinkType": "direct"
     },
     {
       "name": "Geist Kushmints × Banana06",
@@ -1532,8 +1559,8 @@
       "profile": "Minty, creamy, banana-forward. Kush Mints = Animal Mints × Bubba Kush.",
       "images": [],
       "notes": "On OTHER list; no standalone photo.",
-      "breederUrl": "https://www.instagram.com/geistgenetics/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Geist+Kushmints+x+Banana06+Geist+site%3Aseedfinder.eu",
+      "breederUrl": "https://www.google.com/search?q=Geist+cannabis+seeds+breeder",
+      "seedfinderUrl": "https://www.google.com/search?q=Geist+Kushmints+x+Banana06+Geist+site%3Aseedfinder.eu",
       "lineageTags": [
         "Banana",
         "Bubba Kush",
@@ -1566,7 +1593,8 @@
         "label": "Unreleased",
         "emoji": "🟣",
         "note": "Geist craft release, Banana #06 pheno — small-batch, not retailed."
-      }
+      },
+      "breederLinkType": "search"
     },
     {
       "name": "Exotic Runtz S1",
@@ -1581,7 +1609,7 @@
       "images": [],
       "notes": "Likely same rainbow tin format as Runtz S1 — see IMG_4505/IMG_4510.",
       "breederUrl": "https://exoticgenetix.com/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+E+x+otic+Runtz+S1+Exotic+Genetix+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=E+x+otic+Runtz+S1+Exotic+Genetix+site%3Aseedfinder.eu",
       "lineageTags": [
         "Feminized",
         "Gelato",
@@ -1624,7 +1652,8 @@
         "label": "Limited",
         "emoji": "🟡",
         "note": "Exotic Genetix Runtz S1 self — surfaces periodically through Exotic drops."
-      }
+      },
+      "breederLinkType": "direct"
     },
     {
       "name": "Ethos GMOZ × Runtz",
@@ -1641,7 +1670,7 @@
       ],
       "notes": "Green foil bag with marker label.",
       "breederUrl": "https://ethosgenetics.com/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Ethos+GMOZ+x+Runtz+Ethos+Genetics+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=Ethos+GMOZ+x+Runtz+Ethos+Genetics+site%3Aseedfinder.eu",
       "lineageTags": [
         "GMO / Garlic",
         "Gelato",
@@ -1675,7 +1704,8 @@
         "label": "Limited",
         "emoji": "🟡",
         "note": "Ethos GMOZ line × Runtz — Ethos limited/foil releases. GMOZ is part of their gas-candy program."
-      }
+      },
+      "breederLinkType": "direct"
     },
     {
       "name": "Envy Weedies",
@@ -1692,7 +1722,7 @@
       ],
       "notes": "Genetics line marked out on pack.",
       "breederUrl": "https://envygenetics.com/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Envy+Weedies+Envy+Genetics+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=Envy+Weedies+Envy+Genetics+site%3Aseedfinder.eu",
       "lineageTags": [
         "BlowPops (Envy)"
       ],
@@ -1723,7 +1753,8 @@
         "label": "In stock",
         "emoji": "🟢",
         "note": "Envy Genetics — part of the Envy dessert line; typically findable at retailers that carry Envy."
-      }
+      },
+      "breederLinkType": "direct"
     },
     {
       "name": "Wilmeac / Wilmaaa",
@@ -1740,7 +1771,7 @@
       ],
       "notes": "Pack label reveals Envy breeder (docx had it as 'unknown craft').",
       "breederUrl": "https://envygenetics.com/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Wilmeac+%2F+Wilmaaa+Envy+Genetics+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=Wilmeac+%2F+Wilmaaa+Envy+Genetics+site%3Aseedfinder.eu",
       "lineageTags": [
         "Fruity Pebbles"
       ],
@@ -1771,7 +1802,8 @@
         "label": "Limited",
         "emoji": "🟡",
         "note": "Envy Genetics — Fruity Pebbles OG × Calisunset. Not a main-line release; limited drops."
-      }
+      },
+      "breederLinkType": "direct"
     },
     {
       "name": "Savage Acai Gelato × Hooliganz",
@@ -1788,7 +1820,7 @@
       ],
       "notes": "Tester pack.",
       "breederUrl": "https://savagegenetics.com/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Savage+Acai+Gelato+x+Hooliganz+Savage+Genetics+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=Savage+Acai+Gelato+x+Hooliganz+Savage+Genetics+site%3Aseedfinder.eu",
       "lineageTags": [
         "Acai",
         "Animal Cookies",
@@ -1823,7 +1855,8 @@
         "label": "Tester",
         "emoji": "⚫",
         "note": "Savage Genetics tester pack — given to selected growers for reports. Never on retail."
-      }
+      },
+      "breederLinkType": "direct"
     },
     {
       "name": "Ethos FPOG",
@@ -1838,7 +1871,7 @@
       "images": [],
       "notes": "No standalone photo located.",
       "breederUrl": "https://ethosgenetics.com/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Ethos+FPOG+Ethos+Genetics+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=Ethos+FPOG+Ethos+Genetics+site%3Aseedfinder.eu",
       "lineageTags": [
         "Forbidden Fruit",
         "Fruity Pebbles",
@@ -1871,7 +1904,8 @@
         "label": "In stock",
         "emoji": "🟢",
         "note": "Ethos Genetics FPOG (Forbidden Fruit OG) — part of the mainline Ethos catalogue and typically in stock at major seedbanks."
-      }
+      },
+      "breederLinkType": "direct"
     },
     {
       "name": "Fire Farms Fro OGLB (FRO GKB v2.17)",
@@ -1887,8 +1921,8 @@
         "IMG_4525"
       ],
       "notes": "Handwritten label. 'GKB' likely OGKB.",
-      "breederUrl": "https://www.instagram.com/firefarmsgenetics/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Fire+Farms+Fro+OGLB+FRO+GKB+v2.17+Fire+Farms+site%3Aseedfinder.eu",
+      "breederUrl": "https://www.google.com/search?q=Fire+Farms+cannabis+seeds+breeder",
+      "seedfinderUrl": "https://www.google.com/search?q=Fire+Farms+Fro+OGLB+FRO+GKB+v2.17+Fire+Farms+site%3Aseedfinder.eu",
       "lineageTags": [
         "Biscotti",
         "OGKB"
@@ -1920,7 +1954,8 @@
         "label": "Unreleased",
         "emoji": "🟣",
         "note": "Fire Farms handmade cross with a versioned pheno label. Craft circles only."
-      }
+      },
+      "breederLinkType": "search"
     },
     {
       "name": "GRF GMOZ",
@@ -1934,8 +1969,8 @@
       "profile": "Gas/garlic/candy; similar to Ethos GMOZ. GRF cut may vary.",
       "images": [],
       "notes": "No standalone photo located.",
-      "breederUrl": "https://www.instagram.com/grf.genetics/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+GRF+GMOZ+GRF+site%3Aseedfinder.eu",
+      "breederUrl": "https://www.google.com/search?q=GRF+cannabis+seeds+breeder",
+      "seedfinderUrl": "https://www.google.com/search?q=GRF+GMOZ+GRF+site%3Aseedfinder.eu",
       "lineageTags": [
         "Chem / Diesel",
         "Cookies / GSC",
@@ -1969,7 +2004,8 @@
         "label": "Unreleased",
         "emoji": "🟣",
         "note": "GRF GMOZ — unsigned / craft release; not in any mainstream seedbank."
-      }
+      },
+      "breederLinkType": "search"
     },
     {
       "name": "Animal Kush CBD (CBP)",
@@ -1986,7 +2022,7 @@
       ],
       "notes": "Pack shows Humble Jungle Seeds breeder and CBD (not CBP) designation.",
       "breederUrl": "https://humblejungleseeds.com/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Animal+Kush+CBD+CBP+Humble+Jungle+Seeds+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=Animal+Kush+CBD+CBP+Humble+Jungle+Seeds+site%3Aseedfinder.eu",
       "lineageTags": [
         "CBD"
       ],
@@ -2017,7 +2053,8 @@
         "label": "Limited",
         "emoji": "🟡",
         "note": "Humble Jungle Seeds — CBD-positive Animal Kush pheno. Humble Jungle carries CBD-forward lines through select EU/US retailers."
-      }
+      },
+      "breederLinkType": "direct"
     },
     {
       "name": "Grapaya Drip",
@@ -2033,8 +2070,8 @@
         "IMG_4488"
       ],
       "notes": "Not on master list photo — additional strain discovered in collection.",
-      "breederUrl": "https://www.instagram.com/phantomfiregenetics/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Grapaya+Drip+Phantom+Fire+Genetics+site%3Aseedfinder.eu",
+      "breederUrl": "https://www.google.com/search?q=Phantom+Fire+Genetics+cannabis+seeds+breeder",
+      "seedfinderUrl": "https://www.google.com/search?q=Grapaya+Drip+Phantom+Fire+Genetics+site%3Aseedfinder.eu",
       "lineageTags": [
         "Haze",
         "Landrace / Heritage",
@@ -2068,7 +2105,8 @@
         "label": "Limited",
         "emoji": "🟡",
         "note": "Phantom Fire Genetics — multi-way cross (Bright Moments × Blueberry Skunk × SFV × Mendo Purps). Phantom Fire runs craft drops through IG."
-      }
+      },
+      "breederLinkType": "search"
     },
     {
       "name": "Sin City Blue Zu",
@@ -2084,8 +2122,8 @@
         "IMG_4489"
       ],
       "notes": "Not on master list — additional strain.",
-      "breederUrl": "https://www.instagram.com/sincityseeds/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Sin+City+Blue+Zu+Blue+J+Genetics+site%3Aseedfinder.eu",
+      "breederUrl": "https://sincityseeds.com/",
+      "seedfinderUrl": "https://www.google.com/search?q=Sin+City+Blue+Zu+Blue+J+Genetics+site%3Aseedfinder.eu",
       "lineageTags": [
         "Zkittlez"
       ],
@@ -2116,7 +2154,8 @@
         "label": "In stock",
         "emoji": "🟢",
         "note": "Sin City Seeds / Blue J — established commercial breeder. Most Sin City crosses are findable through their direct site and authorized seedbanks."
-      }
+      },
+      "breederLinkType": "direct"
     },
     {
       "name": "Titanium Jack × B-Side",
@@ -2132,8 +2171,8 @@
         "IMG_4491"
       ],
       "notes": "Not on master list — additional strain.",
-      "breederUrl": "https://www.instagram.com/gene_traders/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Titanium+Jack+x+B-Side+Gene+Traders+VIP+site%3Aseedfinder.eu",
+      "breederUrl": "https://www.google.com/search?q=Gene+Traders+VIP+cannabis+seeds+breeder",
+      "seedfinderUrl": "https://www.google.com/search?q=Titanium+Jack+x+B-Side+Gene+Traders+VIP+site%3Aseedfinder.eu",
       "lineageTags": [],
       "phenoType": "Hybrid",
       "estPerPackLow": 66,
@@ -2162,7 +2201,8 @@
         "label": "Unreleased",
         "emoji": "🟣",
         "note": "Gene Traders VIP — private/select trader circle release, not on public retail."
-      }
+      },
+      "breederLinkType": "search"
     },
     {
       "name": "Papaya F2",
@@ -2178,8 +2218,8 @@
         "IMG_4494"
       ],
       "notes": "Freebie pack. Not on master list.",
-      "breederUrl": "https://www.instagram.com/phantomfiregenetics/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Papaya+F2+Phantom+Fire+Genetics+site%3Aseedfinder.eu",
+      "breederUrl": "https://www.google.com/search?q=Phantom+Fire+Genetics+cannabis+seeds+breeder",
+      "seedfinderUrl": "https://www.google.com/search?q=Papaya+F2+Phantom+Fire+Genetics+site%3Aseedfinder.eu",
       "lineageTags": [
         "Papaya / Guava"
       ],
@@ -2214,7 +2254,8 @@
         "label": "Tester",
         "emoji": "⚫",
         "note": "Phantom Fire Genetics F2 — came as a freebie/tester with another purchase. Not independently sold."
-      }
+      },
+      "breederLinkType": "search"
     },
     {
       "name": "The Hydra",
@@ -2230,8 +2271,8 @@
         "IMG_4495"
       ],
       "notes": "Not on master list — additional strain.",
-      "breederUrl": "https://www.instagram.com/lymerisingfarm/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+The+Hydra+Lyme+Rising+Farm+site%3Aseedfinder.eu",
+      "breederUrl": "https://www.google.com/search?q=Lyme+Rising+Farm+cannabis+seeds+breeder",
+      "seedfinderUrl": "https://www.google.com/search?q=The+Hydra+Lyme+Rising+Farm+site%3Aseedfinder.eu",
       "lineageTags": [
         "Haze"
       ],
@@ -2262,7 +2303,8 @@
         "label": "Unreleased",
         "emoji": "🟣",
         "note": "Lyme Rising Farm — TKNL 5 Haze × Pam F2. Craft Northeast small-batch release."
-      }
+      },
+      "breederLinkType": "search"
     },
     {
       "name": "Dinosaur Biscuits",
@@ -2279,8 +2321,8 @@
         "IMG_4518"
       ],
       "notes": "Sealed box with certified hologram. Not on master list.",
-      "breederUrl": "https://www.instagram.com/abcompany.lv/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Dinosaur+Biscuits+A%26B+Company+site%3Aseedfinder.eu",
+      "breederUrl": "https://www.google.com/search?q=A%26B+Company+cannabis+seeds+breeder",
+      "seedfinderUrl": "https://www.google.com/search?q=Dinosaur+Biscuits+A%26B+Company+site%3Aseedfinder.eu",
       "lineageTags": [
         "Cookies / GSC",
         "Stankasaurus"
@@ -2312,7 +2354,8 @@
         "label": "Sold out",
         "emoji": "🟠",
         "note": "A&B Company sealed boutique — Forum Cut Cookies × Stankasaurus. Certified-hologram sealed box; not on current retail."
-      }
+      },
+      "breederLinkType": "search"
     },
     {
       "name": "Copper Sunset",
@@ -2329,7 +2372,7 @@
       ],
       "notes": "Not on master list — additional strain.",
       "breederUrl": null,
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Copper+Sunset+unknown+site%3Aseedfinder.eu",
+      "seedfinderUrl": "https://www.google.com/search?q=Copper+Sunset+site%3Aseedfinder.eu",
       "lineageTags": [
         "Chem / Diesel"
       ],
@@ -2339,7 +2382,7 @@
       "estTotalLow": 77,
       "estTotalHigh": 143,
       "packQty": 10,
-      "geneticsSearchUrl": "https://www.google.com/search?q=Copper+Sunset+unknown+cannabis+strain+genetics+lineage",
+      "geneticsSearchUrl": "https://www.google.com/search?q=Copper+Sunset+cannabis+strain+genetics+lineage",
       "seedsPerPack": 10,
       "packCount": 1,
       "estMid": 110,
@@ -2360,7 +2403,8 @@
         "label": "Unreleased",
         "emoji": "🟣",
         "note": "No confirmed breeder — llama-art pack suggests small-batch handmade. Copper Chem × Peruvian Punch cross."
-      }
+      },
+      "breederLinkType": null
     },
     {
       "name": "Kali's Cookies",
@@ -2376,8 +2420,8 @@
         "IMG_4500"
       ],
       "notes": "Not on master list — additional strain.",
-      "breederUrl": "https://www.instagram.com/kalisgenetics/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+Kali%27s+Cookies+Kali%27s+site%3Aseedfinder.eu",
+      "breederUrl": "https://www.google.com/search?q=Kali%27s+cannabis+seeds+breeder",
+      "seedfinderUrl": "https://www.google.com/search?q=Kali%27s+Cookies+Kali%27s+site%3Aseedfinder.eu",
       "lineageTags": [
         "Cookies / GSC"
       ],
@@ -2408,7 +2452,8 @@
         "label": "Limited",
         "emoji": "🟡",
         "note": "Kali's Seeds — craft release, Kali's Lullaby × Tropicana Cookies. Limited distribution through select retailers."
-      }
+      },
+      "breederLinkType": "search"
     },
     {
       "name": "The A Frame",
@@ -2424,8 +2469,8 @@
         "IMG_4520"
       ],
       "notes": "Not on master list — additional strain.",
-      "breederUrl": "https://www.instagram.com/geo_farms_/",
-      "seedfinderUrl": "https://duckduckgo.com/?q=%21ducky+The+A+Frame+Geo+Farms+site%3Aseedfinder.eu",
+      "breederUrl": "https://www.google.com/search?q=Geo+Farms+cannabis+seeds+breeder",
+      "seedfinderUrl": "https://www.google.com/search?q=The+A+Frame+Geo+Farms+site%3Aseedfinder.eu",
       "lineageTags": [
         "OG Kush"
       ],
@@ -2456,7 +2501,8 @@
         "label": "Discontinued",
         "emoji": "🔴",
         "note": "Geo Farms 2019 release — TKBX2 × Funky Barn BX. Old project, no current retail; aftermarket collector only."
-      }
+      },
+      "breederLinkType": "search"
     }
   ]
 }

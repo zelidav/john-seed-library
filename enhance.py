@@ -15,47 +15,42 @@ with open(SITE / 'strains.json', 'r', encoding='utf-8') as f:
 # ──────────────────────────────────────────────────────────────
 # Breeder URLs
 # ──────────────────────────────────────────────────────────────
-BREEDERS = {
-    'covert genetics': 'https://www.instagram.com/covertgenetics/',
-    'tiki madman': 'https://www.instagram.com/tikimadman/',
-    'in house genetics': 'https://inhousegenetics.com/',
-    'cookies fam': 'https://cookies.co/',
-    'cult classics seeds': 'https://cultclassicsseeds.com/',
-    'cult classics / universally seeded': 'https://cultclassicsseeds.com/',
-    'ethos genetics': 'https://ethosgenetics.com/',
-    'savage genetics': 'https://savagegenetics.com/',
-    'savage (testers)': 'https://savagegenetics.com/',
-    'envy genetics': 'https://envygenetics.com/',
-    'bloom seed co': 'https://bloomseedco.com/',
-    'mephisto genetics': 'https://mephistogenetics.com/',
-    'exotic genetix': 'https://exoticgenetix.com/',
-    'exotic genetix / runtz s1 self': 'https://exoticgenetix.com/',
-    'ab seed': 'https://www.instagram.com/ab_seed_organization/',
-    'ab seed / goat cheese': 'https://www.instagram.com/ab_seed_organization/',
-    'a&b company': 'https://www.instagram.com/abcompany.lv/',
-    'fire farms': 'https://www.instagram.com/firefarmsgenetics/',
-    'humble jungle seeds': 'https://humblejungleseeds.com/',
-    'crane city cannabis': 'https://www.instagram.com/cranecitycannabis/',
-    'phantom fire genetics': 'https://www.instagram.com/phantomfiregenetics/',
-    'gene traders vip': 'https://www.instagram.com/gene_traders/',
-    'lyme rising farm': 'https://www.instagram.com/lymerisingfarm/',
-    'geo farms': 'https://www.instagram.com/geo_farms_/',
-    'geist': 'https://www.instagram.com/geistgenetics/',
-    'grf': 'https://www.instagram.com/grf.genetics/',
-    'blue j genetics': 'https://www.instagram.com/sincityseeds/',
-    'blue j / sin city': 'https://sincityseeds.com/',
-    'sin city': 'https://sincityseeds.com/',
-    "kali's": 'https://www.instagram.com/kalisgenetics/',
+# Verified-only direct URLs (these resolve to real, current pages).
+# Anything not in this set falls back to a Google search for the breeder
+# — guarantees no 404 and lands on the right page either way.
+BREEDERS_VERIFIED = {
+    'in house genetics':      'https://inhousegenetics.com/',
+    'cookies fam':            'https://cookies.co/',
+    'cult classics seeds':    'https://cultclassicsseeds.com/',
+    'cult classics':          'https://cultclassicsseeds.com/',
+    'ethos genetics':         'https://ethosgenetics.com/',
+    'savage genetics':        'https://savagegenetics.com/',
+    'envy genetics':          'https://envygenetics.com/',
+    'bloom seed co':          'https://bloomseedco.com/',
+    'mephisto genetics':      'https://mephistogenetics.com/',
+    'exotic genetix':         'https://exoticgenetix.com/',
+    'humble jungle':          'https://humblejungleseeds.com/',
+    'sin city':               'https://sincityseeds.com/',
+    'covert genetics':        'https://www.covertgenetics.com/',
+    'covert':                 'https://www.covertgenetics.com/',
 }
 
 def breeder_url(breeder_raw):
+    """Returns (url, type) where type is 'direct' for verified breeders or
+    'search' for everything else (Google search for breeder name → first
+    result is virtually always the correct site/IG)."""
     if not breeder_raw:
-        return None
+        return None, None
     b = breeder_raw.lower()
-    for key in sorted(BREEDERS, key=len, reverse=True):
+    for key in sorted(BREEDERS_VERIFIED, key=len, reverse=True):
         if key in b:
-            return BREEDERS[key]
-    return None
+            return BREEDERS_VERIFIED[key], 'direct'
+    # Fallback: Google search for the breeder
+    cleaned = clean_breeder(breeder_raw)
+    if not cleaned or 'unknown' in cleaned.lower() or 'craft' in cleaned.lower():
+        return None, None
+    q = f'{cleaned} cannabis seeds breeder'
+    return f'https://www.google.com/search?q={urllib.parse.quote_plus(q)}', 'search'
 
 # ──────────────────────────────────────────────────────────────
 # Price per-pack (USD) — one physical pack
@@ -476,14 +471,21 @@ def clean_name(name):
     return re.sub(r'\s+', ' ', n).strip()
 
 def seedfinder_url(name, breeder):
-    # DuckDuckGo !ducky redirect → direct seedfinder strain page (bypasses bot wall)
+    """Google site-search restricted to seedfinder.eu. The top result is
+    the strain-info page when one exists; otherwise the user sees Google's
+    closest matches and can broaden the query themselves. More reliable
+    than the !ducky 'I'm-feeling-lucky' redirect, which lands on garbage
+    when seedfinder doesn't have an exact match."""
     s = clean_name(name); b = clean_breeder(breeder)
-    q = f'{s} {b} site:seedfinder.eu'.strip()
-    return f'https://duckduckgo.com/?q=%21ducky+{urllib.parse.quote_plus(q)}'
+    # Strip parenthesised disambiguators / 'unknown' for cleaner queries
+    b_clean = re.sub(r'\b(unknown|craft|small-batch|various|pheno-hunter|cross|cuts? exist)\b', '', b, flags=re.I).strip()
+    q = f'{s} {b_clean} site:seedfinder.eu'.strip() if b_clean else f'{s} site:seedfinder.eu'
+    return f'https://www.google.com/search?q={urllib.parse.quote_plus(q)}'
 
 def genetics_search_url(name, breeder):
     s = clean_name(name); b = clean_breeder(breeder)
-    q = f'{s} {b} cannabis strain genetics lineage'.strip()
+    b_clean = re.sub(r'\b(unknown|craft|small-batch|various|pheno-hunter|cross|cuts? exist)\b', '', b, flags=re.I).strip()
+    q = f'{s} {b_clean} cannabis strain genetics lineage'.strip() if b_clean else f'{s} cannabis strain genetics lineage'
     return f'https://www.google.com/search?q={urllib.parse.quote_plus(q)}'
 
 # ──────────────────────────────────────────────────────────────
@@ -510,7 +512,9 @@ for s in data['strains']:
     s['rarityBreakdown'] = rbreakdown
     s['availability'] = availability(s)
 
-    s['breederUrl'] = breeder_url(s.get('breeder'))
+    bu, bu_type = breeder_url(s.get('breeder'))
+    s['breederUrl'] = bu
+    s['breederLinkType'] = bu_type  # 'direct' (verified breeder site) or 'search' (Google search)
     s['seedfinderUrl'] = seedfinder_url(s.get('name'), s.get('breeder'))
     s['geneticsSearchUrl'] = genetics_search_url(s.get('name'), s.get('breeder'))
     s['lineageTags'] = lineage_tags(s)

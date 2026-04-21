@@ -69,8 +69,6 @@
           <option value="section">Section (Sealed → Bonus)</option>
           <option value="name">Name (A–Z)</option>
           <option value="name-desc">Name (Z–A)</option>
-          <option value="value-desc">Est. value (high → low)</option>
-          <option value="value-asc">Est. value (low → high)</option>
           <option value="rarity-desc">Rarity (high → low)</option>
           <option value="rarity-asc">Rarity (low → high)</option>
           <option value="avail">Availability (in-stock first)</option>
@@ -111,20 +109,30 @@
 </main>
 
 <section id="rarity-info" class="info-section wrap">
-  <h2>Rarity rating — how it's scored</h2>
-  <p>Rarity is a <strong>1–5 opinionated score</strong> of how hard a strain is to acquire once you want one. It's distinct from availability (which is the current retail status) and from valuation (which is estimated retail price). A strain can be low-rarity but sold out, or high-rarity but currently in stock.</p>
+  <h2>Rarity rating — how it works</h2>
+  <p><strong>Rarity</strong> answers one question: <em>how hard is this pack to acquire if you decided you wanted one today?</em> It's a 1–5 opinionated score that combines breeder reputation, the type of seeds in the pack, sealed/opened status, and any strain-specific hype.</p>
 
+  <p>It's <strong>not</strong> the same as availability or value:</p>
+  <ul style="max-width:760px;color:var(--text);">
+    <li><strong>Rarity</strong> = how scarce the pack is in collectors' hands (long-term).</li>
+    <li><strong>Availability</strong> = is the breeder/retailer selling it <em>right now</em> (short-term, see the section below).</li>
+    <li><strong>Value</strong> = estimated dollar amount to acquire one (currently hidden in this view).</li>
+  </ul>
+  <p>A strain can be high-rarity but in-stock (an Ethos hype drop just hit the seedbank), or low-rarity but sold out (a commercial line that got discontinued).</p>
+
+  <h3>The five tiers</h3>
   <div class="rarity-grid" id="rarityScaleEl"></div>
 
-  <h3>Scoring factors (in order of weight)</h3>
+  <h3>How a score is calculated (each card has its own breakdown — click to see)</h3>
   <ol class="factor-list">
-    <li><strong>Breeder tier</strong> — primary signal. Reputation, production scale, and distribution control. Top-tier: A&B Company, Ethos Bx projects, Cult Classics hype drops, Cookies Fam S1 releases, Tiki Madman post-Cup winners.</li>
-    <li><strong>Seed type</strong> — S1 (self-pollinated feminized) and Bx (backcross) projects trade at collector premiums vs. regular feminized lines.</li>
-    <li><strong>Sealed status</strong> — an unopened pack preserves authentication (hologram, hand-label, breeder seal) and adds +1 to the score.</li>
-    <li><strong>Tester / freebie flags</strong> — testers were never retailed (+1 up to 4); freebies are bonus packs thrown in with other purchases and have reduced standalone value (-1).</li>
-    <li><strong>Strain-specific hype</strong> — named hype drops override the breeder tier. Examples in this library: Gushers S1, Cement Shoes S1, OGDLUX Bx3, Fresh Baked, Jurassic Kush (A&B pendant box).</li>
+    <li><strong>Breeder base tier (1–5)</strong> — the dominant input. Top-tier breeders (A&B Company sealed boutique, Ethos Bx projects, Cult Classics hype line, Cookies Fam S1 releases, Tiki Madman post-Cup winners) start at 4–5. Established craft breeders (Exotic Genetix, Mephisto, Bloom, Envy) start at 3. Smaller craft (Geist, Crane City, Fire Farms, Humble Jungle) start at 2. Unsigned starts at 1.</li>
+    <li><strong>Strain-specific hype override (+0 to +3)</strong> — some named drops outrank their breeder's normal tier. In this library: Gushers S1 (5), Cement Shoes S1 (5), Ethos OGDLUX Bx3 (5), Cult Classic Fresh Baked (5), A&B's Jurassic Kush pendant box (5), Dinosaur Biscuits sealed box (5), Drive Thru Wedding (4), Hitmaker (4), Sunset Freshies (4), Freshmaker (4), Grandmas Pajamas (4).</li>
+    <li><strong>Sealed status (+1, max 5)</strong> — unopened packs preserve authentication (hologram, hand-label, breeder seal) and command premium on aftermarket.</li>
+    <li><strong>Seed type modifier</strong> — S1 self-pollinated and Bx backcross releases trade at a collector premium vs. regular fem; reflected in both the per-strain hype list and pricing.</li>
+    <li><strong>Tester / freebie adjustment</strong> — Tester packs were never retailed (forced to ≥4 because they're impossible to buy). Freebies are bonus packs that came with other orders and have reduced standalone value (-1).</li>
   </ol>
-  <p class="muted"><em>Click any strain card for its specific rarity breakdown — which factors pushed the score up or down.</em></p>
+
+  <p>The score is clamped to 1–5. Each strain card shows its specific breakdown when you click into it — you'll see exactly which factors moved it up or down from the base.</p>
 </section>
 
 <section id="availability-info" class="info-section wrap">
@@ -136,7 +144,7 @@
 
 <footer>
   <div class="wrap">
-    <p><b>Valuation note:</b> <span id="valDisclaimer"></span></p>
+    <p><b>Pricing note:</b> <span id="valDisclaimer"></span></p>
     <p>Source: <em>Strain_Genetics_Reference.docx</em> + 42 photos (IMG_4484 → IMG_4525). Strain bud photos from Leafly / AllBud; parent-strain fallback tagged "lineage ref" where the exact strain isn't indexed.</p>
     <p class="muted">Legend: <b>REG</b> Regular · <b>FEM</b> Feminized · <b>AUTO</b> Autoflower · <b>S1</b> Self-pollinated F1 · <b>BX</b> Backcross. Edits you make to name or genetics are saved to your browser's localStorage and can be exported via the "⇩ Export edits" button.</p>
   </div>
