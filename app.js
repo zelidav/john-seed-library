@@ -291,6 +291,17 @@
   };
 
   // ─────── Render helpers ───────
+  // Single source of truth for the small availability badge shown on cards
+  function renderAvailBadge(s) {
+    if (!s.availability) return '';
+    const a = s.availability;
+    const lastSeen = a.lastSeen ? ` · last seen ${escapeHtml(a.lastSeen)}` : '';
+    const tip = `${a.note || ''}${a.retailer ? ' · ' + a.retailer : ''}${lastSeen}`;
+    const buyHint = (a.code === 'in-stock' || a.code === 'limited') && a.retailerUrl
+      ? ` <span style="opacity:0.7">→ buy</span>` : '';
+    return `<span class="avail avail-${a.code}" title="${escapeHtml(tip)}">${a.emoji} ${escapeHtml(a.label)}${buyHint}</span>`;
+  }
+
   function imgRow(s) {
     const packImgs = (s.images && s.images.length)
       ? s.images.map(i => `<div class="imgbox pack-box"><img class="pack" loading="lazy" src="thumb/${i}.jpg" data-full="img/${i}.jpg" alt="${escapeHtml(s.name)} pack"></div>`).join('')
@@ -328,8 +339,7 @@
     if (s.geneticsSearchUrl) footerLinks.push(`<a href="${escapeHtml(s.geneticsSearchUrl)}" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Google search: genetics / reviews (Leafly, AllBud, breeder blogs, IG)">🔍 Genetics</a>`);
     if (s.imagesSearchUrl) footerLinks.push(`<a href="${escapeHtml(s.imagesSearchUrl)}" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Google Images: flower photos">🔍 Flower photos</a>`);
     const edited = s._edited ? `<span class="edited-tag" title="Name/genetics edited locally">EDITED</span>` : '';
-    const avail = s.availability
-      ? `<span class="avail" title="${escapeHtml(s.availability.note || '')}">${s.availability.emoji} ${escapeHtml(s.availability.label)}</span>` : '';
+    const avail = renderAvailBadge(s);
     return `
       <article class="card" data-idx="${idx}">
         <div class="img-row">${imgRow(s)}</div>
@@ -340,7 +350,8 @@
             <span class="seedtype">${escapeHtml(s.seedType)}</span>
             ${s.phenoType ? `<span class="pheno">${escapeHtml(s.phenoType)}</span>` : ''}
             ${s.rarity ? `<span class="rarity" title="${escapeHtml(s.rarityReason || '')}">${rarityFlames(s.rarity)}×${s.rarity}</span>` : ''}
-            ${avail}
+            ${avail}${(s.availability?.code === 'in-stock' || s.availability?.code === 'limited') && s.availability?.retailerUrl
+              ? ` <a class="buy-link" href="${escapeHtml(s.availability.retailerUrl)}" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="${escapeHtml(s.availability.retailer || '')} — open listing">Buy ↗</a>` : ''}
           </div>
           <h3>${escapeHtml(s.name)}${edited}</h3>
           <div class="breeder">${breederHtml}</div>
@@ -363,8 +374,7 @@
     const breederHtml = s.breederUrl
       ? `<a href="${escapeHtml(s.breederUrl)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${breederText}</a>`
       : breederText;
-    const avail = s.availability
-      ? `<span class="avail" title="${escapeHtml(s.availability.note || '')}">${s.availability.emoji} ${escapeHtml(s.availability.label)}</span>` : '';
+    const avail = renderAvailBadge(s);
     const edited = s._edited ? `<span class="edited-tag">EDITED</span>` : '';
     return `
       <article class="card" data-idx="${idx}">
@@ -462,13 +472,36 @@
         </div>`;
     }
 
-    // Availability
+    // Availability — with retailer link + last-seen + sourcing tag
     let availHtml = '';
     if (s.availability) {
+      const a = s.availability;
+      const sourceTag = a.source === 'researched'
+        ? `<span class="source-tag" title="From real-time retail research across breeder shops, Strainly, GLG, Neptune, Seed Cellar, Seeds Here Now, etc.">researched</span>`
+        : a.source === 'curated'
+        ? `<span class="source-tag curated" title="Curated estimate based on breeder reputation and distribution patterns">curated</span>`
+        : `<span class="source-tag fallback" title="Inferred from breeder tier — no specific data">inferred</span>`;
+      const retailerLine = (a.retailer || a.retailerUrl)
+        ? `<p style="margin:0.5rem 0 0;font-size:0.88rem;">
+             <strong>Retailer:</strong>
+             ${a.retailerUrl
+               ? `<a href="${escapeHtml(a.retailerUrl)}" target="_blank" rel="noopener">${escapeHtml(a.retailer || a.retailerUrl)}</a>`
+               : escapeHtml(a.retailer || '')}
+             ${a.lastSeen ? `<span style="color:var(--muted);"> · last seen ${escapeHtml(a.lastSeen)}</span>` : ''}
+           </p>`
+        : '';
+      const buyButton = (a.code === 'in-stock' || a.code === 'limited') && a.retailerUrl
+        ? `<p style="margin:0.7rem 0 0;">
+             <a class="buy-button" href="${escapeHtml(a.retailerUrl)}" target="_blank" rel="noopener">
+               🛒 Open ${escapeHtml(a.retailer || 'listing')}
+             </a>
+           </p>` : '';
       availHtml = `
         <div class="detail-section avail-detail">
-          <h3>Availability: ${s.availability.emoji} ${escapeHtml(s.availability.label)}</h3>
-          <p style="margin:0.3rem 0 0;font-size:0.92rem;">${escapeHtml(s.availability.note || '')}</p>
+          <h3>Availability: ${a.emoji} ${escapeHtml(a.label)} ${sourceTag}</h3>
+          <p style="margin:0.3rem 0 0;font-size:0.92rem;">${escapeHtml(a.note || '')}</p>
+          ${retailerLine}
+          ${buyButton}
         </div>`;
     }
 

@@ -309,18 +309,46 @@ STRAIN_AVAILABILITY = {
     'The A Frame':                     ('discontinued','Geo Farms 2019 release — TKBX2 × Funky Barn BX. Old project, no current retail; aftermarket collector only.'),
 }
 
+# Load real retail-availability research (if present) — overrides curated guesses
+RESEARCH_FILE = SITE / 'availability-research.json'
+RESEARCH = {}
+if RESEARCH_FILE.exists():
+    try:
+        with open(RESEARCH_FILE, 'r', encoding='utf-8') as _f:
+            RESEARCH = json.load(_f)
+        print(f'Loaded {len(RESEARCH)} retail-research entries')
+    except Exception as e:
+        print(f'WARN: could not load research file: {e}')
+
 def availability(strain):
     name = strain.get('name')
-    if name in STRAIN_AVAILABILITY:
-        code, note = STRAIN_AVAILABILITY[name]
+    # Priority 1: real retail research
+    if name in RESEARCH:
+        r = RESEARCH[name]
+        code = r.get('code', 'limited')
+        if code not in AVAILABILITY_STATES:
+            code = 'limited'
         emoji, label, generic = AVAILABILITY_STATES[code]
         return {
             'code': code,
             'label': label,
             'emoji': emoji,
-            'note': note,
+            'note': r.get('note') or generic,
+            'retailer': r.get('retailer'),
+            'retailerUrl': r.get('retailerUrl'),
+            'lastSeen': r.get('lastSeen'),
+            'source': 'researched',
         }
-    # Fallback by breeder tier
+    # Priority 2: curated mapping
+    if name in STRAIN_AVAILABILITY:
+        code, note = STRAIN_AVAILABILITY[name]
+        emoji, label, generic = AVAILABILITY_STATES[code]
+        return {
+            'code': code, 'label': label, 'emoji': emoji,
+            'note': note, 'retailer': None, 'retailerUrl': None,
+            'lastSeen': None, 'source': 'curated',
+        }
+    # Priority 3: breeder-tier fallback
     b = (strain.get('breeder') or '').lower()
     if 'tester' in (strain.get('notes','') or '').lower():
         code = 'tester'
@@ -331,7 +359,11 @@ def availability(strain):
     else:
         code = 'limited'
     emoji, label, generic = AVAILABILITY_STATES[code]
-    return {'code': code, 'label': label, 'emoji': emoji, 'note': generic}
+    return {
+        'code': code, 'label': label, 'emoji': emoji,
+        'note': generic, 'retailer': None, 'retailerUrl': None,
+        'lastSeen': None, 'source': 'fallback',
+    }
 
 # ──────────────────────────────────────────────────────────────
 # Strain bud-image mapping

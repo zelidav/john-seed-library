@@ -1,0 +1,324 @@
+{
+  "Covert Boats & Hoes": {
+    "code": "limited",
+    "retailer": "Seeds Here Now",
+    "retailerUrl": "https://seedsherenow.com/?s=boats+and+hoes&post_type=product",
+    "lastSeen": "2025",
+    "note": "Covert Genetics' GWalk x Chem Brulee cross has been dropped by Seeds Here Now and Brown Bag Farm Goods; typically moves through in small drops and sells out quickly."
+  },
+  "Tiki Madman Space Runtz": {
+    "code": "in-stock",
+    "retailer": "Tiki Seeds (direct)",
+    "retailerUrl": "https://tikiseeds.com/product/space-runtz/",
+    "lastSeen": "current",
+    "note": "Sold direct from Tiki Seeds at $45/10 regs (Runtz x Candy Rain) with ample stock as of this check; also carried by several US seedbanks."
+  },
+  "GSRH (Garlic Sherb)": {
+    "code": "in-stock",
+    "retailer": "North Atlantic Seed Co.",
+    "retailerUrl": "https://www.northatlanticseed.com/product/new-garlic-sherb-s1-f/",
+    "lastSeen": "current",
+    "note": "In House Genetics' Garlic Sherb S1 (GMO x Blue Sherbert selfed) is actively stocked at North Atlantic, Trophy Seeds and Brotanical Gardens."
+  },
+  "Drive Thru Wedding": {
+    "code": "sold-out",
+    "retailer": "Seeds Here Now",
+    "retailerUrl": "https://seedsherenow.com/shop/covert-genetics-drive-thru-wedding-reg-10pk/",
+    "lastSeen": "2025",
+    "note": "Seeds Here Now listing currently shows out of stock with restock pending; Brown Bag Farm Goods has also carried it. Aftermarket only at the moment."
+  },
+  "Envy Pop Rocks": {
+    "code": "limited",
+    "retailer": "Neptune Seed Bank / SeedFinder-listed shops",
+    "retailerUrl": "https://www.google.com/search?q=Envy+Genetics+Pop+Rocks+seeds+for+sale",
+    "lastSeen": "2025",
+    "note": "Envy Genetics Pop Rocks surfaces intermittently at Neptune and other US banks; not a staple listing but rotates back in during Envy drops."
+  },
+  "Gushers S1": {
+    "code": "discontinued",
+    "retailer": null,
+    "retailerUrl": "https://www.google.com/search?q=Cookies+Fam+Gushers+S1+seeds+for+sale",
+    "lastSeen": "2023",
+    "note": "Cookie Fam's Gushers was never officially released as a feminized S1 by the original breeder; any 'Gushers S1' packs circulating are from other breeders and long out of retail."
+  },
+  "Runtz S1": {
+    "code": "discontinued",
+    "retailer": null,
+    "retailerUrl": "https://elev8seeds.com/strains/runtz/",
+    "lastSeen": "2023",
+    "note": "Runtz S1 has been retired by Cookies/Elev8 and is no longer produced; Exotic Genetix's Runtz S1 line has also been shelved as limited-lineup only."
+  },
+  "Cult Classic Fresh Baked": {
+    "code": "sold-out",
+    "retailer": null,
+    "retailerUrl": "https://www.cultclassicsseeds.com/",
+    "lastSeen": "2024",
+    "note": "Cult Classics' Freshies-line release; long retired from the Cult Classics shop and only occasionally resurfaces via Strainly aftermarket."
+  },
+  "Cement Shoes S1": {
+    "code": "discontinued",
+    "retailer": null,
+    "retailerUrl": "https://www.cultclassicsseeds.com/retired/cement-shoes",
+    "lastSeen": "2022",
+    "note": "Listed on the official Cult Classics site under 'Retired.' The cut now lives on via Universally Seeded collabs and clone-only; no S1 seed retail."
+  },
+  "Ethos OGDLUX": {
+    "code": "in-stock",
+    "retailer": "Ethos Genetics (direct)",
+    "retailerUrl": "https://ethosgenetics.com/findseeds",
+    "lastSeen": "current",
+    "note": "OGDlux (OGKB x Triangle Kush BX) is a mainline Ethos release carried by Ethos direct, North Atlantic, Seeds Here Now and Attitude."
+  },
+  "Freshmaker": {
+    "code": "discontinued",
+    "retailer": null,
+    "retailerUrl": "https://www.cultclassicsseeds.com/",
+    "lastSeen": "2020",
+    "note": "Cult Classics Freshies-line pack (Fruit Snacks x Freshies) from 2017-2018; retired by breeder, only surfaces on Strainly aftermarket."
+  },
+  "Savage Jr Mintz": {
+    "code": "in-stock",
+    "retailer": "Neptune Seed Bank",
+    "retailerUrl": "https://neptuneseedbank.com/product/savage-genetics-jr-mintz/",
+    "lastSeen": "current",
+    "note": "Kush Mints x Runtz fems at $120/10; stocked at Neptune, Atomic, Supreme Seed Bank and Seeds Geek."
+  },
+  "Cloud Spin": {
+    "code": "unreleased",
+    "retailer": null,
+    "retailerUrl": "https://www.google.com/search?q=%22Cloud+Spin%22+cannabis+seeds",
+    "lastSeen": null,
+    "note": "No breeder attribution and no public retail listings found; likely an unsigned craft / pheno-hunt pack circulated via IG."
+  },
+  "ABSeed Goat Cheese": {
+    "code": "sold-out",
+    "retailer": "The Seed Cellar",
+    "retailerUrl": "https://seedcellar.com/product-category/cannabis-breeders/a-b-seed-company/",
+    "lastSeen": "2024",
+    "note": "A.B. Seed Company cheese line (sister to Butter Cheese) is carried at The Seed Cellar when dropped; Goat Cheese specifically not showing in current A.B. Seed inventory."
+  },
+  "S. Orange Pucker": {
+    "code": "unreleased",
+    "retailer": null,
+    "retailerUrl": "https://www.google.com/search?q=%22Sour+Orange+Pucker%22+cannabis+seeds",
+    "lastSeen": null,
+    "note": "Handwritten-label cross with no breeder attribution or public retail presence; treated as unsigned craft/pheno-hunt material."
+  },
+  "Grandmas Pajamas": {
+    "code": "sold-out",
+    "retailer": null,
+    "retailerUrl": "https://www.abseedcompany.com/genetics",
+    "lastSeen": "2024",
+    "note": "A&B Company release that ships in their hand-blown glass pendant packaging; not currently listed on The Seed Cellar or The Upper Vault."
+  },
+  "O. Cookie Violence": {
+    "code": "unreleased",
+    "retailer": null,
+    "retailerUrl": "https://www.google.com/search?q=%22Cookie+Violence%22+cannabis+seeds",
+    "lastSeen": null,
+    "note": "No breeder attribution or public retail listings identified; handwritten-label craft cross, treated as unreleased."
+  },
+  "Jurassic Kush": {
+    "code": "sold-out",
+    "retailer": null,
+    "retailerUrl": "https://www.abseedcompany.com/genetics",
+    "lastSeen": "2024",
+    "note": "A&B Company pack with no current retail listings at The Seed Cellar or The Upper Vault; likely aftermarket only."
+  },
+  "N. Speckley Boogie": {
+    "code": "unreleased",
+    "retailer": null,
+    "retailerUrl": "https://www.google.com/search?q=%22Speckley+Boogie%22+cannabis+seeds",
+    "lastSeen": null,
+    "note": "No public retail or breeder profile surfaces; handwritten-label craft pack, treated as unreleased."
+  },
+  "Bloom Guava Barz": {
+    "code": "limited",
+    "retailer": "Bloom Seed Co (direct)",
+    "retailerUrl": "https://bloomseed.co/cultivars/",
+    "lastSeen": "Q1 2026",
+    "note": "Biscotti x Guava 74 fems from Bloom Seed Co; mentioned as a newer release on their cultivars page and rotates through The Seed Source and Gaslamp."
+  },
+  "Nephisto MBAP (ManBearAlienPig)": {
+    "code": "in-stock",
+    "retailer": "Mephisto Genetics (direct)",
+    "retailerUrl": "https://mephistogenetics.com/products/manbearalienpig",
+    "lastSeen": "current",
+    "note": "F3 fem auto; Mephisto notes it is 'back in the catalogue' as one of their top-three most requested strains. Also at SeedSupreme and Seeds For Me."
+  },
+  "G. Classics Hitmaker": {
+    "code": "discontinued",
+    "retailer": null,
+    "retailerUrl": "https://www.cultclassicsseeds.com/",
+    "lastSeen": "2019",
+    "note": "Cult Classics Freshies-line pack (Motorbreath x Freshies); retired by breeder, only aftermarket/Strainly."
+  },
+  "Sunset Freshies": {
+    "code": "discontinued",
+    "retailer": null,
+    "retailerUrl": "https://www.cultclassicsseeds.com/",
+    "lastSeen": "2019",
+    "note": "Cult Classics Freshies-line release; retired from the shop and not replenished."
+  },
+  "GSRH Yahemi": {
+    "code": "unreleased",
+    "retailer": null,
+    "retailerUrl": "https://www.google.com/search?q=%22GSRH+Yahemi%22+cannabis+seeds",
+    "lastSeen": null,
+    "note": "Pheno-hunter cross label (Garlic Sherb x Yahemi style); no public retail — pack trader / IG DM only."
+  },
+  "Exotic Greezy Runtz": {
+    "code": "limited",
+    "retailer": "Multiverse Beans",
+    "retailerUrl": "https://multiversebeans.com/product/greasy-rutz-exotic-genetix/",
+    "lastSeen": "Q1 2026",
+    "note": "Exotic Genetix Greasy/Greezy Runtz fems listed at Multiverse Beans with a January 2026 update; rotates through Seeds Here Now as a Vault release."
+  },
+  "Crane City S. Socker / The Zit": {
+    "code": "limited",
+    "retailer": "Neptune Seed Bank",
+    "retailerUrl": "https://neptuneseedbank.com/product-category/breeders/crane-city-cannabis/",
+    "lastSeen": "2025",
+    "note": "Crane City's 'It'z It' is active; 'Sour Socker' / 'The Zit' specifically not on current Neptune or Oregon Elite pages, so this cut is aftermarket-lean even though the breeder is active."
+  },
+  "Envy Grape Blow": {
+    "code": "in-stock",
+    "retailer": "Fire Tree Seed Vault",
+    "retailerUrl": "https://firetreeseedvault.com/product/seed-types/regular-seeds/envy-genetics-grape-blow-12pk-regs/",
+    "lastSeen": "current",
+    "note": "Grape Pie x Blow Pops 12-pk regs actively listed at Fire Tree Seed Vault and High Class Seeds."
+  },
+  "Geist Kushmints × Banana06": {
+    "code": "tester",
+    "retailer": null,
+    "retailerUrl": "https://www.google.com/search?q=Geist+Kushmints+Banana06+seeds",
+    "lastSeen": null,
+    "note": "Geist Grow cross featuring Banana06 cut; not found on Choice Seedbank, Neptune or Cannabis Seeds Outlet — consistent with a tester / freebie drop rather than a retailed pack."
+  },
+  "Exotic Runtz S1": {
+    "code": "limited",
+    "retailer": "Seeds Here Now",
+    "retailerUrl": "https://seedsherenow.com/shop/runtz-regular-exotic-genetix-vault-release/",
+    "lastSeen": "2025",
+    "note": "Exotic Genetix Runtz S1 / Runtz regs appear as a Vault release at Seeds Here Now in limited stock; Red Runtz S1 also at Supreme Seed Bank."
+  },
+  "Ethos GMOZ × Runtz": {
+    "code": "limited",
+    "retailer": "Ethos Genetics (direct)",
+    "retailerUrl": "https://ethosgenetics.com/findseeds",
+    "lastSeen": "2025",
+    "note": "Ethos' GMOZ (GMO Zkittlez) crossed to Runtz — rotates on ethosgenetics.com and North Atlantic; not a permanent catalog item."
+  },
+  "Envy Weedies": {
+    "code": "sold-out",
+    "retailer": null,
+    "retailerUrl": "https://www.google.com/search?q=Envy+Genetics+Weedies+seeds+for+sale",
+    "lastSeen": "2024",
+    "note": "Cereal Milk x Calisunset; on SeedFinder but no current US seedbank listings — likely aftermarket between drops."
+  },
+  "Wilmeac / Wilmaaa": {
+    "code": "tester",
+    "retailer": null,
+    "retailerUrl": "https://seedfinder.eu/en/strain-info/wilma/envygenetics",
+    "lastSeen": null,
+    "note": "Envy Genetics 'Wilma' has a SeedFinder page but no US retail listings; consistent with a tester / small-circle drop rather than a standard retailed pack."
+  },
+  "Savage Acai Gelato × Hooliganz": {
+    "code": "tester",
+    "retailer": null,
+    "retailerUrl": "https://neptuneseedbank.com/brand/savage-genetics/",
+    "lastSeen": null,
+    "note": "Not present in Neptune, Atomic, or Supreme listings for Savage Genetics; labeled as testers in the source description, so never publicly sold."
+  },
+  "Ethos FPOG": {
+    "code": "sold-out",
+    "retailer": null,
+    "retailerUrl": "https://ethosgenetics.com/findseeds",
+    "lastSeen": "2024",
+    "note": "Ethos FPOG (Fruity Pebbles OG cross) not currently listed on ethosgenetics.com or the major US Ethos resellers; rotates in during seasonal Ethos restocks."
+  },
+  "Fire Farms Fro OGLB (FRO GKB v2.17)": {
+    "code": "tester",
+    "retailer": null,
+    "retailerUrl": "https://neptuneseedbank.com/product-category/breeders/fire-farms/",
+    "lastSeen": null,
+    "note": "Specific v2.17 FRO GKB / Fro OGLB testline does not appear on Neptune, Irvine or Supreme current Fire Farms pages — tester/internal label."
+  },
+  "GRF GMOZ": {
+    "code": "unreleased",
+    "retailer": null,
+    "retailerUrl": "https://neptuneseedbank.com/product/lempire-farmaseed-gmoz/",
+    "lastSeen": null,
+    "note": "GMOZ as a standalone release exists via Lempire Farmaseed; a 'GRF' variant is not a retailed SKU at any identified US seedbank."
+  },
+  "Animal Kush CBD (CBP)": {
+    "code": "sold-out",
+    "retailer": null,
+    "retailerUrl": "https://en.seedfinder.eu/strain-info/Animal_Cookie_Kush_CBD/Humble_Jungle_Seeds/",
+    "lastSeen": "2023",
+    "note": "Humble Jungle Seeds Animal Cookie Kush CBD is documented on SeedFinder but the Detroit-based dispensary seedbank is no longer actively distributing through the major US banks."
+  },
+  "Grapaya Drip": {
+    "code": "in-stock",
+    "retailer": "Luscious Genetics",
+    "retailerUrl": "https://www.lusciousgenetics.com/product/phantom-fire-genetics-grapaya-drip/",
+    "lastSeen": "current",
+    "note": "Phantom Fire Genetics Grapaya Drip active at Luscious Genetics and Terpy Seeds; typically ships with a Papaya F2 freebie."
+  },
+  "Sin City Blue Zu": {
+    "code": "sold-out",
+    "retailer": "Seeds Here Now",
+    "retailerUrl": "https://seedsherenow.com/shop/sin-city-seeds-blue-zu/",
+    "lastSeen": "2025",
+    "note": "Sin City Seeds Blue Zu (Purple Yuzu x Blue Power) regs — SHN page shows out of stock with restock pending; no current listings elsewhere."
+  },
+  "Titanium Jack × B-Side": {
+    "code": "unreleased",
+    "retailer": null,
+    "retailerUrl": "https://www.google.com/search?q=%22Titanium+Jack%22+%22B-Side%22+seeds",
+    "lastSeen": null,
+    "note": "'Gene Traders VIP' cross with no presence at Seeds Here Now, Zamnesia, Neptune or other US/EU banks — consistent with an unsigned private drop."
+  },
+  "Papaya F2": {
+    "code": "in-stock",
+    "retailer": "Seeds of Love",
+    "retailerUrl": "https://seedsoflove.world/product/papaya-sundae/",
+    "lastSeen": "current",
+    "note": "Phantom Fire's Papaya F2 is distributed as a freebie with Papaya Sundae, Maui Grape and Purple Papaya packs at Seeds of Love and Luscious Genetics."
+  },
+  "The Hydra": {
+    "code": "in-stock",
+    "retailer": "Seeds of Love",
+    "retailerUrl": "https://seedsoflove.world/shop/the-hydra/",
+    "lastSeen": "current",
+    "note": "Lyme Rising Farms regs ~$30-$75 depending on pack size at Seeds of Love, with a Summer's End freebie; also at Darkstar and LFTD."
+  },
+  "Dinosaur Biscuits": {
+    "code": "sold-out",
+    "retailer": "The Seed Cellar",
+    "retailerUrl": "https://seedcellar.com/product-category/cannabis-breeders/a-b-seed-company/",
+    "lastSeen": "2024",
+    "note": "A&B Company release shipped in hand-blown glass pendant packaging; not in current A.B. Seed Company listings at The Seed Cellar."
+  },
+  "Copper Sunset": {
+    "code": "unreleased",
+    "retailer": null,
+    "retailerUrl": "https://www.google.com/search?q=%22Copper+Sunset%22+cannabis+seeds",
+    "lastSeen": null,
+    "note": "No breeder attribution or public retail presence found; treated as unsigned craft / pheno-hunt pack."
+  },
+  "Kali's Cookies": {
+    "code": "limited",
+    "retailer": "Equilibrium Genetics",
+    "retailerUrl": "https://eqgenetics.com/product/kali-cookies/",
+    "lastSeen": "2025",
+    "note": "Kali Cookies (Cookies fem x Kablawi male / Heirloom Malawi lineage) from Equilibrium Genetics; small-batch craft release that sells through California shops."
+  },
+  "The A Frame": {
+    "code": "unreleased",
+    "retailer": null,
+    "retailerUrl": "https://www.google.com/search?q=%22Geo+Farms%22+%22A+Frame%22+cannabis+seeds",
+    "lastSeen": null,
+    "note": "No retail presence found for a 'Geo Farms The A Frame' pack at any identified seedbank; treated as unsigned craft / pheno-hunt material."
+  }
+}
